@@ -1,0 +1,3 @@
+[submodule "lhs_nb/bclib"]
+	path = lhs_nb/bclib
+	url = https://github.com/bertcarnell/bclib.git
