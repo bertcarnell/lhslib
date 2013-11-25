@@ -37,14 +37,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/CRandom.o \
 	${OBJECTDIR}/improvedLHS.o \
-	${OBJECTDIR}/improvedLHS_R.o \
 	${OBJECTDIR}/maximinLHS.o \
-	${OBJECTDIR}/maximinLHS_R.o \
-	${OBJECTDIR}/optSeededLHS_R.o \
-	${OBJECTDIR}/optimumLHS_R.o \
-	${OBJECTDIR}/sunif.o \
-	${OBJECTDIR}/utilityLHS.o \
-	${OBJECTDIR}/utilityLHS_R.o
+	${OBJECTDIR}/optSeededLHS.o \
+	${OBJECTDIR}/optimumLHS.o \
+	${OBJECTDIR}/utilityLHS.o
 
 
 # C Compiler Flags
@@ -76,52 +72,32 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblhslib.a: ${OBJECTFILES}
 ${OBJECTDIR}/CRandom.o: CRandom.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/oa/oa_nb/oalib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/CRandom.o CRandom.cpp
+	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/bclib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/CRandom.o CRandom.cpp
 
 ${OBJECTDIR}/improvedLHS.o: improvedLHS.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/oa/oa_nb/oalib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/improvedLHS.o improvedLHS.cpp
-
-${OBJECTDIR}/improvedLHS_R.o: improvedLHS_R.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/oa/oa_nb/oalib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/improvedLHS_R.o improvedLHS_R.cpp
+	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/bclib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/improvedLHS.o improvedLHS.cpp
 
 ${OBJECTDIR}/maximinLHS.o: maximinLHS.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/oa/oa_nb/oalib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/maximinLHS.o maximinLHS.cpp
+	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/bclib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/maximinLHS.o maximinLHS.cpp
 
-${OBJECTDIR}/maximinLHS_R.o: maximinLHS_R.cpp 
+${OBJECTDIR}/optSeededLHS.o: optSeededLHS.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/oa/oa_nb/oalib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/maximinLHS_R.o maximinLHS_R.cpp
+	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/bclib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/optSeededLHS.o optSeededLHS.cpp
 
-${OBJECTDIR}/optSeededLHS_R.o: optSeededLHS_R.cpp 
+${OBJECTDIR}/optimumLHS.o: optimumLHS.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/oa/oa_nb/oalib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/optSeededLHS_R.o optSeededLHS_R.cpp
-
-${OBJECTDIR}/optimumLHS_R.o: optimumLHS_R.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/oa/oa_nb/oalib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/optimumLHS_R.o optimumLHS_R.cpp
-
-${OBJECTDIR}/sunif.o: sunif.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/oa/oa_nb/oalib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/sunif.o sunif.cpp
+	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/bclib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/optimumLHS.o optimumLHS.cpp
 
 ${OBJECTDIR}/utilityLHS.o: utilityLHS.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/oa/oa_nb/oalib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/utilityLHS.o utilityLHS.cpp
-
-${OBJECTDIR}/utilityLHS_R.o: utilityLHS_R.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/oa/oa_nb/oalib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/utilityLHS_R.o utilityLHS_R.cpp
+	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/bclib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/utilityLHS.o utilityLHS.cpp
 
 # Subprojects
 .build-subprojects:

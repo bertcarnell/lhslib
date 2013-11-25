@@ -39,12 +39,12 @@
 
 void maximinLHS_C(int* N, int* K, int* dup, int* result)
 {
-	size_t nsamples = static_cast<size_t>(*N);
-	size_t nparameters = static_cast<size_t>(*K);
-	size_t duplication = static_cast<size_t>(*dup);
+	unsigned int nsamples = static_cast<unsigned int>(*N);
+	unsigned int nparameters = static_cast<unsigned int>(*K);
+	unsigned int duplication = static_cast<unsigned int>(*dup);
 	matrix_unsafe<int> m_result = matrix_unsafe<int>(nparameters, nsamples, result);
 	/* the length of the point1 columns and the list1 vector */
-	size_t len = duplication * (nsamples - 1);
+	unsigned int len = duplication * (nsamples - 1);
 	/* create memory space for computations */
 	matrix<int> avail = matrix<int>(nparameters, nsamples);
 	matrix<int> point1 = matrix<int>(nparameters, len);
@@ -54,9 +54,9 @@ void maximinLHS_C(int* N, int* K, int* dup, int* result)
 	double squaredDistanceBtwnCorners = static_cast<double>(nparameters * (nsamples - 1) * (nsamples - 1));
 
 	/* index of the current candidate point */
-	size_t point_index;
+	unsigned int point_index;
 	/* index of the optimum point */
-	size_t best;
+	unsigned int best;
 	/* the squared distance between points */
 	unsigned int distSquared;
 	/* the minimum squared distance between points */
@@ -65,9 +65,9 @@ void maximinLHS_C(int* N, int* K, int* dup, int* result)
 	unsigned int minCandidateSquaredDistBtwnPts;
 
 	/* initialize the avail matrix */
-	for (size_t row = 0; row < nparameters; row++)
+	for (unsigned int row = 0; row < nparameters; row++)
 	{
-		for (size_t col = 0; col < nsamples; col++)
+		for (unsigned int col = 0; col < nsamples; col++)
 		{
 			avail(row, col) = static_cast<int>(col + 1);
 		}
@@ -83,7 +83,7 @@ void maximinLHS_C(int* N, int* K, int* dup, int* result)
 #endif
 #endif
 
-	for (size_t row = 0; row < nparameters; row++)
+	for (unsigned int row = 0; row < nparameters; row++)
 	{
 		m_result(row, nsamples-1) = static_cast<int>(std::floor(unif_rand() * static_cast<double>(nsamples) + 1.0));
 	}
@@ -92,46 +92,46 @@ void maximinLHS_C(int* N, int* K, int* dup, int* result)
 	* use the random integers from the last column of result to place an N value
 	* randomly through the avail matrix
 	*/
-	for (size_t row = 0; row < nparameters; row++)
+	for (unsigned int row = 0; row < nparameters; row++)
 	{
-		avail(row, static_cast<size_t>(m_result(row, nsamples - 1) - 1)) = static_cast<int>(nsamples);
+		avail(row, static_cast<unsigned int>(m_result(row, nsamples - 1) - 1)) = static_cast<int>(nsamples);
 	}
 
 	/* move backwards through the result matrix columns */
-	for (size_t count = nsamples - 1; count > 0; count--)
+	for (unsigned int count = nsamples - 1; count > 0; count--)
 	{
-		for (size_t row = 0; row < nparameters; row++)
+		for (unsigned int row = 0; row < nparameters; row++)
 		{
-			for (size_t col = 0; col < duplication; col++)
+			for (unsigned int col = 0; col < duplication; col++)
 			{
 				/* create the list1 vector */
-				for (size_t j = 0; j < count; j++)
+				for (unsigned int j = 0; j < count; j++)
 				{
 					list1[j + count*col] = avail(row, j);
 				}
 			}
 			/* create a set of points to choose from */
-			for (size_t col = count * duplication; col > 0; col--)
+			for (unsigned int col = count * duplication; col > 0; col--)
 			{
-				point_index = static_cast<size_t>(std::floor(unif_rand() * static_cast<double>(col)));
+				point_index = static_cast<unsigned int>(std::floor(unif_rand() * static_cast<double>(col)));
 				point1(row, col-1) = list1[point_index];
 				list1[point_index] = list1[col - 1];
 			}
 		}
 		minSquaredDistBtwnPts = DBL_MIN;
 		best = 0;
-		for (size_t col = 0; col < duplication * count - 1; col++)
+		for (unsigned int col = 0; col < duplication * count - 1; col++)
 		{
 			/* set min candidate equal to the maximum distance to start */
 			minCandidateSquaredDistBtwnPts = static_cast<unsigned int>(std::ceil(squaredDistanceBtwnCorners));
-			for (size_t j = count; j < nsamples; j++)
+			for (unsigned int j = count; j < nsamples; j++)
 			{
 				distSquared = 0;
 				/*
 				* find the distance between candidate points and the points already
 				* in the sample
 				*/
-				for (size_t k = 0; k < nparameters; k++)
+				for (unsigned int k = 0; k < nparameters; k++)
 				{
 					vec[k] = point1(k, col) - m_result(k, j);
 					distSquared += vec[k] * vec[k];
@@ -154,14 +154,14 @@ void maximinLHS_C(int* N, int* K, int* dup, int* result)
 		}
 
 		/* take the best point out of point1 and place it in the result */
-		for (size_t row = 0; row < nparameters; row++)
+		for (unsigned int row = 0; row < nparameters; row++)
 		{
 			m_result(row, count-1) = point1(row, best);
 		}
 		/* update the numbers that are available for the future points */
-		for (size_t row = 0; row < nparameters; row++)
+		for (unsigned int row = 0; row < nparameters; row++)
 		{
-			for (size_t col = 0; col < nsamples; col++)
+			for (unsigned int col = 0; col < nsamples; col++)
 			{
 				if (avail(row, col) == m_result(row, count-1))
 				{
@@ -175,7 +175,7 @@ void maximinLHS_C(int* N, int* K, int* dup, int* result)
 	* once all but the last points of result are filled in, there is only
 	* one choice left
 	*/
-	for (size_t row = 0; row < nparameters; row++)
+	for (unsigned int row = 0; row < nparameters; row++)
 	{
 		m_result(row, 0u) = avail(row, 0u);
 	}

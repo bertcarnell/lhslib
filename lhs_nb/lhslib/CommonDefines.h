@@ -30,20 +30,27 @@
 
 #define PRINT_RESULT 0
 
-/* include after PRINT_MACRO is defined */
-#include "utilityLHS.h"
-
 namespace lhslib 
 {
-    void improvedLHS(int n, int k, int dup, std::vector<int> & result);
-    //void maximinLHS_C(int* N, int* K, int* DUP, int* result);
-    //void optimumLHS_C(int* N, int* K, int* MAXSWEEPS, double* EPS, int* pOld, int* JLen, int* bVerbose);
-    //void optSeededLHS_C(int* N, int* K, int* MAXSWEEPS, double* EPS, double* pOld, int* JLen, int* bVerbose);
+    void improvedLHS(int n, int k, int dup, bclib::matrix<int> & result, CRandom<double> & oRandom);
+    void maximinLHS(int n, int k, int dup, bclib::matrix<int> & result, CRandom<double> & oRandom);
+    void optimumLHS(int n, int k, int maxSweeps, double eps, bclib::matrix<int> & pOld, int JLen, bool bVerbose);
+    void optSeededLHS(int n, int k, int maxSweeps, double eps, bclib::matrix<double> & pOld, int JLen, bool bVerbose);
 
-    void set_seed(unsigned int i1, unsigned int i2);
-    void get_seed(unsigned int *i1, unsigned int *i2);
-    double unif_rand(void);
+    //void set_seed(unsigned int i1, unsigned int i2);
+    //void get_seed(unsigned int *i1, unsigned int *i2);
+    //double unif_rand(void);
+    
+    /**
+     * type of size type for use with bclib::matrix<T>
+     * @note the type of the matrix (i.e. int) is irrelevant for size_type
+     */
+    typedef bclib::matrix<int>::size_type msize_type;
+    /**
+     * type of size type for use with std::vector<T>
+     * @note the type of the vector (i.e. int) is irrelevant for size_type
+     */
+    typedef std::vector<int>::size_type vsize_type;
 }
 
 #endif	/* COMMONDEFINES_H */
-

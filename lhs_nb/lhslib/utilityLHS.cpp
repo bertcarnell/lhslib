@@ -25,9 +25,11 @@
 namespace lhslib
 {
     // TODO:  bTranspose should be a bool
-    int lhsCheck(int n, int k, const oacpp::matrix<int> & result, int bTranspose)
+    bool isValidLHS(const bclib::matrix<int> & result, bool bTranspose)
     {
         int total = 0;
+        msize_type k = result.colsize();
+        msize_type n = result.rowsize();
         /*
         * verify that the result is a latin hypercube.  One easy check is to ensure
         * that the sum of the rows is the sum of the 1st N integers.  This check can
@@ -39,48 +41,48 @@ namespace lhslib
         */
         if (bTranspose == 0)
         {
-            for (int irow = 0; irow < k; irow++)
+            for (msize_type irow = 0; irow < k; irow++)
             {
                 total = 0;
-                for (int jcol = 0; jcol < n; jcol++)
+                for (msize_type jcol = 0; jcol < n; jcol++)
                 {
                     total += result(irow, jcol);
                 }
-                if (total != n * (n + 1) / 2)
+                if (total != static_cast<int>(n * (n + 1) / 2))
                 {
-                    return 0;
+                    return false;
                 }
             }
         }
         else
         {
-            for (int jcol = 0; jcol < k; jcol++)
+            for (msize_type jcol = 0; jcol < k; jcol++)
             {
                 total = 0;
-                for (int irow = 0; irow < n; irow++)
+                for (msize_type irow = 0; irow < n; irow++)
                 {
                     total += result(irow, jcol);
                 }
-                if (total != n * (n + 1) / 2)
+                if (total != static_cast<int>(n * (n + 1) / 2))
                 {
-                    return 0;
+                    return false;
                 }
             }
         }
-        return 1;
+        return true;
     }
 
     void rank(std::vector<double> & toRank, std::vector<int> & ranks)
     {
-        size_t len = toRank.size();
+        unsigned int len = toRank.size();
         if (toRank.size() != ranks.size())
         {
             ranks.resize(len, 0);
         }
-        for (size_t i = 0; i < len; i++)
+        for (unsigned int i = 0; i < len; i++)
         {
             ranks[i] = 0;
-            for (size_t j = 0; j < len; j++)
+            for (unsigned int j = 0; j < len; j++)
             {
                 if (toRank[i] < toRank[j])
                 {
@@ -92,30 +94,41 @@ namespace lhslib
 
     void rankColumns(std::vector<double> & toRank, std::vector<int> & ranks, int nrow)
     {
-        size_t n = static_cast<size_t>(nrow);
+        unsigned int n = static_cast<unsigned int>(nrow);
         std::vector<double> column = std::vector<double>(n);
-        size_t len = toRank.size();
+        unsigned int len = toRank.size();
         int offset;
         if (toRank.size() != ranks.size())
         {
             ranks.resize(len, 0);
         }
-        for (size_t i = 0; i < len; i+=n)
+        for (unsigned int i = 0; i < len; i+=n)
         {
             // copy the first nrow
-            for (size_t j = 0; j < n; j++)
+            for (unsigned int j = 0; j < n; j++)
             {
                 column[j] = toRank[i+j];
             }
             // sort
             std::sort(column.begin(), column.end(), std::less<double>());
             // find the sorted number that is the same as the number to rank
-            for (size_t j = 0; j < n; j++)
+            for (unsigned int j = 0; j < n; j++)
             {
                 offset = static_cast<int>(i);
                 ranks[i+j] = std::find(toRank.begin()+offset, toRank.begin()+offset+nrow, column[j]) - (toRank.begin()+offset);
             }
         }
     }
-
+    
+    void initializeAvailableMatrix(bclib::matrix<int> & avail)
+    {
+        // avail is k x n
+        for (msize_type irow = 0; irow < avail.rowsize(); irow++)
+        {
+            for (msize_type jcol = 0; jcol < avail.colsize(); jcol++)
+            {
+                avail(irow, jcol) = static_cast<int>(jcol + 1);
+            }
+        }
+    }
 } // end namespace

@@ -86,19 +86,19 @@ namespace utilityLHS
 	}
 
 	template <class T>
-	static double sumInvDistance(std::vector<T> & Vmatrix, size_t nr, size_t nc)
+	static double sumInvDistance(std::vector<T> & Vmatrix, unsigned int nr, unsigned int nc)
 	{ 
 		T oneDistance = static_cast<T>(0);
 		double totalInvDistance = 0.0;
 		/* iterate the row of the first point from 0 to N-2 */
-		for (size_t i = 0; i < nr - 1; i++)
+		for (unsigned int i = 0; i < nr - 1; i++)
 		{
 			/* iterate the row the second point from i+1 to N-1 */
-			for (size_t j = (i + 1); j < nr; j++)
+			for (unsigned int j = (i + 1); j < nr; j++)
 			{
 				oneDistance = 0;
 				/* iterate through the columns, summing the squared differences */
-				for (size_t k = 0; k < nc; k++)
+				for (unsigned int k = 0; k < nc; k++)
 				{
 					/* calculate the square of the difference in one dimension between the
 					* points */

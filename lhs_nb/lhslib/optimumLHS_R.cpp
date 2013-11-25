@@ -49,11 +49,11 @@
 void optimumLHS_C(int* N, int* K, int* maxSweeps, double* eps, int* oldHypercube,
                   int* optimalityRecordLength, int* bVerbose)
 {
-	size_t nOptimalityRecordLength = static_cast<size_t>(*optimalityRecordLength);
-	size_t nsamples = static_cast<size_t>(*N);
-	size_t nparameters = static_cast<size_t>(*K);
+	unsigned int nOptimalityRecordLength = static_cast<unsigned int>(*optimalityRecordLength);
+	unsigned int nsamples = static_cast<unsigned int>(*N);
+	unsigned int nparameters = static_cast<unsigned int>(*K);
 	bool isVerbose = (*bVerbose == 0)? false : true; 
-	size_t nMaxSweeps = static_cast<size_t>(*maxSweeps);
+	unsigned int nMaxSweeps = static_cast<unsigned int>(*maxSweeps);
 	double eps_change = *eps;
 
 	int extraColumns = 0;
@@ -61,13 +61,13 @@ void optimumLHS_C(int* N, int* K, int* maxSweeps, double* eps, int* oldHypercube
 	double optimalityChangeOld = 0.0;
 	double optimalityChange;
 	int test;
-	size_t iter, posit, optimalityRecordIndex;
+	unsigned int iter, posit, optimalityRecordIndex;
 
 	matrix_unsafe<int> oldHypercube_new = matrix_unsafe<int>(nsamples, nparameters, oldHypercube, true);
 	matrix<int> newHypercube = matrix<int>(nsamples, nparameters, true);
 	std::vector<double> optimalityRecord = std::vector<double>(nOptimalityRecordLength);
-	std::vector<size_t> interchangeRow1 = std::vector<size_t>(nOptimalityRecordLength);
-	std::vector<size_t> interchangeRow2 = std::vector<size_t>(nOptimalityRecordLength);
+	std::vector<unsigned int> interchangeRow1 = std::vector<unsigned int>(nOptimalityRecordLength);
+	std::vector<unsigned int> interchangeRow2 = std::vector<unsigned int>(nOptimalityRecordLength);
 
 	/* find the initial optimality measure */
 	gOptimalityOld = utilityLHS::sumInvDistance<int>(oldHypercube_new.values, static_cast<int>(nsamples), static_cast<int>(nparameters));
@@ -87,19 +87,19 @@ void optimumLHS_C(int* N, int* K, int* maxSweeps, double* eps, int* oldHypercube
 		if (iter == nMaxSweeps) break;
 		iter++;
 		/* iterate over the columns */
-		for (size_t j = 0; j < nparameters; j++)
+		for (unsigned int j = 0; j < nparameters; j++)
 		{
 			optimalityRecordIndex = 0;
 			/* iterate over the rows for the first point from 0 to N-2 */
-			for (size_t i = 0; i < (nsamples - 1); i++)
+			for (unsigned int i = 0; i < (nsamples - 1); i++)
 			{
 				/* iterate over the rows for the second point from i+1 to N-1 */
-				for (size_t k = (i + 1); k < nsamples; k++)
+				for (unsigned int k = (i + 1); k < nsamples; k++)
 				{
 				/* put the values from oldHypercube into newHypercube */
-					for (size_t row = 0; row < nsamples; row++)
+					for (unsigned int row = 0; row < nsamples; row++)
 					{
-						for (size_t col = 0; col < nparameters; col++)
+						for (unsigned int col = 0; col < nparameters; col++)
 						{
 							newHypercube(row, col) = oldHypercube_new(row, col);
 						}
@@ -128,7 +128,7 @@ void optimumLHS_C(int* N, int* K, int* maxSweeps, double* eps, int* oldHypercube
 			* In other words, which two row interchanges made the hypercube better in
 			* this column */
 			posit = 0;
-			for (size_t k = 0; k < nOptimalityRecordLength; k++)
+			for (unsigned int k = 0; k < nOptimalityRecordLength; k++)
 			{
 				if (optimalityRecord[k] < optimalityRecord[posit]) posit = k;
 			}
@@ -137,9 +137,9 @@ void optimumLHS_C(int* N, int* K, int* maxSweeps, double* eps, int* oldHypercube
 			if (optimalityRecord[posit] < gOptimalityOld)
 			{
 				/* put oldHypercube in newHypercube */
-				for (size_t row = 0; row < nsamples; row++)
+				for (unsigned int row = 0; row < nsamples; row++)
 				{
-					for (size_t col = 0; col < nparameters; col++)
+					for (unsigned int col = 0; col < nparameters; col++)
 					{
 						newHypercube(row, col) = oldHypercube_new(row, col);
 					}
@@ -149,9 +149,9 @@ void optimumLHS_C(int* N, int* K, int* maxSweeps, double* eps, int* oldHypercube
 				newHypercube(interchangeRow2[posit], j) = oldHypercube_new(interchangeRow1[posit], j);
 
 				/* put newHypercube back in oldHypercube for the next iteration */
-				for (size_t row = 0; row < nsamples; row++)
+				for (unsigned int row = 0; row < nsamples; row++)
 				{
-					for (size_t col = 0; col < nparameters; col++)
+					for (unsigned int col = 0; col < nparameters; col++)
 					{
 						oldHypercube_new(row, col) = newHypercube(row, col);
 					}

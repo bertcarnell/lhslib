@@ -50,50 +50,50 @@
 template<class T> class matrix 
 {
 public:
-	size_t nrows;
-	size_t ncols;
+	unsigned int nrows;
+	unsigned int ncols;
 	std::vector<T> values;
 
 	matrix();
-	matrix(size_t rows, size_t cols, bool byRow=false);
+	matrix(unsigned int rows, unsigned int cols, bool byRow=false);
 	matrix(int rows, int cols, bool byRow=false);
-	matrix(size_t rows, size_t cols, const T* m, bool byRow=false);
+	matrix(unsigned int rows, unsigned int cols, const T* m, bool byRow=false);
 	matrix(int rows, int cols, const T* m, bool byRow=false);
 	matrix(const matrix<T>& mat);
     ~matrix();
 	
 	matrix<T>& operator=(const matrix<T>& mat);
 
-	T & operator()(size_t i, size_t j);
-	T operator()(size_t i, size_t j) const;
+	T & operator()(unsigned int i, unsigned int j);
+	T operator()(unsigned int i, unsigned int j) const;
 	T & operator()(int i, int j);
 	T operator()(int i, int j) const;
     
 	void transpose();
 private:
-	void matrix_init(size_t rows, size_t cols, bool byRow);
-	void matrix_init(size_t rows, size_t cols, const T* m, bool byRow);
+	void matrix_init(unsigned int rows, unsigned int cols, bool byRow);
+	void matrix_init(unsigned int rows, unsigned int cols, const T* m, bool byRow);
 	bool isByRow;
 };
 
 template<class T> class matrix_unsafe
 {
 public:
-	size_t nrows;
-	size_t ncols;
+	unsigned int nrows;
+	unsigned int ncols;
 	T* values;
 
 	matrix_unsafe();
-	matrix_unsafe(size_t rows, size_t cols, T* m, bool byRow=false);
+	matrix_unsafe(unsigned int rows, unsigned int cols, T* m, bool byRow=false);
 	matrix_unsafe(int rows, int cols, T* m, bool byRow=false);
     ~matrix_unsafe();
 	
-	T & operator()(size_t i, size_t j);
-	T operator()(size_t i, size_t j) const;
+	T & operator()(unsigned int i, unsigned int j);
+	T operator()(unsigned int i, unsigned int j) const;
 	T & operator()(int i, int j);
 	T operator()(int i, int j) const;
 private:
-	void matrix_unsafe_init(size_t rows, size_t cols, T* m, bool byRow);
+	void matrix_unsafe_init(unsigned int rows, unsigned int cols, T* m, bool byRow);
 	bool isByRow;
 };
 
@@ -101,7 +101,7 @@ private:
 
 template<class T>
 inline
-T & matrix<T>::operator()(size_t i, size_t j)
+T & matrix<T>::operator()(unsigned int i, unsigned int j)
 {
 	ASSERT(i,j)
 	if (!isByRow) // most often this choice
@@ -114,16 +114,16 @@ template<class T>
 inline
 T & matrix<T>::operator()(int i, int j)
 {
-	ASSERT(static_cast<size_t>(i),static_cast<size_t>(j))
+	ASSERT(static_cast<unsigned int>(i),static_cast<unsigned int>(j))
 	if (!isByRow) // most often this choice
-		return values[static_cast<size_t>(j*nrows + i)];
+		return values[static_cast<unsigned int>(j*nrows + i)];
 	else
-		return values[static_cast<size_t>(i*ncols + j)];
+		return values[static_cast<unsigned int>(i*ncols + j)];
 }
 
 template<class T>
 inline
-T matrix<T>::operator()(size_t i, size_t j) const
+T matrix<T>::operator()(unsigned int i, unsigned int j) const
 {
 	ASSERT(i,j)
 	if (!isByRow)
@@ -138,9 +138,9 @@ T matrix<T>::operator()(int i, int j) const
 {
 	ASSERT(i,j)
 	if (!isByRow)
-		return values[static_cast<size_t>(j*nrows + i)];
+		return values[static_cast<unsigned int>(j*nrows + i)];
 	else
-		return values[static_cast<size_t>(i*ncols + j)];
+		return values[static_cast<unsigned int>(i*ncols + j)];
 }
 
 template<class T>
@@ -151,25 +151,26 @@ matrix<T>& matrix<T>::operator=(const matrix<T>& mat)
 	ncols = mat.ncols;
 	isByRow = mat.isByRow;
 	values.resize(nrows*ncols);
-	for (size_t i = 0; i < values.size(); i++)
-		values[i] = mat.values[i];
+    std::copy(mat.values.begin(), mat.values.end(), values.begin());
+	//for (std::vector<T>::size_type i = 0; i < values.size(); i++)
+	//	values[i] = mat.values[i];
 	return *this;
 }
 
 template<class T>
-void matrix<T>::matrix_init(size_t rows, size_t cols, const T* m, bool byRow)
+void matrix<T>::matrix_init(unsigned int rows, unsigned int cols, const T* m, bool byRow)
 {
 	assert(rows > 0 && cols > 0);
 	nrows = rows;
 	ncols = cols;
 	isByRow = byRow;
 	values = std::vector<T>(rows*cols);
-	for(size_t i = 0; i < rows*cols; i++)
+	for(unsigned int i = 0; i < rows*cols; i++)
 		values[i] = m[i];
 }
 
 template<class T>
-matrix<T>::matrix(size_t rows, size_t cols, const T* m, bool byRow)
+matrix<T>::matrix(unsigned int rows, unsigned int cols, const T* m, bool byRow)
 {
 	matrix_init(rows, cols, m, byRow);
 }
@@ -177,11 +178,11 @@ matrix<T>::matrix(size_t rows, size_t cols, const T* m, bool byRow)
 template<class T>
 matrix<T>::matrix(int rows, int cols, const T* m, bool byRow)
 {
-	matrix_init(static_cast<size_t>(rows), static_cast<size_t>(cols), m, byRow);
+	matrix_init(static_cast<unsigned int>(rows), static_cast<unsigned int>(cols), m, byRow);
 }
 
 template<class T>
-void matrix<T>::matrix_init(size_t rows, size_t cols, bool byRow)
+void matrix<T>::matrix_init(unsigned int rows, unsigned int cols, bool byRow)
 {
 	assert(rows > 0 && cols > 0);
 	nrows = rows;
@@ -191,7 +192,7 @@ void matrix<T>::matrix_init(size_t rows, size_t cols, bool byRow)
 }
 
 template<class T>
-matrix<T>::matrix(size_t rows, size_t cols, bool byRow)
+matrix<T>::matrix(unsigned int rows, unsigned int cols, bool byRow)
 {
 	matrix_init(rows, cols, byRow);
 }
@@ -199,7 +200,7 @@ matrix<T>::matrix(size_t rows, size_t cols, bool byRow)
 template<class T>
 matrix<T>::matrix(int rows, int cols, bool byRow)
 {
-	matrix_init(static_cast<size_t>(rows), static_cast<size_t>(cols), byRow);
+	matrix_init(static_cast<unsigned int>(rows), static_cast<unsigned int>(cols), byRow);
 }
 
 template<class T>
@@ -209,9 +210,9 @@ matrix<T>::matrix(const matrix<T> & mat)
 	ncols = mat.ncols;
 	isByRow = mat.isByRow;
 	values = std::vector<T>(nrows*ncols);
-	for (size_t i = 0; i < nrows; i++)
+	for (unsigned int i = 0; i < nrows; i++)
 	{
-		for (size_t j = 0; j < ncols; j++)
+		for (unsigned int j = 0; j < ncols; j++)
 		{
 			if (!isByRow) // default option
 				values[j*nrows + i] = mat(i, j);
@@ -234,11 +235,11 @@ template<class T>
 void matrix<T>::transpose()
 {
 	std::vector<T> temp = std::vector<T>(nrows*ncols);
-	size_t newrows = ncols;
-	size_t newcols = nrows;
-	for (size_t i = 0; i < nrows; i++)
+	unsigned int newrows = ncols;
+	unsigned int newcols = nrows;
+	for (unsigned int i = 0; i < nrows; i++)
 	{
-		for (size_t j = 0; j < ncols; j++)
+		for (unsigned int j = 0; j < ncols; j++)
 		{
 			if (!isByRow) // most likely
 				temp[i*ncols + j] = values[j*nrows + i];
@@ -262,7 +263,7 @@ template<class T>
 inline
 T & matrix_unsafe<T>::operator()(int i, int j)
 {
-	ASSERT(static_cast<size_t>(i),static_cast<size_t>(j))
+	ASSERT(static_cast<unsigned int>(i),static_cast<unsigned int>(j))
 	if (!isByRow)
 		return values[j*nrows + i];
 	else
@@ -282,7 +283,7 @@ T matrix_unsafe<T>::operator()(int i, int j) const
 
 template<class T>
 inline
-T & matrix_unsafe<T>::operator()(size_t i, size_t j)
+T & matrix_unsafe<T>::operator()(unsigned int i, unsigned int j)
 {
 	ASSERT(i,j)
 	if (!isByRow)
@@ -293,7 +294,7 @@ T & matrix_unsafe<T>::operator()(size_t i, size_t j)
 
 template<class T>
 inline
-T matrix_unsafe<T>::operator()(size_t i, size_t j) const
+T matrix_unsafe<T>::operator()(unsigned int i, unsigned int j) const
 {
 	ASSERT(i,j)
 	if (!isByRow)
@@ -303,7 +304,7 @@ T matrix_unsafe<T>::operator()(size_t i, size_t j) const
 }
 
 template<class T>
-void matrix_unsafe<T>::matrix_unsafe_init(size_t rows, size_t cols, T* m, bool byRow)
+void matrix_unsafe<T>::matrix_unsafe_init(unsigned int rows, unsigned int cols, T* m, bool byRow)
 {
 	assert(rows > 0 && cols > 0);
 	nrows = rows;
@@ -315,11 +316,11 @@ void matrix_unsafe<T>::matrix_unsafe_init(size_t rows, size_t cols, T* m, bool b
 template<class T>
 matrix_unsafe<T>::matrix_unsafe(int rows, int cols, T* m, bool byRow)
 {
-	matrix_unsafe_init(static_cast<size_t>(rows), static_cast<size_t>(cols), m, byRow);
+	matrix_unsafe_init(static_cast<unsigned int>(rows), static_cast<unsigned int>(cols), m, byRow);
 }
 
 template<class T>
-matrix_unsafe<T>::matrix_unsafe(size_t rows, size_t cols, T* m, bool byRow)
+matrix_unsafe<T>::matrix_unsafe(unsigned int rows, unsigned int cols, T* m, bool byRow)
 {
 	matrix_unsafe_init(rows, cols, m, byRow);
 }

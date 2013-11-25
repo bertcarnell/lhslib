@@ -6,10 +6,7 @@
                    projectFiles="true">
       <itemPath>CRandom.h</itemPath>
       <itemPath>CommonDefines.h</itemPath>
-      <itemPath>defines.h</itemPath>
-      <itemPath>simpleMatrix.h</itemPath>
       <itemPath>utilityLHS.h</itemPath>
-      <itemPath>utilityLHS_R.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -20,14 +17,10 @@
                    projectFiles="true">
       <itemPath>CRandom.cpp</itemPath>
       <itemPath>improvedLHS.cpp</itemPath>
-      <itemPath>improvedLHS_R.cpp</itemPath>
       <itemPath>maximinLHS.cpp</itemPath>
-      <itemPath>maximinLHS_R.cpp</itemPath>
-      <itemPath>optSeededLHS_R.cpp</itemPath>
-      <itemPath>optimumLHS_R.cpp</itemPath>
-      <itemPath>sunif.cpp</itemPath>
+      <itemPath>optSeededLHS.cpp</itemPath>
+      <itemPath>optimumLHS.cpp</itemPath>
       <itemPath>utilityLHS.cpp</itemPath>
-      <itemPath>utilityLHS_R.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -61,7 +54,7 @@
           <standard>4</standard>
           <incDir>
             <pElem>C:/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include</pElem>
-            <pElem>C:/Users/carnellr/Documents/Repositories/oa/oa_nb/oalib</pElem>
+            <pElem>C:/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/bclib</pElem>
           </incDir>
           <commandLine>-Wall -pedantic</commandLine>
           <warningLevel>3</warningLevel>
@@ -79,31 +72,17 @@
       </item>
       <item path="CommonDefines.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="defines.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="improvedLHS.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="improvedLHS_R.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="maximinLHS.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="maximinLHS_R.cpp" ex="false" tool="1" flavor2="0">
+      <item path="optSeededLHS.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="optSeededLHS_R.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="optimumLHS_R.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="simpleMatrix.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="sunif.cpp" ex="false" tool="1" flavor2="0">
+      <item path="optimumLHS.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="utilityLHS.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="utilityLHS.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="utilityLHS_R.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="utilityLHS_R.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="3">
@@ -147,31 +126,17 @@
       </item>
       <item path="CommonDefines.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="defines.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="improvedLHS.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="improvedLHS_R.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="maximinLHS.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="maximinLHS_R.cpp" ex="false" tool="1" flavor2="0">
+      <item path="optSeededLHS.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="optSeededLHS_R.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="optimumLHS_R.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="simpleMatrix.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="sunif.cpp" ex="false" tool="1" flavor2="0">
+      <item path="optimumLHS.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="utilityLHS.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="utilityLHS.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="utilityLHS_R.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="utilityLHS_R.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

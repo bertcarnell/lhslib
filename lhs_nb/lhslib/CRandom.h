@@ -29,8 +29,6 @@
 #ifndef CRANDOM_H
 #define	CRANDOM_H
 
-#include "CommonDefines.h"
-
 namespace lhslib
 {
     template <class T>

@@ -66,15 +66,15 @@ int lhsCheck(int N, int K, int * result, int bTranspose)
 
 void rank(std::vector<double> & toRank, std::vector<int> & ranks)
 {
-	size_t len = toRank.size();
+	unsigned int len = toRank.size();
 #ifdef _DEBUG
 	if (toRank.size() != ranks.size())
 		throw new std::exception("illegal call in rank");
 #endif
-	for (size_t i = 0; i < len; i++)
+	for (unsigned int i = 0; i < len; i++)
 	{
 		ranks[i] = 0;
-		for (size_t j = 0; j < len; j++)
+		for (unsigned int j = 0; j < len; j++)
 		{
 			if (toRank[i] < toRank[j])
 				ranks[i]++;
@@ -84,25 +84,25 @@ void rank(std::vector<double> & toRank, std::vector<int> & ranks)
 
 void rankColumns(std::vector<double> & toRank, std::vector<int> & ranks, int nrow)
 {
-	size_t n = static_cast<size_t>(nrow);
+	unsigned int n = static_cast<unsigned int>(nrow);
 	std::vector<double> column = std::vector<double>(n);
-	size_t len = toRank.size();
+	unsigned int len = toRank.size();
 	int offset;
 #ifdef _DEBUG
 	if (toRank.size() != ranks.size())
 		throw new std::exception("illegal call in rank");
 #endif
-	for (size_t i = 0; i < len; i+=n)
+	for (unsigned int i = 0; i < len; i+=n)
 	{
 		// copy the first nrow
-		for (size_t j = 0; j < n; j++)
+		for (unsigned int j = 0; j < n; j++)
 		{
 			column[j] = toRank[i+j];
 		}
 		// sort
 		std::sort(column.begin(), column.end(), std::less<double>());
 		// find the sorted number that is the same as the number to rank
-		for (size_t j = 0; j < n; j++)
+		for (unsigned int j = 0; j < n; j++)
 		{
 			offset = static_cast<int>(i);
 			ranks[i+j] = std::find(toRank.begin()+offset, toRank.begin()+offset+nrow, column[j]) - (toRank.begin()+offset);
