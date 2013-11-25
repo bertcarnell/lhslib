@@ -44,6 +44,7 @@
             <pElem>C:/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib</pElem>
             <pElem>C:/Program Files/R/R-3.0.1/include</pElem>
             <pElem>C:/Program Files/R/R-3.0.1/library/Rcpp/include</pElem>
+            <pElem>../bclib</pElem>
           </incDir>
           <commandLine>-Wall -pedantic</commandLine>
           <warningLevel>3</warningLevel>

@@ -20,16 +20,21 @@
 
 #include "lhs_r.h"
 
-RcppExport SEXP /*int matrix*/ improvedLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k, 
+RcppExport SEXP /*double matrix*/ improvedLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k, 
         SEXP /*int*/ dup)
 {
     int nlocal = Rcpp::as<int>(n);
     int klocal = Rcpp::as<int>(k);
     int duplocal = Rcpp::as<int>(dup);
     
-    Rcpp::IntegerVector result(nlocal*duplocal,klocal*duplocal);
+    bclib::matrix<int> intMat = bclib::matrix<int>(nlocal, klocal);
+    RStandardUniform oRStandardUniform = RStandardUniform();
+    lhslib::improvedLHS(nlocal, klocal, duplocal, intMat, oRStandardUniform);
+    Rcpp::NumericMatrix result = convertIntegerToNumericLhs(intMat);
+    
     return result;
 }
+
 RcppExport SEXP /*int matrix*/ maximinLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k, 
         SEXP /*int*/ dup)
 {
@@ -68,8 +73,8 @@ RcppExport SEXP /*int matrix*/ optSeededLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k,
 RcppExport SEXP randomLHS_cpp(SEXP n, SEXP k, SEXP preserveDraw)
 {
     // note: there doesn't seem to be a Rcpp::as<size_t>
-    size_t nlocal = static_cast<size_t>(Rcpp::as<int>(n));
-    size_t klocal = static_cast<size_t>(Rcpp::as<int>(k));
+    int nlocal = Rcpp::as<int>(n);
+    int klocal = Rcpp::as<int>(k);
     bool bPreserveDraw = Rcpp::as<bool>(preserveDraw);
     
     Rcpp::NumericMatrix result(nlocal, klocal);
@@ -79,12 +84,12 @@ RcppExport SEXP randomLHS_cpp(SEXP n, SEXP k, SEXP preserveDraw)
     
     if (bPreserveDraw)
     {
-        for (size_t jcol = 0; jcol < klocal; jcol++)
+        for (int jcol = 0; jcol < klocal; jcol++)
         {
-            randomunif1 = Rcpp::runif(static_cast<int>(nlocal));
-            randomunif2 = Rcpp::runif(static_cast<int>(nlocal));
+            randomunif1 = Rcpp::runif(nlocal);
+            randomunif2 = Rcpp::runif(nlocal);
             findorder_zero(randomunif1, orderVector);
-            for (size_t irow = 0; irow < nlocal; irow++)
+            for (int irow = 0; irow < nlocal; irow++)
             {
                 result(irow,jcol) = orderVector[irow] + randomunif2[irow];
                 result(irow,jcol) /= static_cast<double>(nlocal);
@@ -93,20 +98,20 @@ RcppExport SEXP randomLHS_cpp(SEXP n, SEXP k, SEXP preserveDraw)
     }
     else
     {
-        for (size_t jcol = 0; jcol < klocal; jcol++)
+        for (int jcol = 0; jcol < klocal; jcol++)
         {
-            randomunif1 = Rcpp::runif(static_cast<int>(nlocal));
+            randomunif1 = Rcpp::runif(nlocal);
             findorder_zero(randomunif1, orderVector);
-            for (size_t irow = 0; irow < nlocal; irow++)
+            for (int irow = 0; irow < nlocal; irow++)
             {
                 result(irow,jcol) = orderVector[irow];
             }
         }
         randomunif2 = Rcpp::runif(nlocal*klocal);
         Rcpp::NumericMatrix randomMatrix(nlocal, klocal, randomunif2.begin());
-        for (size_t jcol = 0; jcol < klocal; jcol++)
+        for (int jcol = 0; jcol < klocal; jcol++)
         {
-            for (size_t irow = 0; irow < nlocal; irow++)
+            for (int irow = 0; irow < nlocal; irow++)
             {
                 result(irow,jcol) += randomMatrix(irow,jcol);
                 result(irow,jcol) /= static_cast<double>(nlocal);
@@ -115,4 +120,3 @@ RcppExport SEXP randomLHS_cpp(SEXP n, SEXP k, SEXP preserveDraw)
     }
     return result;
 }
-

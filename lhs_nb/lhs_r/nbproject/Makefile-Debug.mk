@@ -65,7 +65,7 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblhs_r.${CND_DLIB_EXT}: ${OBJECTFIL
 ${OBJECTDIR}/lhs_r.o: lhs_r.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib -I/C/Program\ Files/R/R-3.0.1/include -I/C/Program\ Files/R/R-3.0.1/library/Rcpp/include -std=c++98 -Wall -pedantic  -MMD -MP -MF $@.d -o ${OBJECTDIR}/lhs_r.o lhs_r.cpp
+	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib -I/C/Program\ Files/R/R-3.0.1/include -I/C/Program\ Files/R/R-3.0.1/library/Rcpp/include -I../bclib -std=c++98 -Wall -pedantic  -MMD -MP -MF $@.d -o ${OBJECTDIR}/lhs_r.o lhs_r.cpp
 
 # Subprojects
 .build-subprojects:

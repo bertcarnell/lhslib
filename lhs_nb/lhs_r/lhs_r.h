@@ -22,6 +22,9 @@
 #define	LHS_R_H
 
 #include <Rcpp.h>
+#include "CommonDefines.h"
+#include "matrix.h"
+#include "CRandom.h"
 
 RcppExport SEXP /*int matrix*/ improvedLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k, 
         SEXP /*int*/ dup);
@@ -86,4 +89,32 @@ void findorder_zero(const Rcpp::NumericVector & v, Rcpp::IntegerVector & order)
     order = Rcpp::IntegerVector::import(orderlocal.begin(), orderlocal.end());
     // TODO: could we have done orderlocal = Rcpp::as<std::vector<int> >(order); ??
 }
+
+Rcpp::NumericMatrix convertIntegerToNumericLhs(const bclib::matrix<int> & intMat)
+{
+    bclib::matrix<int>::size_type n = intMat.rowsize();
+    bclib::matrix<int>::size_type k = intMat.colsize();
+    Rcpp::NumericMatrix result(n, k);
+    Rcpp::NumericVector eps = Rcpp::runif(static_cast<int>(n*k));
+    unsigned int counter = 0;
+    // I think this is right (iterate over rows within columns
+    for (bclib::matrix<int>::size_type col = 0; col < k; col++)
+    {
+        for (bclib::matrix<int>::size_type row = 0; row < n; row++)
+        {
+            result(row, col) = static_cast<double>(intMat(row, col) - 1) + eps[counter];
+            result(row, col) /= static_cast<double>(n);
+            counter++;
+        }
+    }
+    
+    return result;
+}
+
+class RStandardUniform : public lhslib::CRandom<double>
+{
+public:
+    double getNextRandom() {return Rcpp::as<double>(Rcpp::runif(1));};
+};
+
 #endif	/* LHS_R_H */
