@@ -4,7 +4,9 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>RStandardUniform.h</itemPath>
       <itemPath>lhs_r.h</itemPath>
+      <itemPath>lhs_r_utilities.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -14,6 +16,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>lhs_r.cpp</itemPath>
+      <itemPath>lhs_r_utilities.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -62,9 +65,15 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="RStandardUniform.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="lhs_r.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="lhs_r.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="lhs_r_utilities.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="lhs_r_utilities.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="2">
@@ -88,9 +97,15 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="RStandardUniform.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="lhs_r.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="lhs_r.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="lhs_r_utilities.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="lhs_r_utilities.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

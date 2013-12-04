@@ -48,8 +48,8 @@ namespace lhslib
  * Return an optimized hypercube according to the criteria given
  *
  */
-    void optimumLHS(int n, int k, int maxSweeps, double eps, bclib::matrix<int> & oldHypercube,
-                      int optimalityRecordLength, bool bVerbose)
+    void optimumLHS(int n, int k, int maxSweeps, double eps, bclib::matrix<int> & outlhs,
+                    int optimalityRecordLength, CRandom<double> & oRandom, bool bVerbose)
     {
         if (n < 1 || k < 1 || maxSweeps < 1 || eps <= 0)
         {
@@ -68,14 +68,36 @@ namespace lhslib
         int test;
         unsigned int iter, posit, optimalityRecordIndex;
 
+        if (outlhs.rowsize() != nsamples || outlhs.colsize() != nparameters)
+        {
+            outlhs = bclib::matrix<int>(nsamples, nparameters);
+        }
         //matrix_unsafe<int> oldHypercube_new = matrix_unsafe<int>(nsamples, nparameters, oldHypercube, true);
         bclib::matrix<int> newHypercube = bclib::matrix<int>(nsamples, nparameters);
         std::vector<double> optimalityRecord = std::vector<double>(nOptimalityRecordLength);
         std::vector<unsigned int> interchangeRow1 = std::vector<unsigned int>(nOptimalityRecordLength);
         std::vector<unsigned int> interchangeRow2 = std::vector<unsigned int>(nOptimalityRecordLength);
+        
 
+        // fill the oldHypercube with a random lhs sample
+        std::vector<double> randomUnif(nsamples);
+        std::vector<int> orderedUnif(nsamples);
+        for (msize_type jcol = 0; jcol < nparameters; jcol++)
+        {
+            // fill a vector with a random sample to order
+            for (msize_type irow = 0; irow < nsamples; irow++)
+            {
+                randomUnif[irow] = oRandom.getNextRandom();
+            }
+            bclib::findorder<double>(randomUnif, orderedUnif);
+            for (msize_type irow = 0; irow < nsamples; irow++)
+            {
+                outlhs(irow,jcol) = orderedUnif[irow];
+            }
+        }
+        
         /* find the initial optimality measure */
-        gOptimalityOld = sumInvDistance<int>(oldHypercube);
+        gOptimalityOld = sumInvDistance<int>(outlhs);
 
         if (bVerbose)
         {
@@ -83,7 +105,7 @@ namespace lhslib
         }
 
     //#if PRINT_RESULT
-        lhsPrint<int>(oldHypercube, 1);
+        lhsPrint<int>(outlhs, 1);
     //#endif
 
         test = 0;
@@ -107,12 +129,12 @@ namespace lhslib
                     for (msize_type k = (i + 1); k < nsamples; k++)
                     {
                         /* put the values from oldHypercube into newHypercube */
-                        copyMatrix<int>(newHypercube, oldHypercube);
+                        copyMatrix<int>(newHypercube, outlhs);
 
                         /* exchange two values (from the ith and kth rows) in the jth column
                         * and place them in the new matrix */
-                        newHypercube(i, j) = oldHypercube(k, j);
-                        newHypercube(k, j) = oldHypercube(i, j);
+                        newHypercube(i, j) = outlhs(k, j);
+                        newHypercube(k, j) = outlhs(i, j);
 
                         /* store the optimality of the newly created matrix and the rows that
                         * were interchanged */
@@ -145,14 +167,14 @@ namespace lhslib
                 if (optimalityRecord[posit] < gOptimalityOld)
                 {
                     /* put oldHypercube in newHypercube */
-                    copyMatrix(newHypercube, oldHypercube);
+                    copyMatrix(newHypercube, outlhs);
 
                     /* Interchange the rows that were the best for this column */
-                    newHypercube(interchangeRow1[posit], j) = oldHypercube(interchangeRow2[posit], j);
-                    newHypercube(interchangeRow2[posit], j) = oldHypercube(interchangeRow1[posit], j);
+                    newHypercube(interchangeRow1[posit], j) = outlhs(interchangeRow2[posit], j);
+                    newHypercube(interchangeRow2[posit], j) = outlhs(interchangeRow1[posit], j);
 
                     /* put newHypercube back in oldHypercube for the next iteration */
-                    copyMatrix(oldHypercube, newHypercube);
+                    copyMatrix(outlhs, newHypercube);
 
                     /* if this is not the first column we have used for this sweep */
                     if (j > 0)
@@ -224,7 +246,7 @@ namespace lhslib
         }
 
     //#if _DEBUG
-        bool btest = isValidLHS(oldHypercube, true);
+        bool btest = isValidLHS(outlhs, true);
 
         if (!btest)
         {
@@ -234,7 +256,9 @@ namespace lhslib
     //#endif
 
     //#if PRINT_RESULT
-        lhsPrint<int>(oldHypercube, 1);
+        lhsPrint<int>(outlhs, 1);
     //#endif
+        
+        
     }
 } // end namespace

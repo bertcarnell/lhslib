@@ -18,6 +18,7 @@
 #include <climits>
 #include <cstdio>
 #include "matrix.h"
+#include "order.h"
 #include "CRandom.h"
 
 #ifdef RCOMPILE
@@ -32,10 +33,15 @@
 
 namespace lhslib 
 {
-    void improvedLHS(int n, int k, int dup, bclib::matrix<int> & result, CRandom<double> & oRandom);
-    void maximinLHS(int n, int k, int dup, bclib::matrix<int> & result, CRandom<double> & oRandom);
-    void optimumLHS(int n, int k, int maxSweeps, double eps, bclib::matrix<int> & pOld, int JLen, bool bVerbose);
-    void optSeededLHS(int n, int k, int maxSweeps, double eps, bclib::matrix<double> & pOld, int JLen, bool bVerbose);
+    void improvedLHS(int n, int k, int dup, bclib::matrix<int> & result, 
+            CRandom<double> & oRandom);
+    void maximinLHS(int n, int k, int dup, bclib::matrix<int> & result, 
+            CRandom<double> & oRandom);
+    void optimumLHS(int n, int k, int maxSweeps, double eps, 
+            bclib::matrix<int> & outlhs, int optimalityRecordLength, 
+            CRandom<double> & oRandom, bool bVerbose);
+    void optSeededLHS(int n, int k, int maxSweeps, double eps, 
+            bclib::matrix<double> & pOld, int JLen, bool bVerbose);
 
     //void set_seed(unsigned int i1, unsigned int i2);
     //void get_seed(unsigned int *i1, unsigned int *i2);
