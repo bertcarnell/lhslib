@@ -4,6 +4,7 @@
 #include <vector>
 #include <exception>
 #include <string>
+#include "simpleAssert.h"
 
 namespace lhsTest
 {
@@ -11,6 +12,5 @@ namespace lhsTest
 	{
 	public:
 		virtual void Run(){};
-		void Assert(bool test, std::string msg);
 	};
 }
