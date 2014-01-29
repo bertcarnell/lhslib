@@ -35,13 +35,11 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/TestClass.o \
 	${OBJECTDIR}/improvedLHS_RTest.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/maximinLHS_RTest.o \
 	${OBJECTDIR}/optSeededLHS_RTest.o \
 	${OBJECTDIR}/optimumLHS_RTest.o \
-	${OBJECTDIR}/simpleMatrixTest.o \
 	${OBJECTDIR}/utilityLHS_RTest.o
 
 
@@ -69,11 +67,6 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lhstest.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lhstest ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/TestClass.o: TestClass.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib -I/C/Users/carnellr/Documents/Repositories/Rdevel/Rdevel/src/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/TestClass.o TestClass.cpp
-
 ${OBJECTDIR}/improvedLHS_RTest.o: improvedLHS_RTest.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
@@ -98,11 +91,6 @@ ${OBJECTDIR}/optimumLHS_RTest.o: optimumLHS_RTest.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib -I/C/Users/carnellr/Documents/Repositories/Rdevel/Rdevel/src/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/optimumLHS_RTest.o optimumLHS_RTest.cpp
-
-${OBJECTDIR}/simpleMatrixTest.o: simpleMatrixTest.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib -I/C/Users/carnellr/Documents/Repositories/Rdevel/Rdevel/src/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/simpleMatrixTest.o simpleMatrixTest.cpp
 
 ${OBJECTDIR}/utilityLHS_RTest.o: utilityLHS_RTest.cpp 
 	${MKDIR} -p ${OBJECTDIR}

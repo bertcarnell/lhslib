@@ -53,7 +53,7 @@ namespace lhslib
     {
         if (n < 1 || k < 1 || maxSweeps < 1 || eps <= 0)
         {
-            std::runtime_error("nsamples or nparameters or maxSweeps are less than 1 or eps <= 0");
+            throw std::runtime_error("nsamples or nparameters or maxSweeps are less than 1 or eps <= 0");
         }
         unsigned int nOptimalityRecordLength = static_cast<unsigned int>(optimalityRecordLength);
         msize_type nsamples = static_cast<msize_type>(n);
@@ -104,9 +104,9 @@ namespace lhslib
             PRINT_MACRO("Beginning Optimality Criterion %f \n", gOptimalityOld);
         }
 
-    //#if PRINT_RESULT
+#if PRINT_RESULT
         lhsPrint<int>(outlhs, 1);
-    //#endif
+#endif
 
         test = 0;
         iter = 0;
@@ -246,7 +246,7 @@ namespace lhslib
         }
 
     //#if _DEBUG
-        bool btest = isValidLHS(outlhs, true);
+        bool btest = isValidLHS(outlhs);
 
         if (!btest)
         {
@@ -255,9 +255,9 @@ namespace lhslib
         }
     //#endif
 
-    //#if PRINT_RESULT
+#if PRINT_RESULT
         lhsPrint<int>(outlhs, 1);
-    //#endif
+#endif
         
         
     }

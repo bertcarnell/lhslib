@@ -4,28 +4,20 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>TestClass.h</itemPath>
       <itemPath>improvedLHS_RTest.h</itemPath>
       <itemPath>maximinLHS_RTest.h</itemPath>
       <itemPath>optSeededLHS_RTest.h</itemPath>
       <itemPath>optimumLHS_RTest.h</itemPath>
-      <itemPath>simpleMatrixTest.h</itemPath>
       <itemPath>utilityLHS_RTest.h</itemPath>
-    </logicalFolder>
-    <logicalFolder name="ResourceFiles"
-                   displayName="Resource Files"
-                   projectFiles="true">
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>TestClass.cpp</itemPath>
       <itemPath>improvedLHS_RTest.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
       <itemPath>maximinLHS_RTest.cpp</itemPath>
       <itemPath>optSeededLHS_RTest.cpp</itemPath>
       <itemPath>optimumLHS_RTest.cpp</itemPath>
-      <itemPath>simpleMatrixTest.cpp</itemPath>
       <itemPath>utilityLHS_RTest.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -55,6 +47,7 @@
           <incDir>
             <pElem>C:/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib</pElem>
             <pElem>C:/Users/carnellr/Documents/Repositories/Rdevel/Rdevel/src/include</pElem>
+            <pElem>../bclib</pElem>
           </incDir>
         </ccTool>
         <linkerTool>
@@ -66,10 +59,6 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="TestClass.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="TestClass.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="improvedLHS_RTest.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="improvedLHS_RTest.h" ex="false" tool="3" flavor2="0">
@@ -87,10 +76,6 @@
       <item path="optimumLHS_RTest.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="optimumLHS_RTest.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="simpleMatrixTest.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="simpleMatrixTest.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="utilityLHS_RTest.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -123,10 +108,6 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="TestClass.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="TestClass.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="improvedLHS_RTest.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="improvedLHS_RTest.h" ex="false" tool="3" flavor2="0">
@@ -144,10 +125,6 @@
       <item path="optimumLHS_RTest.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="optimumLHS_RTest.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="simpleMatrixTest.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="simpleMatrixTest.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="utilityLHS_RTest.cpp" ex="false" tool="1" flavor2="0">
       </item>

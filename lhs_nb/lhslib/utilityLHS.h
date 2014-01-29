@@ -12,38 +12,25 @@
 
 namespace lhslib
 {
-	bool isValidLHS(const bclib::matrix<int> & result, bool bTranspose);
+	bool isValidLHS(const bclib::matrix<int> & result);
 	void rank(std::vector<double> & toRank, std::vector<int> & ranks);
 	void rankColumns(std::vector<double> & toRank, std::vector<int> & ranks, int nrow);
     void initializeAvailableMatrix(bclib::matrix<int> & avail);
 
 	template <class T>
-	void lhsPrint(const bclib::matrix<T> & result, int bTranspose)
+	void lhsPrint(const bclib::matrix<T> & A)
 	{
-        msize_type k = result.colsize();
-        msize_type n = result.rowsize();
-		if (bTranspose == 0)
-		{
-			for (msize_type irow = 0; irow < k; irow++)
-			{
-				for (msize_type jcol = 0; jcol < n; jcol++)
-				{
-					PRINT_MACRO("%g ", static_cast<double>(result(irow, jcol)));
-				}
-				PRINT_MACRO("\n");
-			}
-		}
-		else
-		{
-			for (msize_type irow = 0; irow < n; irow++)
-			{
-				for (msize_type jcol = 0; jcol < k; jcol++)
-				{
-					PRINT_MACRO("%g ", static_cast<double>(result(irow, jcol)));
-				}
-				PRINT_MACRO("\n");
-			}
-		}
+        PRINT_MACRO("\n");
+        msize_type cols = A.colsize();
+        msize_type rows = A.rowsize();
+        for (msize_type irow = 0; irow < rows; irow++)
+        {
+            for (msize_type jcol = 0; jcol < cols; jcol++)
+            {
+                PRINT_MACRO("%g ", static_cast<double>(A(irow, jcol)));
+            }
+            PRINT_MACRO("\n");
+        }
 	}
 
 	template <class T>

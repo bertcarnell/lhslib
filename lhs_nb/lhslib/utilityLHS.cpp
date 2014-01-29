@@ -1,6 +1,6 @@
 /*
  *
- * utilityLHS_R.cpp: A C++ routine of utilities used in the LHS package
+ * utilityLHS.cpp: A C++ routine of utilities used in the LHS package
  * Copyright (C) 2012  Robert Carnell
  *
  * This program is free software; you can redistribute it and/or
@@ -24,12 +24,19 @@
 
 namespace lhslib
 {
-    // TODO:  bTranspose should be a bool
-    bool isValidLHS(const bclib::matrix<int> & result, bool bTranspose)
+    /**
+     * check to determine of an lhs is valid.
+     * if bTranspose==false, then sum the columns
+     * if bTranspose==true, then sum the rows
+     * @param result
+     * @param bTranspose
+     * @return 
+     */
+    bool isValidLHS(const bclib::matrix<int> & result)
     {
         int total = 0;
-        msize_type k = result.colsize();
-        msize_type n = result.rowsize();
+        msize_type cols = result.colsize();
+        msize_type rows = result.rowsize();
         /*
         * verify that the result is a latin hypercube.  One easy check is to ensure
         * that the sum of the rows is the sum of the 1st N integers.  This check can
@@ -39,34 +46,17 @@ namespace lhslib
         * the same sum could come from 5 5 5 5 5 5 5 5 5 10
         * but this is unlikely
         */
-        if (bTranspose == 0)
+        // sum each column
+        for (msize_type jcol = 0; jcol < cols; jcol++)
         {
-            for (msize_type irow = 0; irow < k; irow++)
+            total = 0;
+            for (msize_type irow = 0; irow < rows; irow++)
             {
-                total = 0;
-                for (msize_type jcol = 0; jcol < n; jcol++)
-                {
-                    total += result(irow, jcol);
-                }
-                if (total != static_cast<int>(n * (n + 1) / 2))
-                {
-                    return false;
-                }
+                total += result(irow, jcol);
             }
-        }
-        else
-        {
-            for (msize_type jcol = 0; jcol < k; jcol++)
+            if (total != static_cast<int>(rows * (rows + 1) / 2))
             {
-                total = 0;
-                for (msize_type irow = 0; irow < n; irow++)
-                {
-                    total += result(irow, jcol);
-                }
-                if (total != static_cast<int>(n * (n + 1) / 2))
-                {
-                    return false;
-                }
+                return false;
             }
         }
         return true;

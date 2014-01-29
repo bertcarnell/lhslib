@@ -14,23 +14,23 @@ namespace lhsTest{
 		int n = 4;
 		int k = 3;
 		int DUP = 5;
-		int * result = new int[n*k];
-		int * avail = new int[n*k];
-		int * point1 = new int[k*DUP*(n-1)];
-		int * list1 = new int[DUP*(n-1)];
-		int * vec = new int[k];
+        bclib::matrix<int> result = bclib::matrix<int>(n, k);
 
-		set_seed(1976, 1968);
-		maximinLHS_C(&n, &k, &DUP, result);
+        lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
+        oRandom.setSeed(1976, 1968);
+		lhslib::maximinLHS(n, k, DUP, result, oRandom);
 
-		matrix<int> result_temp = matrix<int>(k, n, result);
-		result_temp.transpose();
-
-		//int expected[12] = {2,4,1,3,1,4,3,2,1,3,4,2}; // before correction to point index.  No longer matches R program
-		int expected[12] = {4,2,1,3,1,4,3,2,3,1,4,2};
+		//int expected[12] = {4,2,1,3,
+        //                    1,4,3,2,
+        //                    3,1,4,2};
+		int expected[12] = {4,1,3,
+                            2,4,1,
+                            1,3,4,
+                            3,2,2};
 		for (int i = 0; i < n*k; i++)
 		{
-			Assert(expected[i] == result_temp.values[i], "Failed 1");
+			//Assert(expected[i] == result_temp.values[i], "Failed 1");
+            bclib::Assert(expected[i], result.getDataVector()[i], "Failed 1");
 		}
 	}
 
@@ -47,19 +47,18 @@ floor(4*maximinLHS(4,3,5))+1
 .Random.seed
 */
 
-		void maximinLHS_RTest::testStress()
-		{
-			int n = 4;
-			int k = 3;
-			int DUP = 5;
-			int * result = new int[n*k];
-			int * avail = new int[n*k];
-			int * point1 = new int[k*DUP*(n-1)];
-			int * list1 = new int[DUP*(n-1)];
-			int * vec = new int[k];
+    void maximinLHS_RTest::testStress()
+    {
+        int n = 4;
+        int k = 3;
+        int DUP = 5;
+        bclib::matrix<int> result = bclib::matrix<int>(n, k);
 
-			set_seed(1976, 1968);
-			for (int i = 0; i < 10000; i++)
-				maximinLHS_C(&n, &k, &DUP, result);
-		}
+        lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
+        oRandom.setSeed(1976, 1968);
+        for (int i = 0; i < 10000; i++)
+        {
+            lhslib::maximinLHS(n, k, DUP, result, oRandom);
+        }
+    }
 }

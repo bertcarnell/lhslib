@@ -22,6 +22,7 @@
 #include "CRandom.h"
 
 #ifdef RCOMPILE
+#include "R.h"
 #define PRINT_MACRO Rprintf
 #define ERROR_MACRO Rprintf
 #else // RCOMPILE

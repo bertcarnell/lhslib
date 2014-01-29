@@ -26,7 +26,7 @@
 /*
  * Arrays are passed into this routine to allow R to allocate and deallocate
  * memory within the wrapper function.
- * The R internal random numer generator is used that R can set.seed for
+ * The R internal random number generator is used that R can set.seed for
  * testing the functions.
  * Dimensions:  result  K x N
  * Parameters:
@@ -41,17 +41,18 @@ namespace lhslib
 {
     void maximinLHS(int n, int k, int dup, bclib::matrix<int> & result, CRandom<double> & oRandom)
     {
-        if (n < 1 || k < 1)
+        if (n < 1 || k < 1 || dup < 1)
         {
-            throw std::runtime_error("nsamples are less than 1 (n) or nparameters less than 1 (k)");
+            throw std::runtime_error("nsamples are less than 1 (n) or nparameters less than 1 (k) or duplication is less than 1");
         }
         msize_type nsamples = static_cast<msize_type>(n);
         msize_type nparameters = static_cast<msize_type>(k);
         unsigned int duplication = static_cast<unsigned int>(dup);
         if (result.rowsize() != nsamples || result.colsize() != nparameters)
         {
-            result = bclib::matrix<int>(nsamples, nparameters);
+            throw std::runtime_error("result should be n x k for the lhslib::maximinLHS call");
         }
+        result.transpose();
         // *****  matrix_unsafe<int> m_result = matrix_unsafe<int>(nparameters, nsamples, result);
         /* the length of the point1 columns and the list1 vector */
         msize_type len = duplication * (nsamples - 1);
@@ -182,18 +183,19 @@ namespace lhslib
             result(irow, 0u) = avail(irow, 0u);
         }
 
+        result.transpose();
     //#ifdef _DEBUG
-        bool test = isValidLHS(result, true);
+        bool test = isValidLHS(result);
 
         if (!test)
         {
             /* the error function should send an error message through R */
-            std::runtime_error("Invalid Hypercube\n");
+            throw std::runtime_error("Invalid Hypercube\n");
         }
     //#endif
 
-    //#if PRINT_RESULT
+    #if PRINT_RESULT
         lhsPrint(result, 0);
-    //#endif
+    #endif
     }
 } // end namespace

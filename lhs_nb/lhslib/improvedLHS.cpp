@@ -44,6 +44,14 @@
  */
 namespace lhslib
 {
+    /**
+     * 
+     * @param n
+     * @param k
+     * @param dup
+     * @param result n x k matrix
+     * @param oRandom
+     */
     void improvedLHS(int n, int k, int dup, bclib::matrix<int> & result, CRandom<double> & oRandom)
     {
         if (n < 1 || k < 1 || dup < 1)
@@ -53,6 +61,12 @@ namespace lhslib
         msize_type nsamples = static_cast<msize_type>(n);
         msize_type nparameters = static_cast<msize_type>(k);
         msize_type duplication = static_cast<msize_type>(dup);
+        if (nsamples != result.rowsize() || nparameters != result.colsize())
+        {
+            throw std::runtime_error("result should be n x k for the lhslib::improvedLHS call");
+        }
+        // now transpose the matrix for future calls
+        result.transpose(); // now it is k x n
         // ********** matrix_unsafe<int> m_result = matrix_unsafe<int>(nparameters, nsamples, result);
         /* the length of the point1 columns and the list1 vector */
         msize_type len = duplication * (nsamples - 1);
@@ -194,9 +208,11 @@ namespace lhslib
         {
             result(jrow, 0u) = avail(jrow, 0u);
         }
-
+        
+        result.transpose();
+        
     //#if _DEBUG
-        bool test = isValidLHS(result, true);
+        bool test = isValidLHS(result);
 
         if (!test)
         {
@@ -204,8 +220,8 @@ namespace lhslib
         }
     //#endif
 
-    //#if PRINT_RESULT
+    #if PRINT_RESULT
         lhsPrint(result, 0);
-    //#endif
+    #endif
     }
 } // end namespace

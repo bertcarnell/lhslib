@@ -20,31 +20,47 @@ namespace lhsTest{
 		int k = 3;
 		int maxSweeps = 2;
 		double eps = 0.1;
-		double * pNew = new double[n*k];
+		//double * pNew = new double[n*k];
+        bclib::matrix<double> mOld = bclib::matrix<double>(n, k, pOld);
 		int jLen = 9 * 8 / 2 + 1; // 9 choose 2 + 1
-		double * J1 = new double[jLen];
-		int * J2 = new int[jLen];
-		int * J3 = new int[jLen];
-		int iVerbose = 0;
+		//double * J1 = new double[jLen];
+		//int * J2 = new int[jLen];
+		//int * J3 = new int[jLen];
+		//int iVerbose = 0;
 
-		set_seed(1976, 1968);
+		//set_seed(1976, 1968);
+        lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
+        oRandom.setSeed(1976, 1968);
 
-		optSeededLHS_C(&n, &k, &maxSweeps, &eps, pOld, &jLen, &iVerbose);
-		int * result = new int[n*k];
-		for (int i = 0; i < n*k; i++)
+		//optSeededLHS_C(&n, &k, &maxSweeps, &eps, pOld, &jLen, &iVerbose);
+        lhslib::optSeededLHS(n, k, maxSweeps, eps, mOld, jLen, false);
+        
+        matrix<int> result = matrix<int>(n, k);
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < k; j++)
+            {
+                result(i, j) = static_cast<int>(std::floor(9.0*mOld(i,j)) + 1.0);
+            }
+        }
+		//int expected[27] = {7,9,5,8,6,4,3,1,2,
+		//	                  1,7,8,4,3,9,5,2,6,
+		//	                  3,6,8,2,9,4,1,5,7};
+		int expected[27] = {7,1,3,
+                            9,7,6,
+                            5,8,8,
+                            8,4,2,
+                            6,3,9,
+                            4,9,4,
+                            3,5,1,
+                            1,2,5,
+                            2,6,7};
+        
+		for (int i = 0; i < n; i++)
 		{
-			result[i] = static_cast<int>(std::floor(9*pOld[i])+1);
-		}
-		int expected[27] = {7,9,5,8,6,4,3,1,2,
-			1,7,8,4,3,9,5,2,6,
-			3,6,8,2,9,4,1,5,7};
-
-		// transpose to compare
-		for (int i = 0; i < k; i++) // columns
-		{
-			for (int j = 0; j < n; j++) // rows
+			for (int j = 0; j < k; j++)
 			{
-				Assert(expected[i*n+j] == result[j*k+i], "Failed 1");
+				bclib::Assert(expected[i*k+j] == result(i, j), "Failed 1");
 			}
 		}
 	}
@@ -114,18 +130,24 @@ floor((4+5)*optSeededLHS(lhsseed, 5, 2, 0.1))+1
 			0.10114126, 0.20412818, 0.49293670, 0.73194844, 0.72583449, 0.68952544};
 		int n = 9;
 		int k = 3;
+        bclib::matrix<double> mOld = bclib::matrix<double>(n,k);
 		int maxSweeps = 2;
 		double eps = 0.1;
-		double * pNew = new double[n*k];
+		//double * pNew = new double[n*k];
 		int jLen = 9 * 8 / 2 + 1; // 9 choose 2 + 1
-		double * J1 = new double[jLen];
-		int * J2 = new int[jLen];
-		int * J3 = new int[jLen];
-		int iVerbose = 0;
+		//double * J1 = new double[jLen];
+		//int * J2 = new int[jLen];
+		//int * J3 = new int[jLen];
+		//int iVerbose = 0;
 
-		set_seed(1976, 1968);
+		//set_seed(1976, 1968);
+        //lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
+        //oRandom.setSeed(1976, 1968);
 
 		for (int i = 0; i < 10000; i++)
-			optSeededLHS_C(&n, &k, &maxSweeps, &eps, pOld, &jLen, &iVerbose);
+        {
+			//optSeededLHS_C(&n, &k, &maxSweeps, &eps, pOld, &jLen, &iVerbose);
+            lhslib::optSeededLHS(n, k, maxSweeps, eps, mOld, jLen, false);
+        }
 	}
 }

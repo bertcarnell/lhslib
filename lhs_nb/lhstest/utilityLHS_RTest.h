@@ -3,10 +3,12 @@
 #include <cstdlib>
 #include "TestClass.h"
 #include "defines.h"
-#include "utilityLHS_R.h"
+#include "utilityLHS.h"
+#include "matrix.h"
+#include "CommonDefines.h"
 
 namespace lhsTest {
-	class utilityLHSTest : public TestClass
+	class utilityLHSTest : public bclib::TestClass
 	{
 		void Run();
 		void testLhsCheck();

@@ -2,10 +2,12 @@
 
 #include <cstdlib>
 #include "TestClass.h"
+#include "CommonDefines.h"
 #include "defines.h"
+#include "utilityLHS.h"
 
 namespace lhsTest {
-	class optimumLHS_RTest : public TestClass
+	class optimumLHS_RTest : public bclib::TestClass
 	{
 		void Run();
 		void testOptimumLHS_R();

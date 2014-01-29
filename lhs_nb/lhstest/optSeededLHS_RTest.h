@@ -3,9 +3,11 @@
 #include <cstdlib>
 #include "TestClass.h"
 #include "defines.h"
+#include "CommonDefines.h"
+#include "utilityLHS.h"
 
 namespace lhsTest {
-	class optSeededLHS_RTest : public TestClass
+	class optSeededLHS_RTest : public bclib::TestClass
 	{
 		void Run();
 		void testOptSeededLHS_R();
