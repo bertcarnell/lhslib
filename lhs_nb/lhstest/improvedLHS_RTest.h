@@ -2,7 +2,6 @@
 
 #include <cstdlib>
 #include "TestClass.h"
-#include "defines.h"
 #include "utilityLHS.h"
 #include "CommonDefines.h"
 

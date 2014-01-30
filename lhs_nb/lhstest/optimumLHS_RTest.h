@@ -3,7 +3,6 @@
 #include <cstdlib>
 #include "TestClass.h"
 #include "CommonDefines.h"
-#include "defines.h"
 #include "utilityLHS.h"
 
 namespace lhsTest {

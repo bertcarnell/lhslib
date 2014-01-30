@@ -35,7 +35,7 @@ namespace lhsTest{
 		//optSeededLHS_C(&n, &k, &maxSweeps, &eps, pOld, &jLen, &iVerbose);
         lhslib::optSeededLHS(n, k, maxSweeps, eps, mOld, jLen, false);
         
-        matrix<int> result = matrix<int>(n, k);
+        bclib::matrix<int> result = bclib::matrix<int>(n, k);
         for (int i = 0; i < n; i++)
         {
             for (int j = 0; j < k; j++)

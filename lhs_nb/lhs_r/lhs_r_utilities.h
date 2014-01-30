@@ -14,10 +14,8 @@
 namespace lhs_r
 {
     void findorder_zero(const Rcpp::NumericVector & v, Rcpp::IntegerVector & order);
-    Rcpp::NumericMatrix convertIntegerToNumericLhs(const bclib::matrix<int> & intMat,
-            bool bTransposeInput = false);
-    Rcpp::NumericMatrix convertMatrixToNumericLhs(const bclib::matrix<double> & intMat,
-            bool bTransposeInput = false);
+    Rcpp::NumericMatrix convertIntegerToNumericLhs(const bclib::matrix<int> & intMat);
+    Rcpp::NumericMatrix convertMatrixToNumericLhs(const bclib::matrix<double> & intMat);
     Rcpp::IntegerVector runifint(unsigned int n, int min_int, int max_int);
 
     template <int RTYPE>
