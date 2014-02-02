@@ -17,6 +17,10 @@ namespace lhs_r
     Rcpp::NumericMatrix convertIntegerToNumericLhs(const bclib::matrix<int> & intMat);
     Rcpp::NumericMatrix convertMatrixToNumericLhs(const bclib::matrix<double> & intMat);
     Rcpp::IntegerVector runifint(unsigned int n, int min_int, int max_int);
+    void checkArguments(int n, int k);
+    void checkArguments(int n, int k, int dup);
+    void checkArguments(int n, int k, int maxsweeps, double eps);
+    Rcpp::NumericMatrix degenerateCase(int k);
 
     template <int RTYPE>
     Rcpp::NumericMatrix calculateDistance(Rcpp::Matrix<RTYPE> & mat)  // non-const because of the matrix row

@@ -23,6 +23,12 @@
 RcppExport SEXP /*double matrix*/ improvedLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k, 
         SEXP /*int*/ dup)
 {
+    if (TYPEOF(n) != INTSXP || TYPEOF(k) != INTSXP ||
+            TYPEOF(dup) != INTSXP)
+    {
+        ::Rf_error("n, k, and dup should be integers");
+    }
+
     try
     {
         Rcpp::RNGScope tempRNG;
@@ -30,6 +36,12 @@ RcppExport SEXP /*double matrix*/ improvedLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k
         int m_n = Rcpp::as<int>(n);
         int m_k = Rcpp::as<int>(k);
         int m_dup = Rcpp::as<int>(dup);
+        
+        lhs_r::checkArguments(m_n, m_k, m_dup);
+        if (m_n == 1)
+        {
+            return lhs_r::degenerateCase(m_k);
+        }
 
         bclib::matrix<int> intMat = bclib::matrix<int>(m_n, m_k);
         RStandardUniform oRStandardUniform = RStandardUniform();
@@ -46,7 +58,7 @@ RcppExport SEXP /*double matrix*/ improvedLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k
     }
     catch (std::exception & e)
     {
-        ::forward_exception_to_r(e);
+        ::Rf_error(e.what());
     }
     catch (...)
     {
@@ -58,17 +70,29 @@ RcppExport SEXP /*double matrix*/ improvedLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k
 RcppExport SEXP /*int matrix*/ maximinLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k, 
         SEXP /*int*/ dup)
 {
+    if (TYPEOF(n) != INTSXP || TYPEOF(k) != INTSXP ||
+            TYPEOF(dup) != INTSXP)
+    {
+        ::Rf_error("n, k, and dup should be integers");
+    }
+    
     try
     {
         Rcpp::RNGScope tempRNG;
 
-        int nlocal = Rcpp::as<int>(n);
-        int klocal = Rcpp::as<int>(k);
-        int duplocal = Rcpp::as<int>(dup);
+        int m_n = Rcpp::as<int>(n);
+        int m_k = Rcpp::as<int>(k);
+        int m_dup = Rcpp::as<int>(dup);
 
-        bclib::matrix<int> intMat = bclib::matrix<int>(nlocal, klocal);
+        lhs_r::checkArguments(m_n, m_k, m_dup);
+        if (m_n == 1)
+        {
+            return lhs_r::degenerateCase(m_k);
+        }
+
+        bclib::matrix<int> intMat = bclib::matrix<int>(m_n, m_k);
         RStandardUniform oRStandardUniform = RStandardUniform();
-        lhslib::maximinLHS(nlocal, klocal, duplocal, intMat, oRStandardUniform);
+        lhslib::maximinLHS(m_n, m_k, m_dup, intMat, oRStandardUniform);
         Rcpp::NumericMatrix result = lhs_r::convertIntegerToNumericLhs(intMat);
 
         return result;
@@ -81,7 +105,7 @@ RcppExport SEXP /*int matrix*/ maximinLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k,
     }
     catch (std::exception & e)
     {
-        ::forward_exception_to_r(e);
+        ::Rf_error(e.what());
     }
     catch (...)
     {
@@ -90,12 +114,14 @@ RcppExport SEXP /*int matrix*/ maximinLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k,
     return ::R_NilValue;
 }
 
-// TODO:  add try block
 RcppExport SEXP /*int matrix*/ optimumLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k, 
         SEXP /*int*/ maxsweeps, SEXP /*double*/ eps, SEXP /*int*/ bVerbose)
 {
-    // TODO:  check for na in n, k, maxsweeps, eps
-    // TODO:  check for infinite n, k, maxsweeps, eps
+    if (TYPEOF(n) != INTSXP || TYPEOF(k) != INTSXP || TYPEOF(maxsweeps) != INTSXP ||
+            TYPEOF(eps) != REALSXP || TYPEOF(bVerbose) != LGLSXP)
+    {
+        ::Rf_error("n, k, and maxsweeps should be integers, eps should be a real, and bVerbose should be a logical");
+    }
     try
     {
         int m_n = Rcpp::as<int>(n);
@@ -103,16 +129,13 @@ RcppExport SEXP /*int matrix*/ optimumLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k,
         int m_maxsweeps = Rcpp::as<int>(maxsweeps);
         double m_eps = Rcpp::as<double>(eps);
         bool m_bVerbose = Rcpp::as<bool>(bVerbose);
-
-        if (m_eps >= 1 || m_eps <= 0)
+        
+        lhs_r::checkArguments(m_n, m_k, m_maxsweeps, m_eps);
+        if (m_n == 1)
         {
-            Rcpp::exception("eps must fall in the interval (0,1)\n");
+            return lhs_r::degenerateCase(m_k);
         }
-        if (m_n < 1 || m_k < 1 || m_maxsweeps < 1)
-        {
-            Rcpp::exception("n, k, and maxsweeps must be positive integers");
-        }
-
+        
         Rcpp::RNGScope tempRNG;
         RStandardUniform oRStandardUniform = RStandardUniform();
         int jLen = static_cast<int>(::Rf_choose(static_cast<double>(m_n), 2.0) + 1.0);
@@ -133,7 +156,7 @@ RcppExport SEXP /*int matrix*/ optimumLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k,
     }
     catch (std::exception & e)
     {
-        ::forward_exception_to_r(e);
+        ::Rf_error(e.what());
     }
     catch (...)
     {
@@ -143,11 +166,15 @@ RcppExport SEXP /*int matrix*/ optimumLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k,
 }
 
 RcppExport SEXP /*int matrix*/ optSeededLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k, 
-        SEXP /*int*/ maxsweeps, SEXP /*double*/ eps, SEXP /*int**/ inlhs,
+        SEXP /*int*/ maxsweeps, SEXP /*double*/ eps, SEXP /*numeric matrix*/ inlhs,
         SEXP /*int*/ bVerbose)
 {
-    // TODO:  check for na in n, k, maxsweeps, eps
-    // TODO:  check for infinite n, k, maxsweeps, eps
+    if (TYPEOF(n) != INTSXP || TYPEOF(k) != INTSXP || TYPEOF(maxsweeps) != INTSXP ||
+            TYPEOF(eps) != REALSXP || TYPEOF(bVerbose) != LGLSXP)
+    {
+        ::Rf_error("n, k, and maxsweeps should be integers, eps should be a real, and bVerbose should be a logical");
+    }
+    
     try
     {
         int m_n = Rcpp::as<int>(n);
@@ -155,20 +182,29 @@ RcppExport SEXP /*int matrix*/ optSeededLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k,
         int m_maxsweeps = Rcpp::as<int>(maxsweeps);
         double m_eps = Rcpp::as<double>(eps);
         bool m_bVerbose = Rcpp::as<bool>(bVerbose);
-
-        if (m_eps >= 1 || m_eps <= 0)
+        
+        lhs_r::checkArguments(m_n, m_k, m_maxsweeps, m_eps);
+        if (m_n == 1)
         {
-            Rcpp::exception("eps must fall in the interval (0,1)\n");
-        }
-        if (m_n < 1 || m_k < 1 || m_maxsweeps < 1)
-        {
-            Rcpp::exception("n, k, and maxsweeps must be positive integers");
+            return lhs_r::degenerateCase(m_k);
         }
 
         int jLen = static_cast<int>(::Rf_choose(static_cast<double>(m_n), 2.0) + 1.0);
         Rcpp::NumericMatrix m_inlhs(inlhs);
-        std::vector<double> mv_inlhs = Rcpp::as<std::vector<double> >(m_inlhs);
-        bclib::matrix<double> mm_inlhs = bclib::matrix<double>(m_n, m_k, mv_inlhs);
+        //std::vector<double> mv_inlhs = Rcpp::as<std::vector<double> >(m_inlhs); // this probably unrolled the matrix columnwise
+        //bclib::matrix<double> mm_inlhs = bclib::matrix<double>(m_n, m_k, mv_inlhs); // and this was row wise
+        bclib::matrix<double> mm_inlhs = bclib::matrix<double>(m_n, m_k);
+        if (m_inlhs.ncol() != m_k || m_inlhs.nrow() != m_n)
+        {
+            throw std::invalid_argument("input matrix does not match the n and k arguments");
+        }
+        for (int i = 0; i < m_n; i++)
+        {
+            for (int j = 0; j < m_k; j++)
+            {
+                mm_inlhs(i,j) = m_inlhs(i,j);
+            }
+        }
 
         lhslib::optSeededLHS(m_n, m_k, m_maxsweeps, m_eps, mm_inlhs,
                 jLen, m_bVerbose);
@@ -185,7 +221,7 @@ RcppExport SEXP /*int matrix*/ optSeededLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k,
     }
     catch (std::exception & e)
     {
-        ::forward_exception_to_r(e);
+        ::Rf_error(e.what());
     }
     catch (...)
     {
@@ -207,52 +243,64 @@ RcppExport SEXP /*int matrix*/ optSeededLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k,
  */
 RcppExport SEXP randomLHS_cpp(SEXP n, SEXP k, SEXP preserveDraw)
 {
+    if (TYPEOF(n) != INTSXP || TYPEOF(k) != INTSXP ||
+            TYPEOF(preserveDraw) != LGLSXP)
+    {
+        ::Rf_error("n and k should be integers, preserveDraw should be a logical");
+    }
+    
     try
     {
         Rcpp::RNGScope tempRNG;
         
-        int nlocal = Rcpp::as<int>(n);
-        int klocal = Rcpp::as<int>(k);
+        int m_n = Rcpp::as<int>(n);
+        int m_k = Rcpp::as<int>(k);
         bool bPreserveDraw = Rcpp::as<bool>(preserveDraw);
 
-        Rcpp::NumericMatrix result(nlocal, klocal);
-        Rcpp::NumericVector randomunif1(nlocal);
-        Rcpp::NumericVector randomunif2(nlocal);
+        lhs_r::checkArguments(m_n, m_k);
+        if (m_n == 1)
+        {
+            return lhs_r::degenerateCase(m_k);
+        }
+
+        Rcpp::NumericMatrix result(m_n, m_k);
+        Rcpp::NumericVector randomunif1(m_n);
+        Rcpp::NumericVector randomunif2(m_n);
         Rcpp::IntegerVector orderVector(n);
 
         if (bPreserveDraw)
         {
-            for (int jcol = 0; jcol < klocal; jcol++)
+            for (int jcol = 0; jcol < m_k; jcol++)
             {
-                randomunif1 = Rcpp::runif(nlocal);
-                randomunif2 = Rcpp::runif(nlocal);
+                randomunif1 = Rcpp::runif(m_n);
+                randomunif2 = Rcpp::runif(m_n);
                 lhs_r::findorder_zero(randomunif1, orderVector);
-                for (int irow = 0; irow < nlocal; irow++)
+                for (int irow = 0; irow < m_n; irow++)
                 {
                     result(irow,jcol) = orderVector[irow] + randomunif2[irow];
-                    result(irow,jcol) /= static_cast<double>(nlocal);
+                    result(irow,jcol) /= static_cast<double>(m_n);
                 }
             }
         }
         else
         {
-            for (int jcol = 0; jcol < klocal; jcol++)
+            for (int jcol = 0; jcol < m_k; jcol++)
             {
-                randomunif1 = Rcpp::runif(nlocal);
+                randomunif1 = Rcpp::runif(m_n);
                 lhs_r::findorder_zero(randomunif1, orderVector);
-                for (int irow = 0; irow < nlocal; irow++)
+                for (int irow = 0; irow < m_n; irow++)
                 {
                     result(irow,jcol) = orderVector[irow];
                 }
             }
-            randomunif2 = Rcpp::runif(nlocal*klocal);
-            Rcpp::NumericMatrix randomMatrix(nlocal, klocal, randomunif2.begin());
-            for (int jcol = 0; jcol < klocal; jcol++)
+            randomunif2 = Rcpp::runif(m_n*m_k);
+            Rcpp::NumericMatrix randomMatrix(m_n, m_k, randomunif2.begin());
+            for (int jcol = 0; jcol < m_k; jcol++)
             {
-                for (int irow = 0; irow < nlocal; irow++)
+                for (int irow = 0; irow < m_n; irow++)
                 {
                     result(irow,jcol) += randomMatrix(irow,jcol);
-                    result(irow,jcol) /= static_cast<double>(nlocal);
+                    result(irow,jcol) /= static_cast<double>(m_n);
                 }
             }
         }
@@ -266,7 +314,7 @@ RcppExport SEXP randomLHS_cpp(SEXP n, SEXP k, SEXP preserveDraw)
     }
     catch (std::exception & e)
     {
-        ::forward_exception_to_r(e);
+        ::Rf_error(e.what());
     }
     catch (...)
     {
@@ -291,20 +339,21 @@ RcppExport SEXP geneticLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k, SEXP /*int*/ pop,
         std::string m_criterium = Rcpp::as<std::string>(criterium);
         bool m_bVerbose = Rcpp::as<bool>(bVerbose);
 
+        lhs_r::checkArguments(m_n, m_k);
         // lengths should be 1 because of the cast
         // TODO:  are NA's stopped?
         // TODO:  are infitities stopped?
-        if (m_n < 1 || m_k < 1 || m_pop < 1 || m_gen < 1)
+        if (m_pop < 1 || m_gen < 1)
         {
-            throw Rcpp::exception("n, k, pop, and gen should be integers greater than 0");
+            throw std::invalid_argument("pop, and gen should be integers greater than 0");
         }
         if (m_pMut <= 0 || m_pMut >= 1)
         {
-            throw Rcpp::exception("pMut should be between 0 and 1");
+            throw std::invalid_argument("pMut should be between 0 and 1");
         }
         if (m_pop % 2 != 0)
         {
-            throw Rcpp::exception("pop should be an even number");
+            throw std::invalid_argument("pop should be an even number");
         }
         if (m_n == 1)
         {
@@ -312,9 +361,7 @@ RcppExport SEXP geneticLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k, SEXP /*int*/ pop,
             {
                 Rprintf("Design is already optimal");
             }
-            Rcpp::NumericMatrix Z(m_n, m_k);
-            std::fill(Z.begin(), Z.end(), 1.0);
-            return Z;
+            return lhs_r::degenerateCase(m_k);
         }
 
         std::vector<Rcpp::IntegerMatrix> A = std::vector<Rcpp::IntegerMatrix>(m_pop);
@@ -357,7 +404,9 @@ RcppExport SEXP geneticLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k, SEXP /*int*/ pop,
                 } 
                 else 
                 {
-                    throw Rcpp::exception("Criterium not recognized");
+                    std::stringstream msg;
+                    msg << "Criterium not recognized: S and Maximin are available: " << m_criterium.c_str() << " was provided.\n";
+                    throw std::invalid_argument(msg.str().c_str());
                 }
             }
             Rcpp::IntegerVector H(B.size());
@@ -467,7 +516,7 @@ RcppExport SEXP geneticLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k, SEXP /*int*/ pop,
     }
     catch (std::exception & e)
     {
-        ::forward_exception_to_r(e);
+        ::Rf_error(e.what());
     }
     catch (...)
     {

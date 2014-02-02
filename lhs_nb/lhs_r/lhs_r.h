@@ -36,5 +36,8 @@ RcppExport SEXP /*int matrix*/ optSeededLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k,
         SEXP /*int*/ maxsweeps, SEXP /*double*/ eps, SEXP /*int**/ pOld,
         SEXP /*int*/ bVerbose);
 RcppExport SEXP randomLHS_cpp(SEXP n, SEXP k, SEXP preserveDraw);
+RcppExport SEXP geneticLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k, SEXP /*int*/ pop,
+        SEXP /*int*/ gen, SEXP /*double*/ pMut, SEXP criterium,
+        SEXP /*bool*/ bVerbose);
 
 #endif	/* LHS_R_H */

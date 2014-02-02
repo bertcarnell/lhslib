@@ -77,7 +77,6 @@ namespace lhslib
         std::vector<double> optimalityRecord = std::vector<double>(nOptimalityRecordLength);
         std::vector<unsigned int> interchangeRow1 = std::vector<unsigned int>(nOptimalityRecordLength);
         std::vector<unsigned int> interchangeRow2 = std::vector<unsigned int>(nOptimalityRecordLength);
-        
 
         // fill the oldHypercube with a random lhs sample
         std::vector<double> randomUnif(nsamples);

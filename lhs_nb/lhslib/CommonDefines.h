@@ -44,10 +44,6 @@ namespace lhslib
     void optSeededLHS(int n, int k, int maxSweeps, double eps, 
             bclib::matrix<double> & pOld, int JLen, bool bVerbose);
 
-    //void set_seed(unsigned int i1, unsigned int i2);
-    //void get_seed(unsigned int *i1, unsigned int *i2);
-    //double unif_rand(void);
-    
     /**
      * type of size type for use with bclib::matrix<T>
      * @note the type of the matrix (i.e. int) is irrelevant for size_type

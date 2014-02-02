@@ -57,10 +57,19 @@ namespace lhs_r
 
     Rcpp::NumericMatrix convertMatrixToNumericLhs(const bclib::matrix<double> & intMat)
     {
-        std::vector<double>::iterator i = intMat.getDataVector().begin();
+        //std::vector<double>::iterator i = intMat.getDataVector().begin();  this iterator is row wise, but numeric matrix may be columnwise
         bclib::matrix<int>::size_type rows = intMat.rowsize();
         bclib::matrix<int>::size_type cols = intMat.colsize();
-        Rcpp::NumericMatrix result(rows, cols, i);
+        //Rcpp::NumericMatrix result(rows, cols, i);
+        
+        Rcpp::NumericMatrix result(rows, cols);
+        for (bclib::matrix<int>::size_type i = 0; i < rows; i++)
+        {
+            for (bclib::matrix<int>::size_type j = 0; j < cols; j++)
+            {
+                result(i, j) = intMat(i, j);
+            }
+        }
 
         return result;
     }
@@ -78,5 +87,65 @@ namespace lhs_r
             *intv_it = min_int + static_cast<int>(floor(static_cast<double>(*r_it) * range));
         }
         return intv;
+    }
+    
+    void checkArguments(int n, int k)
+    {
+        if (n == NA_INTEGER || k == NA_INTEGER)
+        {
+            throw std::invalid_argument("Invalid Argument: n and k may not be NA or NaN");
+        }
+        else if (n < 1 || k < 1)
+        {
+            std::stringstream msg;
+            msg << "Invalid Argument: n and k must be integers > 0, n=" << n << " k=" << k << "\n";
+            throw std::invalid_argument(msg.str().c_str());
+        }
+    }
+    
+    void checkArguments(int n, int k, int dup)
+    {
+        checkArguments(n, k);
+        if (dup == NA_INTEGER)
+        {
+            throw std::invalid_argument("Invalid Argument: dup may not be NA or NaN");
+        }
+        if (dup < 1)
+        {
+            std::stringstream msg;
+            msg << "Invalid Argument: dup must be an integer > 0, dup=" << dup << "\n";
+            throw std::invalid_argument(msg.str().c_str());
+        }
+    }
+    
+    void checkArguments(int n, int k, int maxsweeps, double eps)
+    {
+        std::stringstream msg;
+        checkArguments(n, k);
+        if (maxsweeps == NA_INTEGER)
+        {
+            throw std::invalid_argument("Invalid Argument: maxsweeps may not be NA or NaN");
+        }
+        else if (!R_FINITE(eps))
+        {
+            throw std::invalid_argument("Invalid Argument: eps may not be Na, NaN, or +-Inf");
+        }
+        else if (maxsweeps < 1)
+        {
+            msg << "Invalid Argument: maxsweeps must be an integer > 0, maxsweeps=" << maxsweeps << "\n";
+            throw std::invalid_argument(msg.str().c_str());
+        }
+        else if (eps <= 0 || eps >= 1)
+        {
+            msg << "Invalid Argument: eps must be a double on the interval (0,1), eps=" << eps << "\n";
+            throw std::invalid_argument(msg.str().c_str());
+        }
+    }
+    
+    Rcpp::NumericMatrix degenerateCase(int k)
+    {
+        Rcpp::NumericMatrix Z(1, k);
+        std::fill(Z.begin(), Z.end(), 1.0);
+        return Z;
     }
 } // end namespace
