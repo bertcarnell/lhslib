@@ -26,10 +26,13 @@
 #include "utilityLHS.h"
 
 namespace lhsTest {
+    /**
+     * class to test the optSeededLHS method
+     */
 	class optSeededLHS_RTest : public bclib::TestClass
 	{
-		void Run();
-		void testOptSeededLHS_R();
-		void testStress();
+		void Run(); /**< run the test suite */
+		void testOptSeededLHS_R(); /**< Test the optSeededLHS method */
+		void testStress(); /**< Test the optSeededLHS repeatedly */
 	};
 }

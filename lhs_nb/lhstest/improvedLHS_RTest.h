@@ -26,10 +26,14 @@
 #include "CommonDefines.h"
 
 namespace lhsTest {
+    /**
+     * class to test the improvedLHS method
+     */
 	class improvedLHS_RTest : public bclib::TestClass
 	{
-		void Run();
-		void testImprovedLHS_R();
-		void testStress();
+    public:
+		void Run(); /**< Run the test suite */
+		void testImprovedLHS_R(); /**< Test improvedLHS */
+		void testStress(); /**< Test Stress */
 	};
 }

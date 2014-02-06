@@ -44,7 +44,7 @@ RcppExport SEXP /*double matrix*/ improvedLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k
         }
 
         bclib::matrix<int> intMat = bclib::matrix<int>(m_n, m_k);
-        RStandardUniform oRStandardUniform = RStandardUniform();
+        lhs_r::RStandardUniform oRStandardUniform = lhs_r::RStandardUniform();
         lhslib::improvedLHS(m_n, m_k, m_dup, intMat, oRStandardUniform);
         Rcpp::NumericMatrix result = lhs_r::convertIntegerToNumericLhs(intMat);
 
@@ -91,7 +91,7 @@ RcppExport SEXP /*double matrix*/ maximinLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k,
         }
 
         bclib::matrix<int> intMat = bclib::matrix<int>(m_n, m_k);
-        RStandardUniform oRStandardUniform = RStandardUniform();
+        lhs_r::RStandardUniform oRStandardUniform = lhs_r::RStandardUniform();
         lhslib::maximinLHS(m_n, m_k, m_dup, intMat, oRStandardUniform);
         Rcpp::NumericMatrix result = lhs_r::convertIntegerToNumericLhs(intMat);
 
@@ -137,7 +137,7 @@ RcppExport SEXP /*double matrix*/ optimumLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k,
         }
         
         Rcpp::RNGScope tempRNG;
-        RStandardUniform oRStandardUniform = RStandardUniform();
+        lhs_r::RStandardUniform oRStandardUniform = lhs_r::RStandardUniform();
         int jLen = static_cast<int>(::Rf_choose(static_cast<double>(m_n), 2.0) + 1.0);
         bclib::matrix<int> intMat = bclib::matrix<int>(m_n, m_k);
 

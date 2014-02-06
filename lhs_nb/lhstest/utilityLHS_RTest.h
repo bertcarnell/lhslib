@@ -26,14 +26,39 @@
 #include "matrix.h"
 #include "CommonDefines.h"
 
+/**
+ * @namespace lhsTest A collections of tests for the lhs methods
+ */
 namespace lhsTest {
+    /**
+     * A class to test the utility methods of the lhs library
+     */
 	class utilityLHSTest : public bclib::TestClass
 	{
+    public:
+        /** 
+         * Run the Test methods 
+         */
 		void Run();
+        /** 
+         * Test lhsCheck 
+         */
 		void testLhsCheck();
+        /** 
+         * Test rank 
+         */
 		void testRank();
+        /** 
+         * Test rankColumns 
+         */
 		void testRankColumns();
+        /** 
+         * Test lhsPrint 
+         */
 		void testLhsPrint();
+        /** 
+         * Test sumInvDistance 
+         */
 		void testSumInvDistance();
 	};
 }

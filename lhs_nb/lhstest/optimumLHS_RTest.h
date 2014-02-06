@@ -26,10 +26,13 @@
 #include "utilityLHS.h"
 
 namespace lhsTest {
+    /**
+     * Class to test the optimumLHS method
+     */
 	class optimumLHS_RTest : public bclib::TestClass
 	{
-		void Run();
-		void testOptimumLHS_R();
-		void testStress();
+		void Run(); /**< run the test suite */
+		void testOptimumLHS_R(); /** test the optimumLHS method */
+		void testStress(); /** test the optimumLHS method repeatedly */
 	};
 }

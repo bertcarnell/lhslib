@@ -24,11 +24,25 @@
 #include "TestClass.h"
 #include "CommonDefines.h"
 
-namespace lhsTest {
+namespace lhsTest 
+{
+    /**
+     * Class to test the maximinLHS methods
+     */
 	class maximinLHS_RTest : public bclib::TestClass
 	{
+    public:
+        /**
+         * Run the test suite
+         */
 		void Run();
+        /**
+         * Test maximinLHS
+         */
 		void testMaximinLHS_R();
+        /**
+         * Test maximinLHS repeatedly
+         */
 		void testStress();
 	};
 }

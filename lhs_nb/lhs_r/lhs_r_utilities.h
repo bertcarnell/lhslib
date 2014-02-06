@@ -24,6 +24,9 @@
 #include <Rcpp.h>
 #include "CommonDefines.h"
 
+/**
+ * @namespace lhs_r a namespace for the lhs methods used in the R interface
+ */
 namespace lhs_r
 {
     /**

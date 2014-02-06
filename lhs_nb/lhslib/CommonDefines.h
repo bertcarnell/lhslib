@@ -46,7 +46,7 @@
 #define PRINT_RESULT 0
 
 /**
- * LHS c++ Library namespace
+ * @namespace lhslib LHS c++ Library namespace
  */
 namespace lhslib 
 {
