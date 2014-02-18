@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>lhs - Latin Hypercube Samples by bertcarnell</title>
+    <title>lhs (Latin Hypercube Samples)</title>
 
+    <link rel="stylesheet" href="stylesheets/github-highlight.css">
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -28,37 +29,88 @@
         </ul>
       </header>
       <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+		<h3>
+			<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>
+			The lhs (Latin Hypercube Samples) Project
+		</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+		<p>
+			This page gives a high level description of how the lhs library is used through the API.  It also links to
+			more extensive documentation through doxygen.
+		</p>
+		<ul>
+			<li><a href="www.r-project.org">The R Project</a></li>
+			<li><a href="www.r-forge.r-project.org">R-forge</a></li>
+			<li><a href="www.r-forge.r-project.org">lhs on R-forge</a></li>
+			<li><a href="www.github.com">lhs on github</a></li>
+			<li><a href="www.github.com">bclib on github</a></li>
+			<li><a href="www.r-project.org">Latest stable lhs on CRAN</a></li>
+			<li><a href="rcpp">Rcpp Project</a></li>
+			<li><a href="doxygen">Doxygen</a></li>
+		</ul>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+		<p>The lhs github project is designed to contain the C++ code that is the core of the R package lhs.  The R package is house on R-forge
+		   because of that site's automated build environment against the latest R tools.  The C++ code is hosted on github because of all the
+		   advantages that git offers over svn</p>
+   
+		<h3>
+			<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>
+			lhslib C++ API
+		</h3>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+		<p>
+			The API is primarily documented through the Doxygen documentation supplied <a href="doxygen/html/index.html">here.</a>  The following
+			code illustrates how the API is called from C++.  The Rcpp API is also illustrated, although it is intended to be
+			called from within R.  Notes: <code>bclib</code> is a namespace from another related github project with common code for bertcarnell's
+			libraries.  The <code>bclib::matrix<T></code> class is a simple matrix class that only includes necessary operations.  More
+			robust matrix templates could be used in the future.  <code>lhslib</code> is the namespace of this project.
+		</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+		<h4>improvedLHS Algorithm</h4>
+		<pre><code>
+int n = 4;
+int k = 3;
+int dup = 5;
+bclib::matrix<int> result = bclib::matrix<int>(n,k);
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
+oRandom.setSeed(1976, 1968);
+lhslib::improvedLHS(n, k, dup, result, oRandom);
+		</code></pre>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+		<h4>maximinLHS Algorithm</h4>
+		<pre><code>
+int n = 4;
+int k = 3;
+int dup = 5;
+bclib::matrix<int> result = bclib::matrix<int>(n, k);
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
+oRandom.setSeed(1976, 1968);
+lhslib::maximinLHS(n, k, dup, result, oRandom);
+		</code></pre>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+		<h4>maximinLHS Algorithm</h4>
+		<pre><code>
+int n = 4;
+int k = 3;
+int maxSweeps = 2;
+double eps = 0.1;
+int jLen = 7; // (4 choose 2) + 1
+bclib::matrix<int> result = bclib::matrix<int>(n, k);
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
+oRandom.setSeed(1976, 1968);
+lhslib::optimumLHS(n, k, maxSweeps, eps, result, jLen, oRandom, false);
+		</code></pre>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+		<h3>
+			<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>
+			lhs-r Rcpp C++ API
+		</h3>
+		
+		<p>To be added...</p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/bertcarnell">bertcarnell</a></p>
@@ -66,6 +118,8 @@ $ git checkout gh-pages
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
+    <script src="javascripts/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>	
     
   </body>
 </html>
