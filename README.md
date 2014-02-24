@@ -3,6 +3,8 @@ lhs
 
 Latin hypercube sampling code for the lhs pacakge in the statistical software package R (www.r-project.org)
 
+Link to the lhs project page here:  http://bertcarnell.github.io/lhs/
+
 See the lhs R-Forge project here:  https://r-forge.r-project.org/projects/lhs/
 
 See the lhs project page here:  http://lhs.r-forge.r-project.org/
