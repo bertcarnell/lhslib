@@ -39,14 +39,14 @@
 			more extensive documentation through doxygen.
 		</p>
 		<ul>
-			<li><a href="www.r-project.org">The R Project</a></li>
-			<li><a href="www.r-forge.r-project.org">R-forge</a></li>
-			<li><a href="www.r-forge.r-project.org">lhs on R-forge</a></li>
-			<li><a href="www.github.com">lhs on github</a></li>
-			<li><a href="www.github.com">bclib on github</a></li>
-			<li><a href="www.r-project.org">Latest stable lhs on CRAN</a></li>
-			<li><a href="rcpp">Rcpp Project</a></li>
-			<li><a href="doxygen">Doxygen</a></li>
+			<li><a href="http://www.r-project.org">The R Project</a></li>
+			<li><a href="http://www.r-forge.r-project.org">R-forge</a></li>
+			<li><a href="https://r-forge.r-project.org/projects/lhs/">lhs on R-forge</a></li>
+			<li><a href="https://github.com/bertcarnell/lhs">lhs on github</a></li>
+			<li><a href="https://github.com/bertcarnell/bclib">bclib on github</a></li>
+			<li><a href="http://cran.case.edu/web/packages/lhs/index.html">Latest stable lhs on CRAN</a></li>
+			<li><a href="http://www.rcpp.org">Rcpp Project</a></li>
+			<li><a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a></li>
 		</ul>
 
 		<p>The lhs github project is designed to contain the C++ code that is the core of the R package lhs.  The R package is house on R-forge
@@ -90,7 +90,7 @@ oRandom.setSeed(1976, 1968);
 lhslib::maximinLHS(n, k, dup, result, oRandom);
 		</code></pre>
 
-		<h4>maximinLHS Algorithm</h4>
+		<h4>optimumLHS Algorithm</h4>
 		<pre><code>
 int n = 4;
 int k = 3;
@@ -109,7 +109,45 @@ lhslib::optimumLHS(n, k, maxSweeps, eps, result, jLen, oRandom, false);
 			lhs-r Rcpp C++ API
 		</h3>
 		
-		<p>To be added...</p>
+		<h4>improvedLHS Algorithm</h4>
+		<pre><code>
+// c++
+RcppExport SEXP improvedLHS_cpp(SEXP n, SEXP k, SEXP dup);
+		</code>
+		<code>
+# R
+x <- .Call("improvedLHS_cpp", as.integer(n), as.integer(k), as.integer(dup))
+		</code></pre>
+
+		<h4>maximinLHS Algorithm</h4>
+		<pre><code>
+// c++
+RcppExport SEXP maximinLHS_cpp(SEXP n, SEXP k, SEXP dup);
+		</code></pre>
+
+		<h4>optimumLHS Algorithm</h4>
+		<pre><code>
+// c++
+RcppExport SEXP optimumLHS_cpp(SEXP n, SEXP k, SEXP maxsweeps, SEXP eps, SEXP bVerbose);
+		</code></pre>
+
+		<h4>optSeededLHS Algorithm</h4>
+		<pre><code>
+// c++
+RcppExport SEXP optSeededLHS_cpp(SEXP n, SEXP k, SEXP maxsweeps, SEXP eps, SEXP pOld, SEXP bVerbose);
+		</code></pre>
+
+		<h4>randomLHS Algorithm</h4>
+		<pre><code>
+// c++
+RcppExport SEXP randomLHS_cpp(SEXP n, SEXP k, SEXP preserveDraw);
+		</code></pre>
+
+		<h4>geneticLHS Algorithm</h4>
+		<pre><code>
+// c++
+RcppExport SEXP geneticLHS_cpp(SEXP n, SEXP k, SEXP pop, SEXP gen, SEXP pMut, SEXP criterium, SEXP bVerbose);
+		</code></pre>
 
       </section>
       <footer>
