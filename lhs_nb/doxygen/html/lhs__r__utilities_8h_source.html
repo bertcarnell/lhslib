@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -100,8 +101,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>lhs_r</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacelhs__r.html#a0f674ea18843155bc54720c713e85bd3">findorder_zero</a>(<span class="keyword">const</span> Rcpp::NumericVector &amp; v, Rcpp::IntegerVector &amp; order);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    Rcpp::NumericMatrix <a class="code" href="namespacelhs__r.html#a6d7b16d0c3998bd4aa98c30e9b8882c3">convertIntegerToNumericLhs</a>(<span class="keyword">const</span> bclib::matrix&lt;int&gt; &amp; intMat);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    Rcpp::NumericMatrix <a class="code" href="namespacelhs__r.html#a1db21b2cc7f6e2665ab478be9c0a3856">convertMatrixToNumericLhs</a>(<span class="keyword">const</span> bclib::matrix&lt;double&gt; &amp; intMat);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    Rcpp::NumericMatrix <a class="code" href="namespacelhs__r.html#a6d7b16d0c3998bd4aa98c30e9b8882c3">convertIntegerToNumericLhs</a>(<span class="keyword">const</span> <a class="code" href="classbclib_1_1matrix.html">bclib::matrix&lt;int&gt;</a> &amp; intMat);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    Rcpp::NumericMatrix <a class="code" href="namespacelhs__r.html#a1db21b2cc7f6e2665ab478be9c0a3856">convertMatrixToNumericLhs</a>(<span class="keyword">const</span> <a class="code" href="classbclib_1_1matrix.html">bclib::matrix&lt;double&gt;</a> &amp; intMat);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    Rcpp::IntegerVector <a class="code" href="namespacelhs__r.html#a3a2c4e900e333963faa84226446fdca1">runifint</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> n, <span class="keywordtype">int</span> min_int, <span class="keywordtype">int</span> max_int);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacelhs__r.html#ad068a6624c73a16af87218da7347e754">checkArguments</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> k);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacelhs__r.html#ad068a6624c73a16af87218da7347e754">checkArguments</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> dup);</div>
@@ -118,8 +119,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            {</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keyword">typename</span> Rcpp::Matrix&lt;RTYPE&gt;::Row rowi = mat.row(i);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="keyword">typename</span> Rcpp::Matrix&lt;RTYPE&gt;::Row rowj = mat.row(j);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="keywordtype">int</span> sum = Rcpp::sum((rowi - rowj) * (rowi - rowj));</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                result(i,j) = sqrt(static_cast&lt;double&gt;(sum));</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="keywordtype">double</span> sum = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(Rcpp::sum((rowi - rowj) * (rowi - rowj)));</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                result(i,j) = sqrt(sum);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            }</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">return</span> result;</div>
@@ -145,7 +146,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        }</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="keywordflow">throw</span> Rcpp::exception(<span class="stringliteral">&quot;problem with calculateSOptimal&quot;</span>);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;problem with calculateSOptimal&quot;</span>);</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        }</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
@@ -157,6 +158,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="namespacelhs__r_html_ad068a6624c73a16af87218da7347e754"><div class="ttname"><a href="namespacelhs__r.html#ad068a6624c73a16af87218da7347e754">lhs_r::checkArguments</a></div><div class="ttdeci">void checkArguments(int n, int k)</div><div class="ttdoc">check the arguments are valid </div><div class="ttdef"><b>Definition:</b> lhs_r_utilities.cpp:112</div></div>
 <div class="ttc" id="namespacelhs__r_html_a3a2c4e900e333963faa84226446fdca1"><div class="ttname"><a href="namespacelhs__r.html#a3a2c4e900e333963faa84226446fdca1">lhs_r::runifint</a></div><div class="ttdeci">Rcpp::IntegerVector runifint(unsigned int n, int min_int, int max_int)</div><div class="ttdoc">a uniform integer sample between min and max </div><div class="ttdef"><b>Definition:</b> lhs_r_utilities.cpp:97</div></div>
 <div class="ttc" id="_common_defines_8h_html"><div class="ttname"><a href="_common_defines_8h.html">CommonDefines.h</a></div></div>
+<div class="ttc" id="classbclib_1_1matrix_html"><div class="ttname"><a href="classbclib_1_1matrix.html">bclib::matrix</a></div><div class="ttdoc">Matrix Class. </div><div class="ttdef"><b>Definition:</b> matrix.h:43</div></div>
 <div class="ttc" id="namespacelhs__r_html_aa1ce6877e5ce6ed20551b599e3af7aa0"><div class="ttname"><a href="namespacelhs__r.html#aa1ce6877e5ce6ed20551b599e3af7aa0">lhs_r::calculateSOptimal</a></div><div class="ttdeci">double calculateSOptimal(Rcpp::Matrix&lt; RTYPE &gt; &amp;mat)</div><div class="ttdoc">calculate the S optimal criterion </div><div class="ttdef"><b>Definition:</b> lhs_r_utilities.h:116</div></div>
 <div class="ttc" id="namespacelhs__r_html_ab6646739c635c9fe8440f4a90261d1d9"><div class="ttname"><a href="namespacelhs__r.html#ab6646739c635c9fe8440f4a90261d1d9">lhs_r::degenerateCase</a></div><div class="ttdeci">Rcpp::NumericMatrix degenerateCase(int k)</div><div class="ttdoc">develop an lhs sample in the degenerate case </div><div class="ttdef"><b>Definition:</b> lhs_r_utilities.cpp:165</div></div>
 <div class="ttc" id="namespacelhs__r_html_a07b965bc93a70535feb91314885d2750"><div class="ttname"><a href="namespacelhs__r.html#a07b965bc93a70535feb91314885d2750">lhs_r::calculateDistance</a></div><div class="ttdeci">Rcpp::NumericMatrix calculateDistance(Rcpp::Matrix&lt; RTYPE &gt; &amp;mat)</div><div class="ttdoc">Calculate the distance between points in a matrix. </div><div class="ttdef"><b>Definition:</b> lhs_r_utilities.h:93</div></div>
@@ -164,7 +166,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 6 2014 17:03:08 for Latin Hypercube Sampling by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 25 2014 17:08:58 for Latin Hypercube Sampling by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

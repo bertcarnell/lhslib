@@ -251,49 +251,21 @@ RcppExport SEXP randomLHS_cpp(SEXP n, SEXP k, SEXP preserveDraw)
         {
             return lhs_r::degenerateCase(m_k);
         }
+        
+        lhs_r::RStandardUniform oRStandardUniform = lhs_r::RStandardUniform();
+        bclib::matrix<double> result = bclib::matrix<double>(m_n, m_k);
+        lhslib::randomLHS(m_n, m_k, bPreserveDraw, result, oRStandardUniform);
 
-        Rcpp::NumericMatrix result(m_n, m_k);
-        Rcpp::NumericVector randomunif1(m_n);
-        Rcpp::NumericVector randomunif2(m_n);
-        Rcpp::IntegerVector orderVector(n);
-
-        if (bPreserveDraw)
+        Rcpp::NumericMatrix rresult(m_n, m_k);
+        for (int irow = 0; irow < m_n; irow++)
         {
             for (int jcol = 0; jcol < m_k; jcol++)
             {
-                randomunif1 = Rcpp::runif(m_n);
-                randomunif2 = Rcpp::runif(m_n);
-                lhs_r::findorder_zero(randomunif1, orderVector);
-                for (int irow = 0; irow < m_n; irow++)
-                {
-                    result(irow,jcol) = orderVector[irow] + randomunif2[irow];
-                    result(irow,jcol) /= static_cast<double>(m_n);
-                }
+                rresult(irow, jcol) = result(irow, jcol);
             }
         }
-        else
-        {
-            for (int jcol = 0; jcol < m_k; jcol++)
-            {
-                randomunif1 = Rcpp::runif(m_n);
-                lhs_r::findorder_zero(randomunif1, orderVector);
-                for (int irow = 0; irow < m_n; irow++)
-                {
-                    result(irow,jcol) = orderVector[irow];
-                }
-            }
-            randomunif2 = Rcpp::runif(m_n*m_k);
-            Rcpp::NumericMatrix randomMatrix(m_n, m_k, randomunif2.begin());
-            for (int jcol = 0; jcol < m_k; jcol++)
-            {
-                for (int irow = 0; irow < m_n; irow++)
-                {
-                    result(irow,jcol) += randomMatrix(irow,jcol);
-                    result(irow,jcol) /= static_cast<double>(m_n);
-                }
-            }
-        }
-        return result;
+
+        return rresult;
     }
     catch (Rcpp::not_compatible & nc)
     {
@@ -377,7 +349,7 @@ RcppExport SEXP geneticLHS_cpp(SEXP /*int*/ n, SEXP /*int*/ k, SEXP /*int*/ pop,
         std::vector<Rcpp::IntegerMatrix> J;
         for (int v = 0; v < m_gen; v++)
         {
-            B <- Rcpp::NumericVector(m_pop);
+            B = Rcpp::NumericVector(m_pop);
             for (int i = 0; i < m_pop; i++)
             {
                 if (m_criterium == "S")

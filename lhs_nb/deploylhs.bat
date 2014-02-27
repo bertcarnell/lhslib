@@ -4,7 +4,7 @@ echo off
 set CYGWIN=nodosfilewarning
 :: Deploy to lhs repository at r-forge.r-project.org
 :: change this destination to match your path
-set DESTINATION=C:\Users\carnellr\Documents\Repositories\lhs\admin\pkg\lhs\src
+set DESTINATION=F:\Repositories\lhs\pkg\lhs\src
 :: dos2unix
 set DOS2UNIX="C:\MinGW\msys\1.0\bin\dos2unix.exe"
 

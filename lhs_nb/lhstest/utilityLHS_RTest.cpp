@@ -26,9 +26,14 @@ namespace lhsTest{
 		printf("\tutilityLHS_RTest...");
 		testLhsCheck();
 		testRank();
-		testRankColumns();
 		testLhsPrint();
 		testSumInvDistance();
+        testCalculateDistance();
+        testCalculateSOptimal();
+        testInitializeAvailableMatrix();
+        testCopyMatrix();
+        testRunif_std();
+        testRunifint();
 		printf("passed\n");
 	}
 
@@ -57,7 +62,7 @@ namespace lhsTest{
         }
 
 		std::vector<int> d = std::vector<int>(5);
-        lhslib::rank(a, d);
+        lhslib::rank<double>(a, d);
 
 		int expected[5] = {4, 1, 3, 2, 0};
 		for (int i = 0; i < 5; i++)
@@ -72,7 +77,7 @@ namespace lhsTest{
 			e[i] = f[i];
         }
 
-		lhslib::rank(e, d);
+		lhslib::rank<double>(e, d);
 
 		int expected2[5] = {4, 1, 1, 3, 0};
 		for (int i = 0; i < 5; i++)
@@ -81,28 +86,24 @@ namespace lhsTest{
         }
 	}
 
-	void utilityLHSTest::testRankColumns()
-	{
-		std::vector<double> a = std::vector<double>(10);
-		double b[10] = {.1, .4, .2, .3, .5, .11, .12, .15, .14, .13};
-		for (int i = 0; i < 10; i++)
-        {
-			a[i] = b[i];
-        }
-
-		std::vector<int> d = std::vector<int>(10);
-        lhslib::rankColumns(a, d, 5);
-
-		int expected[10] = {0, 2, 3, 1, 4, 0, 1, 4, 3, 2};
-		for (int i = 0; i < 10; i++)
-        {
-			bclib::Assert(d[i] == expected[i], "failed 6");
-        }
-	}
-
 	void utilityLHSTest::testLhsPrint()
 	{
 	}
+    
+    void utilityLHSTest::testInitializeAvailableMatrix()
+    {
+        bclib::matrix<int> A = bclib::matrix<int>(4,5);
+        lhslib::initializeAvailableMatrix(A);
+        
+        std::vector<int> col;
+        for (bclib::matrix<int>::size_type jcol = 0; jcol < A.colsize(); jcol++)
+        {
+            for (bclib::matrix<int>::size_type irow = 0; irow < A.rowsize(); irow++)
+            {
+                bclib::Assert(jcol+1, A(irow, jcol));
+            }
+        }
+    }
 
 	void utilityLHSTest::testSumInvDistance()
 	{
@@ -110,7 +111,119 @@ namespace lhsTest{
         bclib::matrix<double> A = bclib::matrix<double>(3, 3, a);
         double expectedSum = 1.0/sqrt(3.0)+1.0/sqrt(12.0)+1.0/sqrt(27.0);
         
-        double test = lhslib::sumInvDistance(A);
-        bclib::AssertEqualsLRE(expectedSum, test, 6, "failed in testSumInvDistance");
+        double test = lhslib::sumInvDistance<double>(A);
+        bclib::AssertEqualsLRE(expectedSum, test, 12, "failed in testSumInvDistance");
+        test = lhslib::sumInvDistance_deprecated<double>(A);
+        bclib::AssertEqualsLRE(expectedSum, test, 12, "failed in testSumInvDistance");
+
+        int b[9] = {1, 1, 1, 2, 2, 2, 4, 4, 4};
+        bclib::matrix<int> B = bclib::matrix<int>(3, 3, b);
+        expectedSum = 1.0/sqrt(3.0)+1.0/sqrt(12.0)+1.0/sqrt(27.0);
+        
+        test = lhslib::sumInvDistance<int>(B);
+        bclib::AssertEqualsLRE(expectedSum, test, 12, "failed in testSumInvDistance");
+        test = lhslib::sumInvDistance_deprecated<int>(B);
+        bclib::AssertEqualsLRE(expectedSum, test, 12, "failed in testSumInvDistance");
+
+        std::vector<int> A1 = {1,2,3,4,5,6,7,8,9};
+        bclib::matrix<int> B1 = bclib::matrix<int>(3, 3, A1);
+        bclib::matrix<double> B1dist = bclib::matrix<double>(3,3);
+        lhslib::calculateDistance<int>(B1, B1dist);
+        double expected = 1.0 / sqrt(3*3+3*3+3*3) + 1.0 / sqrt(6*6+6*6+6*6) + 1.0 / sqrt(3*3+3*3+3*3);
+        double actual = lhslib::sumInvDistance<int>(B1);
+        double actual2 = lhslib::sumInvDistance<int>(B1);
+        bclib::AssertEqualsLRE(expected, actual, 12);
+        bclib::AssertEqualsLRE(expected, actual2, 12);
+        bclib::AssertEqualsLRE(actual, actual2, 12);
 	}
+    
+    void utilityLHSTest::testCalculateDistance()
+    {
+        // two vectors
+        std::vector<int> A = {1, 2, 3, 4, 5, 6};
+        std::vector<int> H = {10, 10, 10, 10, 10, 10};
+        int dist = lhslib::calculateDistanceSquared<int>(A, H);
+        bclib::Assert(81+64+49+36+25+16, dist);
+        
+        std::vector<int> G = {1, 2, 3};
+        ASSERT_THROW(lhslib::calculateDistanceSquared<int>(A, G));
+        
+        // a matrix
+        std::vector<int> Bin = {1,2,3,4,5,6,7,8,9};
+        bclib::matrix<int> B = bclib::matrix<int>(3, 3, Bin);
+        bclib::matrix<double> Bdist = bclib::matrix<double>(3,3);
+        lhslib::calculateDistance<int>(B, Bdist);
+        bclib::Assert(0.0, Bdist(0,0), 1E-12);
+        bclib::Assert(0.0, Bdist(1,1), 1E-12);
+        bclib::Assert(0.0, Bdist(2,2), 1E-12);
+        bclib::AssertEqualsLRE(sqrt(3*3+3*3+3*3), Bdist(0,1), 12);
+        bclib::AssertEqualsLRE(sqrt(6*6+6*6+6*6), Bdist(0,2), 12);
+        bclib::AssertEqualsLRE(sqrt(3*3+3*3+3*3), Bdist(1,2), 12);
+    }
+    
+    void utilityLHSTest::testCalculateSOptimal()
+    {
+        std::vector<int> A = {1,2,3,4,5,6,7,8,9};
+        bclib::matrix<int> B = bclib::matrix<int>(3, 3, A);
+        bclib::matrix<double> Bdist = bclib::matrix<double>(3,3);
+        lhslib::calculateDistance<int>(B, Bdist);
+        double expected = 1.0/(1.0 / sqrt(3*3+3*3+3*3) + 1.0 / sqrt(6*6+6*6+6*6) + 1.0 / sqrt(3*3+3*3+3*3));
+        double actual = lhslib::calculateSOptimal<int>(B);
+        bclib::AssertEqualsLRE(expected, actual, 12);
+    }
+    
+    void utilityLHSTest::testCopyMatrix()
+    {
+        std::vector<int> A = {1,2,3,4,5,6,7,8,9,10};
+        bclib::matrix<int> B = bclib::matrix<int>(2, 5, A);
+        std::vector<int> E = {11,11,11,11,11,11,11,11,11,11};
+        bclib::matrix<int> F = bclib::matrix<int>(2, 5, E);
+        lhslib::copyMatrix<int>(F, B);
+    }
+    
+    void utilityLHSTest::testRunif_std()
+    {
+        lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
+        oRandom.setSeed(1000,2000);
+        
+        std::vector<double> A = std::vector<double>(10u);
+        lhslib::runif_std(10u, A, oRandom);
+        
+        std::vector<double>::iterator it = std::max_element(A.begin(), A.end());
+        bclib::Assert(*it < 1.0);
+        it = std::min_element(A.begin(), A.end());
+        bclib::Assert(*it > 0.0);
+        
+    }
+    
+    void utilityLHSTest::testRunifint()
+    {
+        std::vector<int> A = std::vector<int>(1000u);
+        lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
+        oRandom.setSeed(1100,2100);
+        lhslib::runifint<int>(1000u, 3, 9, A, oRandom);
+        std::vector<int>::iterator it = std::min_element(A.begin(), A.end());
+        bclib::Assert(*it, 3);
+        it = std::max_element(A.begin(), A.end());
+        bclib::Assert(*it, 9);
+        
+        lhslib::runifint<int>(1000u, 0, 1, A, oRandom);
+        it = std::min_element(A.begin(), A.end());
+        bclib::Assert(*it, 0);
+        it = std::max_element(A.begin(), A.end());
+        bclib::Assert(*it, 1);
+
+        lhslib::runifint<int>(1000u, -10, 10, A, oRandom);
+        it = std::min_element(A.begin(), A.end());
+        bclib::Assert(*it, -10);
+        it = std::max_element(A.begin(), A.end());
+        bclib::Assert(*it, 10);
+        
+        int temp = 0;
+        for (int i = 0; i < 100; i++)
+        {
+            lhslib::runifint<int>(3, 9, &temp, oRandom);
+            bclib::Assert(temp >= 3 && temp <= 9);
+        }
+    }
 }

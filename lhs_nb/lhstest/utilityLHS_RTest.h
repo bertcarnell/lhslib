@@ -49,10 +49,6 @@ namespace lhsTest {
          */
 		void testRank();
         /** 
-         * Test rankColumns 
-         */
-		void testRankColumns();
-        /** 
          * Test lhsPrint 
          */
 		void testLhsPrint();
@@ -60,5 +56,11 @@ namespace lhsTest {
          * Test sumInvDistance 
          */
 		void testSumInvDistance();
+        void testCalculateDistance();
+        void testCalculateSOptimal();
+        void testInitializeAvailableMatrix();
+        void testCopyMatrix();
+        void testRunif_std();
+        void testRunifint();
 	};
 }

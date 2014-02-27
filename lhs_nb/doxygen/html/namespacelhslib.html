@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -102,10 +103,14 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlhslib_1_1_c_random_standard_uniform.html">CRandomStandardUniform</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">random numbers from a standard uniform distribution  <a href="classlhslib_1_1_c_random_standard_uniform.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlhslib_1_1square_difference.html">squareDifference</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlhslib_1_1invert.html">invert</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:aba3390cdfd1c0921a2afd4877ae2694a"><td class="memItemLeft" align="right" valign="top">typedef bclib::matrix&lt; int &gt;<br class="typebreak"/>
+<tr class="memitem:aba3390cdfd1c0921a2afd4877ae2694a"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; int &gt;<br class="typebreak"/>
 ::size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#aba3390cdfd1c0921a2afd4877ae2694a">msize_type</a></td></tr>
 <tr class="memdesc:aba3390cdfd1c0921a2afd4877ae2694a"><td class="mdescLeft">&#160;</td><td class="mdescRight">type of size type for use with bclib::matrix&lt;T&gt;  <a href="#aba3390cdfd1c0921a2afd4877ae2694a">More...</a><br/></td></tr>
 <tr class="separator:aba3390cdfd1c0921a2afd4877ae2694a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,42 +121,78 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1bcea72bb643189e251f3573f40f95a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a1bcea72bb643189e251f3573f40f95a7">improvedLHS</a> (int n, int k, int dup, bclib::matrix&lt; int &gt; &amp;result, <a class="el" href="classlhslib_1_1_c_random.html">CRandom</a>&lt; double &gt; &amp;oRandom)</td></tr>
+<tr class="memitem:a1bcea72bb643189e251f3573f40f95a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a1bcea72bb643189e251f3573f40f95a7">improvedLHS</a> (int n, int k, int dup, <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; int &gt; &amp;result, <a class="el" href="classlhslib_1_1_c_random.html">CRandom</a>&lt; double &gt; &amp;oRandom)</td></tr>
 <tr class="memdesc:a1bcea72bb643189e251f3573f40f95a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Improved Latin hypercube sample algorithm.  <a href="#a1bcea72bb643189e251f3573f40f95a7">More...</a><br/></td></tr>
 <tr class="separator:a1bcea72bb643189e251f3573f40f95a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5ace7050d4c2e53ba6bf40b43fe94fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#ac5ace7050d4c2e53ba6bf40b43fe94fd">maximinLHS</a> (int n, int k, int dup, bclib::matrix&lt; int &gt; &amp;result, <a class="el" href="classlhslib_1_1_c_random.html">CRandom</a>&lt; double &gt; &amp;oRandom)</td></tr>
+<tr class="memitem:ac5ace7050d4c2e53ba6bf40b43fe94fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#ac5ace7050d4c2e53ba6bf40b43fe94fd">maximinLHS</a> (int n, int k, int dup, <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; int &gt; &amp;result, <a class="el" href="classlhslib_1_1_c_random.html">CRandom</a>&lt; double &gt; &amp;oRandom)</td></tr>
 <tr class="memdesc:ac5ace7050d4c2e53ba6bf40b43fe94fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Latin hypercube sample algorithm with maximin criterion.  <a href="#ac5ace7050d4c2e53ba6bf40b43fe94fd">More...</a><br/></td></tr>
 <tr class="separator:ac5ace7050d4c2e53ba6bf40b43fe94fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38e8e0204db3ded54b28fd5ff7b8dcc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a38e8e0204db3ded54b28fd5ff7b8dcc4">optimumLHS</a> (int n, int k, int maxSweeps, double eps, bclib::matrix&lt; int &gt; &amp;outlhs, int optimalityRecordLength, <a class="el" href="classlhslib_1_1_c_random.html">CRandom</a>&lt; double &gt; &amp;oRandom, bool bVerbose)</td></tr>
+<tr class="memitem:a38e8e0204db3ded54b28fd5ff7b8dcc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a38e8e0204db3ded54b28fd5ff7b8dcc4">optimumLHS</a> (int n, int k, int maxSweeps, double eps, <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; int &gt; &amp;outlhs, int optimalityRecordLength, <a class="el" href="classlhslib_1_1_c_random.html">CRandom</a>&lt; double &gt; &amp;oRandom, bool bVerbose)</td></tr>
 <tr class="memdesc:a38e8e0204db3ded54b28fd5ff7b8dcc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimum Latin hypercube sample algorithm.  <a href="#a38e8e0204db3ded54b28fd5ff7b8dcc4">More...</a><br/></td></tr>
 <tr class="separator:a38e8e0204db3ded54b28fd5ff7b8dcc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63325b1013d30cee42bb04ea7bb8bb2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a63325b1013d30cee42bb04ea7bb8bb2e">optSeededLHS</a> (int n, int k, int maxSweeps, double eps, bclib::matrix&lt; double &gt; &amp;pOld, int JLen, bool bVerbose)</td></tr>
+<tr class="memitem:a63325b1013d30cee42bb04ea7bb8bb2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a63325b1013d30cee42bb04ea7bb8bb2e">optSeededLHS</a> (int n, int k, int maxSweeps, double eps, <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; double &gt; &amp;pOld, int JLen, bool bVerbose)</td></tr>
 <tr class="memdesc:a63325b1013d30cee42bb04ea7bb8bb2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Application of the optimum lhs method to a seeded Latin hypercube.  <a href="#a63325b1013d30cee42bb04ea7bb8bb2e">More...</a><br/></td></tr>
 <tr class="separator:a63325b1013d30cee42bb04ea7bb8bb2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7af77ed0b838f98395f503483b7e29b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a7af77ed0b838f98395f503483b7e29b4">isValidLHS</a> (const bclib::matrix&lt; int &gt; &amp;result)</td></tr>
+<tr class="memitem:aeabc32263e6017814fb1f8d0837f4cf6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeabc32263e6017814fb1f8d0837f4cf6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>randomLHS</b> (int n, int k, bool bPreserveDraw, <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; double &gt; &amp;result, <a class="el" href="classlhslib_1_1_c_random.html">CRandom</a>&lt; double &gt; &amp;oRandom)</td></tr>
+<tr class="separator:aeabc32263e6017814fb1f8d0837f4cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3b077069f7ceab7bf04166c80b86cc6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad3b077069f7ceab7bf04166c80b86cc6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>geneticLHS</b> (int n, int k, int pop, int gen, double pMut, std::string criterium, bool bVerbose, <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; double &gt; &amp;result, <a class="el" href="classlhslib_1_1_c_random.html">CRandom</a>&lt; double &gt; &amp;oRandom)</td></tr>
+<tr class="separator:ad3b077069f7ceab7bf04166c80b86cc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7af77ed0b838f98395f503483b7e29b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a7af77ed0b838f98395f503483b7e29b4">isValidLHS</a> (const <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; int &gt; &amp;result)</td></tr>
 <tr class="memdesc:a7af77ed0b838f98395f503483b7e29b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">check to determine of an lhs is valid.  <a href="#a7af77ed0b838f98395f503483b7e29b4">More...</a><br/></td></tr>
 <tr class="separator:a7af77ed0b838f98395f503483b7e29b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa14d40079c23858001cc7fc99064c4b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#aa14d40079c23858001cc7fc99064c4b3">rank</a> (std::vector&lt; double &gt; &amp;toRank, std::vector&lt; int &gt; &amp;ranks)</td></tr>
-<tr class="memdesc:aa14d40079c23858001cc7fc99064c4b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">rank a vector of doubles  <a href="#aa14d40079c23858001cc7fc99064c4b3">More...</a><br/></td></tr>
-<tr class="separator:aa14d40079c23858001cc7fc99064c4b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3129829c9a2e9980bcb464f2ee7dae66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a3129829c9a2e9980bcb464f2ee7dae66">rankColumns</a> (std::vector&lt; double &gt; &amp;toRank, std::vector&lt; int &gt; &amp;ranks, int nrow)</td></tr>
-<tr class="memdesc:a3129829c9a2e9980bcb464f2ee7dae66"><td class="mdescLeft">&#160;</td><td class="mdescRight">rank columns  <a href="#a3129829c9a2e9980bcb464f2ee7dae66">More...</a><br/></td></tr>
-<tr class="separator:a3129829c9a2e9980bcb464f2ee7dae66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a464d4a440a7a7361440a58c58369a8e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a464d4a440a7a7361440a58c58369a8e2">initializeAvailableMatrix</a> (bclib::matrix&lt; int &gt; &amp;avail)</td></tr>
+<tr class="memitem:a464d4a440a7a7361440a58c58369a8e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a464d4a440a7a7361440a58c58369a8e2">initializeAvailableMatrix</a> (<a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; int &gt; &amp;avail)</td></tr>
 <tr class="memdesc:a464d4a440a7a7361440a58c58369a8e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the matrix of available points.  <a href="#a464d4a440a7a7361440a58c58369a8e2">More...</a><br/></td></tr>
 <tr class="separator:a464d4a440a7a7361440a58c58369a8e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31cef924adb5147873603a385f3f4fc1"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a31cef924adb5147873603a385f3f4fc1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a31cef924adb5147873603a385f3f4fc1">rank</a> (const std::vector&lt; T &gt; &amp;toRank, std::vector&lt; int &gt; &amp;ranks)</td></tr>
+<tr class="memdesc:a31cef924adb5147873603a385f3f4fc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">rank a vector of doubles  <a href="#a31cef924adb5147873603a385f3f4fc1">More...</a><br/></td></tr>
+<tr class="separator:a31cef924adb5147873603a385f3f4fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a793c71745d3c15f78164bb8063d1bfda"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a793c71745d3c15f78164bb8063d1bfda"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a793c71745d3c15f78164bb8063d1bfda">lhsPrint</a> (const bclib::matrix&lt; T &gt; &amp;A)</td></tr>
+<tr class="memitem:a793c71745d3c15f78164bb8063d1bfda"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a793c71745d3c15f78164bb8063d1bfda">lhsPrint</a> (const <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; T &gt; &amp;A)</td></tr>
 <tr class="memdesc:a793c71745d3c15f78164bb8063d1bfda"><td class="mdescLeft">&#160;</td><td class="mdescRight">print the Latin hypercube sample  <a href="#a793c71745d3c15f78164bb8063d1bfda">More...</a><br/></td></tr>
 <tr class="separator:a793c71745d3c15f78164bb8063d1bfda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b0d34638b3b4dfc2c4b7a022357cbad"><td class="memTemplParams" colspan="2"><a class="anchor" id="a2b0d34638b3b4dfc2c4b7a022357cbad"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a2b0d34638b3b4dfc2c4b7a022357cbad"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>calculateDistanceSquared</b> (const std::vector&lt; T &gt; A, const std::vector&lt; T &gt; B)</td></tr>
+<tr class="separator:a2b0d34638b3b4dfc2c4b7a022357cbad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa2079f5ddf6af8503a7668d407d7edd"><td class="memTemplParams" colspan="2"><a class="anchor" id="afa2079f5ddf6af8503a7668d407d7edd"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:afa2079f5ddf6af8503a7668d407d7edd"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>calculateDistanceSquared</b> (const std::iterator Abegin, const std::iterator Aend, const std::iterator Bbegin)</td></tr>
+<tr class="separator:afa2079f5ddf6af8503a7668d407d7edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6787a23ff595bf60279354bb50e49fcd"><td class="memTemplParams" colspan="2"><a class="anchor" id="a6787a23ff595bf60279354bb50e49fcd"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a6787a23ff595bf60279354bb50e49fcd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>calculateDistance</b> (const <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; T &gt; &amp;mat, <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; double &gt; &amp;result)</td></tr>
+<tr class="separator:a6787a23ff595bf60279354bb50e49fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8608058b6189b953da2191341f8bf23"><td class="memTemplParams" colspan="2"><a class="anchor" id="ae8608058b6189b953da2191341f8bf23"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:ae8608058b6189b953da2191341f8bf23"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><b>sumInvDistanceTest</b> (const <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; T &gt; &amp;A)</td></tr>
+<tr class="separator:ae8608058b6189b953da2191341f8bf23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dcf0728b1805c06afe150461c86a5e2"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a8dcf0728b1805c06afe150461c86a5e2"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a8dcf0728b1805c06afe150461c86a5e2">sumInvDistance</a> (const bclib::matrix&lt; T &gt; &amp;A)</td></tr>
+<tr class="memitem:a8dcf0728b1805c06afe150461c86a5e2"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a8dcf0728b1805c06afe150461c86a5e2">sumInvDistance</a> (const <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; T &gt; &amp;A)</td></tr>
 <tr class="memdesc:a8dcf0728b1805c06afe150461c86a5e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sum of the inverse distance between points.  <a href="#a8dcf0728b1805c06afe150461c86a5e2">More...</a><br/></td></tr>
 <tr class="separator:a8dcf0728b1805c06afe150461c86a5e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a897a59d76ad6177aa753f52167f6811e"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a897a59d76ad6177aa753f52167f6811e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a897a59d76ad6177aa753f52167f6811e">copyMatrix</a> (bclib::matrix&lt; T &gt; &amp;copyTo, const bclib::matrix&lt; T &gt; &amp;copyFrom)</td></tr>
+<tr class="memitem:a897a59d76ad6177aa753f52167f6811e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a897a59d76ad6177aa753f52167f6811e">copyMatrix</a> (<a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; T &gt; &amp;copyTo, const <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; T &gt; &amp;copyFrom)</td></tr>
 <tr class="memdesc:a897a59d76ad6177aa753f52167f6811e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a matrix.  <a href="#a897a59d76ad6177aa753f52167f6811e">More...</a><br/></td></tr>
 <tr class="separator:a897a59d76ad6177aa753f52167f6811e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cd1542e9860230f6ca3593d951a3267"><td class="memTemplParams" colspan="2"><a class="anchor" id="a1cd1542e9860230f6ca3593d951a3267"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a1cd1542e9860230f6ca3593d951a3267"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><b>calculateSOptimal</b> (const <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; T &gt; &amp;mat)</td></tr>
+<tr class="separator:a1cd1542e9860230f6ca3593d951a3267"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f679357cab133596cd0d1f156e3e323"><td class="memTemplParams" colspan="2"><a class="anchor" id="a2f679357cab133596cd0d1f156e3e323"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a2f679357cab133596cd0d1f156e3e323"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>runif_std</b> (unsigned int n, std::vector&lt; T &gt; &amp;output, <a class="el" href="classlhslib_1_1_c_random.html">CRandom</a>&lt; T &gt; oRandom)</td></tr>
+<tr class="separator:a2f679357cab133596cd0d1f156e3e323"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62126257e10b53fcf75d309f9624ee09"><td class="memTemplParams" colspan="2"><a class="anchor" id="a62126257e10b53fcf75d309f9624ee09"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a62126257e10b53fcf75d309f9624ee09"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>runifint</b> (unsigned int n, T min, T max, std::vector&lt; T &gt; &amp;output, <a class="el" href="classlhslib_1_1_c_random.html">CRandom</a>&lt; double &gt; oRandom)</td></tr>
+<tr class="separator:a62126257e10b53fcf75d309f9624ee09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fdfb56665cd98a93abc997340f297c1"><td class="memTemplParams" colspan="2"><a class="anchor" id="a5fdfb56665cd98a93abc997340f297c1"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a5fdfb56665cd98a93abc997340f297c1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>runifint</b> (T min, T max, T *output, <a class="el" href="classlhslib_1_1_c_random.html">CRandom</a>&lt; double &gt; oRandom)</td></tr>
+<tr class="separator:a5fdfb56665cd98a93abc997340f297c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>LHS c++ Library namespace. </p>
@@ -161,7 +202,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef bclib::matrix&lt;int&gt;::size_type <a class="el" href="namespacelhslib.html#aba3390cdfd1c0921a2afd4877ae2694a">lhslib::msize_type</a></td>
+          <td class="memname">typedef <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt;int&gt;::size_type <a class="el" href="namespacelhslib.html#aba3390cdfd1c0921a2afd4877ae2694a">lhslib::msize_type</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -196,13 +237,13 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">void lhslib::copyMatrix </td>
           <td>(</td>
-          <td class="paramtype">bclib::matrix&lt; T &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>copyTo</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const bclib::matrix&lt; T &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>copyFrom</em>&#160;</td>
         </tr>
         <tr>
@@ -216,7 +257,7 @@ template&lt;class T &gt; </div>
 <p>Copy a matrix. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">copyTo</td><td>the matrix to oopy to </td></tr>
+    <tr><td class="paramname">copyTo</td><td>the matrix to copy to </td></tr>
     <tr><td class="paramname">copyFrom</td><td>the matrix to copy from </td></tr>
   </table>
   </dd>
@@ -249,7 +290,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bclib::matrix&lt; int &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; int &gt; &amp;&#160;</td>
           <td class="paramname"><em>result</em>, </td>
         </tr>
         <tr>
@@ -292,7 +333,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">void lhslib::initializeAvailableMatrix </td>
           <td>(</td>
-          <td class="paramtype">bclib::matrix&lt; int &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; int &gt; &amp;&#160;</td>
           <td class="paramname"><em>avail</em></td><td>)</td>
           <td></td>
         </tr>
@@ -316,7 +357,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">bool lhslib::isValidLHS </td>
           <td>(</td>
-          <td class="paramtype">const bclib::matrix&lt; int &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; int &gt; &amp;&#160;</td>
           <td class="paramname"><em>result</em></td><td>)</td>
           <td></td>
         </tr>
@@ -353,7 +394,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">void lhslib::lhsPrint </td>
           <td>(</td>
-          <td class="paramtype">const bclib::matrix&lt; T &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em></td><td>)</td>
           <td></td>
         </tr>
@@ -396,7 +437,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bclib::matrix&lt; int &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; int &gt; &amp;&#160;</td>
           <td class="paramname"><em>result</em>, </td>
         </tr>
         <tr>
@@ -458,7 +499,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bclib::matrix&lt; int &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; int &gt; &amp;&#160;</td>
           <td class="paramname"><em>outlhs</em>, </td>
         </tr>
         <tr>
@@ -535,7 +576,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bclib::matrix&lt; double &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; double &gt; &amp;&#160;</td>
           <td class="paramname"><em>pOld</em>, </td>
         </tr>
         <tr>
@@ -574,14 +615,16 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="aa14d40079c23858001cc7fc99064c4b3"></a>
+<a class="anchor" id="a31cef924adb5147873603a385f3f4fc1"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void lhslib::rank </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>toRank</em>, </td>
         </tr>
         <tr>
@@ -609,48 +652,6 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a3129829c9a2e9980bcb464f2ee7dae66"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lhslib::rankColumns </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; double &gt; &amp;&#160;</td>
-          <td class="paramname"><em>toRank</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; int &gt; &amp;&#160;</td>
-          <td class="paramname"><em>ranks</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>nrow</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>rank columns </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">toRank</td><td>the vector of values to rank </td></tr>
-    <tr><td class="paramname">ranks</td><td>the ranks of the vector of values </td></tr>
-    <tr><td class="paramname">nrow</td><td>the row that is being operated on </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a class="anchor" id="a8dcf0728b1805c06afe150461c86a5e2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -660,7 +661,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">double lhslib::sumInvDistance </td>
           <td>(</td>
-          <td class="paramtype">const bclib::matrix&lt; T &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em></td><td>)</td>
           <td></td>
         </tr>
@@ -681,7 +682,7 @@ template&lt;class T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 6 2014 17:03:09 for Latin Hypercube Sampling by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 25 2014 17:08:59 for Latin Hypercube Sampling by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

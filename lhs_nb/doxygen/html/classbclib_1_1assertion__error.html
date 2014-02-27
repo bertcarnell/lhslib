@@ -74,7 +74,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>bclib</b></li><li class="navelem"><a class="el" href="classbclib_1_1assertion__error.html">assertion_error</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacebclib.html">bclib</a></li><li class="navelem"><a class="el" href="classbclib_1_1assertion__error.html">assertion_error</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -96,6 +96,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">bclib::assertion_error Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>a class to create assertion errors  
+ <a href="classbclib_1_1assertion__error.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="simple_assert_8h_source.html">simpleAssert.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for bclib::assertion_error:</div>
 <div class="dyncontent">
@@ -107,18 +112,26 @@ Inheritance diagram for bclib::assertion_error:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ace47425eaf774c04caf93a073eaab38a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbclib_1_1assertion__error.html#ace47425eaf774c04caf93a073eaab38a">assertion_error</a> (const std::string &amp;arg)</td></tr>
-<tr class="memdesc:ace47425eaf774c04caf93a073eaab38a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes a character string describing the error.  <a href="#ace47425eaf774c04caf93a073eaab38a">More...</a><br/></td></tr>
+<tr class="memitem:ace47425eaf774c04caf93a073eaab38a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ace47425eaf774c04caf93a073eaab38a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbclib_1_1assertion__error.html#ace47425eaf774c04caf93a073eaab38a">assertion_error</a> (const std::string &amp;arg)</td></tr>
+<tr class="memdesc:ace47425eaf774c04caf93a073eaab38a"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor <br/></td></tr>
 <tr class="separator:ace47425eaf774c04caf93a073eaab38a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c5edfc1b225b63790f944a1d012437e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c5edfc1b225b63790f944a1d012437e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>assertion_error</b> (const char *arg)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbclib_1_1assertion__error.html#a7c5edfc1b225b63790f944a1d012437e">assertion_error</a> (const char *arg)</td></tr>
+<tr class="memdesc:a7c5edfc1b225b63790f944a1d012437e"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor <br/></td></tr>
 <tr class="separator:a7c5edfc1b225b63790f944a1d012437e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15591c0680bb688f5e1987a11e62aef6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a15591c0680bb688f5e1987a11e62aef6"></a>
-const char *&#160;</td><td class="memItemRight" valign="bottom"><b>what</b> () const   throw ()</td></tr>
+<tr class="memitem:a249937450feeba1e8c2957d5b6718137"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a249937450feeba1e8c2957d5b6718137"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbclib_1_1assertion__error.html#a249937450feeba1e8c2957d5b6718137">~assertion_error</a> ()  throw ()</td></tr>
+<tr class="memdesc:a249937450feeba1e8c2957d5b6718137"><td class="mdescLeft">&#160;</td><td class="mdescRight">destructor <br/></td></tr>
+<tr class="separator:a249937450feeba1e8c2957d5b6718137"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15591c0680bb688f5e1987a11e62aef6"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbclib_1_1assertion__error.html#a15591c0680bb688f5e1987a11e62aef6">what</a> () const   throw ()</td></tr>
+<tr class="memdesc:a15591c0680bb688f5e1987a11e62aef6"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the message associated with the exception  <a href="#a15591c0680bb688f5e1987a11e62aef6">More...</a><br/></td></tr>
 <tr class="separator:a15591c0680bb688f5e1987a11e62aef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ace47425eaf774c04caf93a073eaab38a"></a>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>a class to create assertion errors </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a15591c0680bb688f5e1987a11e62aef6"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -126,21 +139,27 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>what</b> () c
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bclib::assertion_error::assertion_error </td>
+          <td class="memname">const char* bclib::assertion_error::what </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>arg</em></td><td>)</td>
-          <td></td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+        <tr>
+          <td align="right">throw </td><td>(</td><td colspan="2"></td>
+        </tr>
+        <tr>
+          <td align="right"></td><td>)</td><td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Takes a character string describing the error. </p>
+<p>return the message associated with the exception </p>
+<dl class="section return"><dt>Returns</dt><dd>the message </dd></dl>
 
 </div>
 </div>
@@ -150,7 +169,7 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>what</b> () c
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 6 2014 16:04:11 for Latin Hypercube Sampling by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 25 2014 17:08:58 for Latin Hypercube Sampling by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

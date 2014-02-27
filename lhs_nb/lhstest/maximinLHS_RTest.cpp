@@ -76,7 +76,7 @@ floor(4*maximinLHS(4,3,5))+1
 
         lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
         oRandom.setSeed(1976, 1968);
-        for (int i = 0; i < 10000; i++)
+        for (int i = 0; i < 50; i++)
         {
             lhslib::maximinLHS(n, k, DUP, result, oRandom);
         }

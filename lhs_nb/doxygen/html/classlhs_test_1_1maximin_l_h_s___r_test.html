@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -73,7 +74,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,6 +107,7 @@ Inheritance diagram for lhsTest::maximinLHS_RTest:</div>
  <div class="center">
   <img src="classlhs_test_1_1maximin_l_h_s___r_test.png" usemap="#lhsTest::maximinLHS_RTest_map" alt=""/>
   <map id="lhsTest::maximinLHS_RTest_map" name="lhsTest::maximinLHS_RTest_map">
+<area href="classbclib_1_1_test_class.html" title="A class used to derive unit test from. " alt="bclib::TestClass" shape="rect" coords="0,0,163,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -123,6 +125,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlhs_test_1_1maximin_l_h_s___r_test.html#a847d85bd44876f20be68f5e145f2c88f">testStress</a> ()</td></tr>
 <tr class="memdesc:a847d85bd44876f20be68f5e145f2c88f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test maximinLHS repeatedly. <br/></td></tr>
 <tr class="separator:a847d85bd44876f20be68f5e145f2c88f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_static_methods_classbclib_1_1_test_class"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classbclib_1_1_test_class')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classbclib_1_1_test_class.html">bclib::TestClass</a></td></tr>
+<tr class="memitem:a2cae37f046f4c7d88028840b06bc1c97 inherit pub_static_methods_classbclib_1_1_test_class"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbclib_1_1_test_class.html#a2cae37f046f4c7d88028840b06bc1c97">executeTests</a> (std::vector&lt; <a class="el" href="classbclib_1_1_test_class.html">TestClass</a> * &gt; tests)</td></tr>
+<tr class="memdesc:a2cae37f046f4c7d88028840b06bc1c97 inherit pub_static_methods_classbclib_1_1_test_class"><td class="mdescLeft">&#160;</td><td class="mdescRight">method used in the <a class="el" href="main_8cpp.html">main.cpp</a> to run unit test classes  <a href="#a2cae37f046f4c7d88028840b06bc1c97">More...</a><br/></td></tr>
+<tr class="separator:a2cae37f046f4c7d88028840b06bc1c97 inherit pub_static_methods_classbclib_1_1_test_class"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to test the maximinLHS methods. </p>
@@ -133,7 +142,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 6 2014 17:03:09 for Latin Hypercube Sampling by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 25 2014 17:08:59 for Latin Hypercube Sampling by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

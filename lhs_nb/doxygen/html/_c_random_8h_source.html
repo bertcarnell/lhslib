@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -121,35 +122,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classlhslib_1_1_c_random.html">   52</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classlhslib_1_1_c_random.html">CRandom</a></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">virtual</span> T <a class="code" href="classlhslib_1_1_c_random.html#ab31dba8a8ccc2ae9eb4106b0bae04c28">getNextRandom</a>() = 0;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    };</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classlhslib_1_1_c_random_standard_uniform.html">   65</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classlhslib_1_1_c_random_standard_uniform.html">CRandomStandardUniform</a> : <span class="keyword">public</span> <a class="code" href="classlhslib_1_1_c_random.html">CRandom</a>&lt;double&gt;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classlhslib_1_1_c_random_standard_uniform.html#ad819e9f4f1c6f439435511af46dd2401">   71</a></span>&#160;        <a class="code" href="classlhslib_1_1_c_random_standard_uniform.html#ad819e9f4f1c6f439435511af46dd2401">CRandomStandardUniform</a>(){m_i1 = 1234; m_i2 = 5678;};</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classlhslib_1_1_c_random_standard_uniform.html#ac1a3760af711a22e65c40b0e0a30bd0a">getNextRandom</a>();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classlhslib_1_1_c_random_standard_uniform.html#ae07b01da6a32315c20f9bef678708a1a">setSeed</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i1, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i2);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classlhslib_1_1_c_random_standard_uniform.html#a6582b4b45c66554fb23c32bf19e9cf3b">getSeed</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *i1, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *i2);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_i1;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_i2;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    };</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* CRANDOM_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classlhslib_1_1_c_random.html#a2d3b153a8fa8707e6a68a3cfea32d69e">   59</a></span>&#160;        <span class="keyword">virtual</span> T <a class="code" href="classlhslib_1_1_c_random.html#a2d3b153a8fa8707e6a68a3cfea32d69e">getNextRandom</a>()</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(0);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        };</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    };</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classlhslib_1_1_c_random_standard_uniform.html">   68</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classlhslib_1_1_c_random_standard_uniform.html">CRandomStandardUniform</a> : <span class="keyword">public</span> <a class="code" href="classlhslib_1_1_c_random.html">CRandom</a>&lt;double&gt;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classlhslib_1_1_c_random_standard_uniform.html#ad819e9f4f1c6f439435511af46dd2401">   74</a></span>&#160;        <a class="code" href="classlhslib_1_1_c_random_standard_uniform.html#ad819e9f4f1c6f439435511af46dd2401">CRandomStandardUniform</a>(){m_i1 = 1234; m_i2 = 5678;};</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classlhslib_1_1_c_random_standard_uniform.html#ac1a3760af711a22e65c40b0e0a30bd0a">getNextRandom</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classlhslib_1_1_c_random_standard_uniform.html#ae07b01da6a32315c20f9bef678708a1a">setSeed</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i1, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i2);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classlhslib_1_1_c_random_standard_uniform.html#a6582b4b45c66554fb23c32bf19e9cf3b">getSeed</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *i1, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *i2);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_i1;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_i2;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    };</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* CRANDOM_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor"></span></div>
 <div class="ttc" id="classlhslib_1_1_c_random_html"><div class="ttname"><a href="classlhslib_1_1_c_random.html">lhslib::CRandom</a></div><div class="ttdoc">Pseudorandom number abstract class. </div><div class="ttdef"><b>Definition:</b> CRandom.h:52</div></div>
+<div class="ttc" id="classlhslib_1_1_c_random_html_a2d3b153a8fa8707e6a68a3cfea32d69e"><div class="ttname"><a href="classlhslib_1_1_c_random.html#a2d3b153a8fa8707e6a68a3cfea32d69e">lhslib::CRandom::getNextRandom</a></div><div class="ttdeci">virtual T getNextRandom()</div><div class="ttdoc">get the next random value from </div><div class="ttdef"><b>Definition:</b> CRandom.h:59</div></div>
 <div class="ttc" id="classlhslib_1_1_c_random_standard_uniform_html_ac1a3760af711a22e65c40b0e0a30bd0a"><div class="ttname"><a href="classlhslib_1_1_c_random_standard_uniform.html#ac1a3760af711a22e65c40b0e0a30bd0a">lhslib::CRandomStandardUniform::getNextRandom</a></div><div class="ttdeci">double getNextRandom()</div><div class="ttdoc">get the next random number from the stream </div><div class="ttdef"><b>Definition:</b> CRandom.cpp:25</div></div>
-<div class="ttc" id="classlhslib_1_1_c_random_standard_uniform_html_ad819e9f4f1c6f439435511af46dd2401"><div class="ttname"><a href="classlhslib_1_1_c_random_standard_uniform.html#ad819e9f4f1c6f439435511af46dd2401">lhslib::CRandomStandardUniform::CRandomStandardUniform</a></div><div class="ttdeci">CRandomStandardUniform()</div><div class="ttdoc">default constructor </div><div class="ttdef"><b>Definition:</b> CRandom.h:71</div></div>
-<div class="ttc" id="classlhslib_1_1_c_random_standard_uniform_html"><div class="ttname"><a href="classlhslib_1_1_c_random_standard_uniform.html">lhslib::CRandomStandardUniform</a></div><div class="ttdoc">random numbers from a standard uniform distribution </div><div class="ttdef"><b>Definition:</b> CRandom.h:65</div></div>
+<div class="ttc" id="classlhslib_1_1_c_random_standard_uniform_html_ad819e9f4f1c6f439435511af46dd2401"><div class="ttname"><a href="classlhslib_1_1_c_random_standard_uniform.html#ad819e9f4f1c6f439435511af46dd2401">lhslib::CRandomStandardUniform::CRandomStandardUniform</a></div><div class="ttdeci">CRandomStandardUniform()</div><div class="ttdoc">default constructor </div><div class="ttdef"><b>Definition:</b> CRandom.h:74</div></div>
+<div class="ttc" id="classlhslib_1_1_c_random_standard_uniform_html"><div class="ttname"><a href="classlhslib_1_1_c_random_standard_uniform.html">lhslib::CRandomStandardUniform</a></div><div class="ttdoc">random numbers from a standard uniform distribution </div><div class="ttdef"><b>Definition:</b> CRandom.h:68</div></div>
 <div class="ttc" id="classlhslib_1_1_c_random_standard_uniform_html_ae07b01da6a32315c20f9bef678708a1a"><div class="ttname"><a href="classlhslib_1_1_c_random_standard_uniform.html#ae07b01da6a32315c20f9bef678708a1a">lhslib::CRandomStandardUniform::setSeed</a></div><div class="ttdeci">void setSeed(unsigned int i1, unsigned int i2)</div><div class="ttdoc">set the random seed </div><div class="ttdef"><b>Definition:</b> CRandom.cpp:32</div></div>
 <div class="ttc" id="classlhslib_1_1_c_random_standard_uniform_html_a6582b4b45c66554fb23c32bf19e9cf3b"><div class="ttname"><a href="classlhslib_1_1_c_random_standard_uniform.html#a6582b4b45c66554fb23c32bf19e9cf3b">lhslib::CRandomStandardUniform::getSeed</a></div><div class="ttdeci">void getSeed(unsigned int *i1, unsigned int *i2)</div><div class="ttdoc">get the random seeds </div><div class="ttdef"><b>Definition:</b> CRandom.cpp:37</div></div>
-<div class="ttc" id="classlhslib_1_1_c_random_html_ab31dba8a8ccc2ae9eb4106b0bae04c28"><div class="ttname"><a href="classlhslib_1_1_c_random.html#ab31dba8a8ccc2ae9eb4106b0bae04c28">lhslib::CRandom::getNextRandom</a></div><div class="ttdeci">virtual T getNextRandom()=0</div><div class="ttdoc">get the next random value from </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 6 2014 17:03:08 for Latin Hypercube Sampling by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 25 2014 17:08:58 for Latin Hypercube Sampling by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,12 +95,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;TestClass.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_test_class_8h.html">TestClass.h</a>&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utility_l_h_s_8h.html">utilityLHS.h</a>&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_common_defines_8h.html">CommonDefines.h</a>&quot;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span>lhsTest {</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classlhs_test_1_1improved_l_h_s___r_test.html">   32</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classlhs_test_1_1improved_l_h_s___r_test.html">improvedLHS_RTest</a> : <span class="keyword">public</span> bclib::TestClass</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classlhs_test_1_1improved_l_h_s___r_test.html">   32</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classlhs_test_1_1improved_l_h_s___r_test.html">improvedLHS_RTest</a> : <span class="keyword">public</span> <a class="code" href="classbclib_1_1_test_class.html">bclib::TestClass</a></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classlhs_test_1_1improved_l_h_s___r_test.html#a6e856c1a3844293433e7986e5ad6eb06">Run</a>(); </div>
@@ -109,14 +110,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 <div class="ttc" id="classlhs_test_1_1improved_l_h_s___r_test_html_a6e856c1a3844293433e7986e5ad6eb06"><div class="ttname"><a href="classlhs_test_1_1improved_l_h_s___r_test.html#a6e856c1a3844293433e7986e5ad6eb06">lhsTest::improvedLHS_RTest::Run</a></div><div class="ttdeci">void Run()</div><div class="ttdoc">Run the test suite. </div><div class="ttdef"><b>Definition:</b> improvedLHS_RTest.cpp:24</div></div>
 <div class="ttc" id="utility_l_h_s_8h_html"><div class="ttname"><a href="utility_l_h_s_8h.html">utilityLHS.h</a></div></div>
+<div class="ttc" id="_test_class_8h_html"><div class="ttname"><a href="_test_class_8h.html">TestClass.h</a></div></div>
 <div class="ttc" id="classlhs_test_1_1improved_l_h_s___r_test_html_a51e2407cd23eed99707ffba94fc19c06"><div class="ttname"><a href="classlhs_test_1_1improved_l_h_s___r_test.html#a51e2407cd23eed99707ffba94fc19c06">lhsTest::improvedLHS_RTest::testStress</a></div><div class="ttdeci">void testStress()</div><div class="ttdoc">Test Stress. </div><div class="ttdef"><b>Definition:</b> improvedLHS_RTest.cpp:86</div></div>
+<div class="ttc" id="classbclib_1_1_test_class_html"><div class="ttname"><a href="classbclib_1_1_test_class.html">bclib::TestClass</a></div><div class="ttdoc">A class used to derive unit test from. </div><div class="ttdef"><b>Definition:</b> TestClass.h:90</div></div>
 <div class="ttc" id="_common_defines_8h_html"><div class="ttname"><a href="_common_defines_8h.html">CommonDefines.h</a></div></div>
 <div class="ttc" id="classlhs_test_1_1improved_l_h_s___r_test_html_a625cb209cbae31b29d987b04521c7e19"><div class="ttname"><a href="classlhs_test_1_1improved_l_h_s___r_test.html#a625cb209cbae31b29d987b04521c7e19">lhsTest::improvedLHS_RTest::testImprovedLHS_R</a></div><div class="ttdeci">void testImprovedLHS_R()</div><div class="ttdoc">Test improvedLHS. </div><div class="ttdef"><b>Definition:</b> improvedLHS_RTest.cpp:32</div></div>
 <div class="ttc" id="classlhs_test_1_1improved_l_h_s___r_test_html"><div class="ttname"><a href="classlhs_test_1_1improved_l_h_s___r_test.html">lhsTest::improvedLHS_RTest</a></div><div class="ttdoc">class to test the improvedLHS method </div><div class="ttdef"><b>Definition:</b> improvedLHS_RTest.h:32</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 6 2014 17:03:08 for Latin Hypercube Sampling by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 25 2014 17:08:58 for Latin Hypercube Sampling by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

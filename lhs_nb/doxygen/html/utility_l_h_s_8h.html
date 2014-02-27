@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -87,6 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -97,6 +99,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <p><a href="utility_l_h_s_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlhslib_1_1square_difference.html">lhslib::squareDifference&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlhslib_1_1invert.html">lhslib::invert&lt; T, W &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacelhslib"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html">lhslib</a></td></tr>
@@ -105,30 +114,60 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7af77ed0b838f98395f503483b7e29b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a7af77ed0b838f98395f503483b7e29b4">lhslib::isValidLHS</a> (const bclib::matrix&lt; int &gt; &amp;result)</td></tr>
+<tr class="memitem:a7af77ed0b838f98395f503483b7e29b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a7af77ed0b838f98395f503483b7e29b4">lhslib::isValidLHS</a> (const <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; int &gt; &amp;result)</td></tr>
 <tr class="memdesc:a7af77ed0b838f98395f503483b7e29b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">check to determine of an lhs is valid.  <a href="#a7af77ed0b838f98395f503483b7e29b4">More...</a><br/></td></tr>
 <tr class="separator:a7af77ed0b838f98395f503483b7e29b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa14d40079c23858001cc7fc99064c4b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#aa14d40079c23858001cc7fc99064c4b3">lhslib::rank</a> (std::vector&lt; double &gt; &amp;toRank, std::vector&lt; int &gt; &amp;ranks)</td></tr>
-<tr class="memdesc:aa14d40079c23858001cc7fc99064c4b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">rank a vector of doubles  <a href="#aa14d40079c23858001cc7fc99064c4b3">More...</a><br/></td></tr>
-<tr class="separator:aa14d40079c23858001cc7fc99064c4b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3129829c9a2e9980bcb464f2ee7dae66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a3129829c9a2e9980bcb464f2ee7dae66">lhslib::rankColumns</a> (std::vector&lt; double &gt; &amp;toRank, std::vector&lt; int &gt; &amp;ranks, int nrow)</td></tr>
-<tr class="memdesc:a3129829c9a2e9980bcb464f2ee7dae66"><td class="mdescLeft">&#160;</td><td class="mdescRight">rank columns  <a href="#a3129829c9a2e9980bcb464f2ee7dae66">More...</a><br/></td></tr>
-<tr class="separator:a3129829c9a2e9980bcb464f2ee7dae66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a464d4a440a7a7361440a58c58369a8e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a464d4a440a7a7361440a58c58369a8e2">lhslib::initializeAvailableMatrix</a> (bclib::matrix&lt; int &gt; &amp;avail)</td></tr>
+<tr class="memitem:a31cef924adb5147873603a385f3f4fc1"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a31cef924adb5147873603a385f3f4fc1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a31cef924adb5147873603a385f3f4fc1">lhslib::rank</a> (const std::vector&lt; T &gt; &amp;toRank, std::vector&lt; int &gt; &amp;ranks)</td></tr>
+<tr class="memdesc:a31cef924adb5147873603a385f3f4fc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">rank a vector of doubles  <a href="#a31cef924adb5147873603a385f3f4fc1">More...</a><br/></td></tr>
+<tr class="separator:a31cef924adb5147873603a385f3f4fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a464d4a440a7a7361440a58c58369a8e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a464d4a440a7a7361440a58c58369a8e2">lhslib::initializeAvailableMatrix</a> (<a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; int &gt; &amp;avail)</td></tr>
 <tr class="memdesc:a464d4a440a7a7361440a58c58369a8e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the matrix of available points.  <a href="#a464d4a440a7a7361440a58c58369a8e2">More...</a><br/></td></tr>
 <tr class="separator:a464d4a440a7a7361440a58c58369a8e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a793c71745d3c15f78164bb8063d1bfda"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a793c71745d3c15f78164bb8063d1bfda"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a793c71745d3c15f78164bb8063d1bfda">lhslib::lhsPrint</a> (const bclib::matrix&lt; T &gt; &amp;A)</td></tr>
+<tr class="memitem:a793c71745d3c15f78164bb8063d1bfda"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a793c71745d3c15f78164bb8063d1bfda">lhslib::lhsPrint</a> (const <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; T &gt; &amp;A)</td></tr>
 <tr class="memdesc:a793c71745d3c15f78164bb8063d1bfda"><td class="mdescLeft">&#160;</td><td class="mdescRight">print the Latin hypercube sample  <a href="#a793c71745d3c15f78164bb8063d1bfda">More...</a><br/></td></tr>
 <tr class="separator:a793c71745d3c15f78164bb8063d1bfda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b0d34638b3b4dfc2c4b7a022357cbad"><td class="memTemplParams" colspan="2"><a class="anchor" id="a2b0d34638b3b4dfc2c4b7a022357cbad"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a2b0d34638b3b4dfc2c4b7a022357cbad"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>lhslib::calculateDistanceSquared</b> (const std::vector&lt; T &gt; A, const std::vector&lt; T &gt; B)</td></tr>
+<tr class="separator:a2b0d34638b3b4dfc2c4b7a022357cbad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa2079f5ddf6af8503a7668d407d7edd"><td class="memTemplParams" colspan="2"><a class="anchor" id="afa2079f5ddf6af8503a7668d407d7edd"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:afa2079f5ddf6af8503a7668d407d7edd"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>lhslib::calculateDistanceSquared</b> (const std::iterator Abegin, const std::iterator Aend, const std::iterator Bbegin)</td></tr>
+<tr class="separator:afa2079f5ddf6af8503a7668d407d7edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6787a23ff595bf60279354bb50e49fcd"><td class="memTemplParams" colspan="2"><a class="anchor" id="a6787a23ff595bf60279354bb50e49fcd"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a6787a23ff595bf60279354bb50e49fcd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>lhslib::calculateDistance</b> (const <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; T &gt; &amp;mat, <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; double &gt; &amp;result)</td></tr>
+<tr class="separator:a6787a23ff595bf60279354bb50e49fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8608058b6189b953da2191341f8bf23"><td class="memTemplParams" colspan="2"><a class="anchor" id="ae8608058b6189b953da2191341f8bf23"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:ae8608058b6189b953da2191341f8bf23"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><b>lhslib::sumInvDistanceTest</b> (const <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; T &gt; &amp;A)</td></tr>
+<tr class="separator:ae8608058b6189b953da2191341f8bf23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dcf0728b1805c06afe150461c86a5e2"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a8dcf0728b1805c06afe150461c86a5e2"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a8dcf0728b1805c06afe150461c86a5e2">lhslib::sumInvDistance</a> (const bclib::matrix&lt; T &gt; &amp;A)</td></tr>
+<tr class="memitem:a8dcf0728b1805c06afe150461c86a5e2"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a8dcf0728b1805c06afe150461c86a5e2">lhslib::sumInvDistance</a> (const <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; T &gt; &amp;A)</td></tr>
 <tr class="memdesc:a8dcf0728b1805c06afe150461c86a5e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sum of the inverse distance between points.  <a href="#a8dcf0728b1805c06afe150461c86a5e2">More...</a><br/></td></tr>
 <tr class="separator:a8dcf0728b1805c06afe150461c86a5e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a897a59d76ad6177aa753f52167f6811e"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a897a59d76ad6177aa753f52167f6811e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a897a59d76ad6177aa753f52167f6811e">lhslib::copyMatrix</a> (bclib::matrix&lt; T &gt; &amp;copyTo, const bclib::matrix&lt; T &gt; &amp;copyFrom)</td></tr>
+<tr class="memitem:a897a59d76ad6177aa753f52167f6811e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a897a59d76ad6177aa753f52167f6811e">lhslib::copyMatrix</a> (<a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; T &gt; &amp;copyTo, const <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; T &gt; &amp;copyFrom)</td></tr>
 <tr class="memdesc:a897a59d76ad6177aa753f52167f6811e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a matrix.  <a href="#a897a59d76ad6177aa753f52167f6811e">More...</a><br/></td></tr>
 <tr class="separator:a897a59d76ad6177aa753f52167f6811e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cd1542e9860230f6ca3593d951a3267"><td class="memTemplParams" colspan="2"><a class="anchor" id="a1cd1542e9860230f6ca3593d951a3267"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a1cd1542e9860230f6ca3593d951a3267"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><b>lhslib::calculateSOptimal</b> (const <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; T &gt; &amp;mat)</td></tr>
+<tr class="separator:a1cd1542e9860230f6ca3593d951a3267"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f679357cab133596cd0d1f156e3e323"><td class="memTemplParams" colspan="2"><a class="anchor" id="a2f679357cab133596cd0d1f156e3e323"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a2f679357cab133596cd0d1f156e3e323"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>lhslib::runif_std</b> (unsigned int n, std::vector&lt; T &gt; &amp;output, CRandom&lt; T &gt; oRandom)</td></tr>
+<tr class="separator:a2f679357cab133596cd0d1f156e3e323"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62126257e10b53fcf75d309f9624ee09"><td class="memTemplParams" colspan="2"><a class="anchor" id="a62126257e10b53fcf75d309f9624ee09"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a62126257e10b53fcf75d309f9624ee09"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>lhslib::runifint</b> (unsigned int n, T min, T max, std::vector&lt; T &gt; &amp;output, CRandom&lt; double &gt; oRandom)</td></tr>
+<tr class="separator:a62126257e10b53fcf75d309f9624ee09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fdfb56665cd98a93abc997340f297c1"><td class="memTemplParams" colspan="2"><a class="anchor" id="a5fdfb56665cd98a93abc997340f297c1"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a5fdfb56665cd98a93abc997340f297c1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>lhslib::runifint</b> (T min, T max, T *output, CRandom&lt; double &gt; oRandom)</td></tr>
+<tr class="separator:a5fdfb56665cd98a93abc997340f297c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Robert Carnell </dd></dl>
@@ -139,7 +178,7 @@ Functions</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 6 2014 17:03:09 for Latin Hypercube Sampling by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 25 2014 17:08:58 for Latin Hypercube Sampling by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -92,7 +92,7 @@ print(runif(1), 20)
 
         lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
         oRandom.setSeed(1976, 1968);
-		for (int i = 0; i < 10000; i++)
+		for (int i = 0; i < 50; i++)
         {
 			lhslib::improvedLHS(n, k, DUP, result, oRandom);
         }

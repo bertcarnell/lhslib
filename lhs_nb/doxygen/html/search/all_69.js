@@ -7,5 +7,9 @@ var searchData=
   ['improvedlhs_5frtest_2ecpp',['improvedLHS_RTest.cpp',['../improved_l_h_s___r_test_8cpp.html',1,'']]],
   ['improvedlhs_5frtest_2eh',['improvedLHS_RTest.h',['../improved_l_h_s___r_test_8h.html',1,'']]],
   ['initializeavailablematrix',['initializeAvailableMatrix',['../namespacelhslib.html#a464d4a440a7a7361440a58c58369a8e2',1,'lhslib']]],
-  ['isvalidlhs',['isValidLHS',['../namespacelhslib.html#a7af77ed0b838f98395f503483b7e29b4',1,'lhslib']]]
+  ['invert',['invert',['../structlhslib_1_1invert.html',1,'lhslib']]],
+  ['isempty',['isEmpty',['../classbclib_1_1matrix.html#a3ff3607602739c33a3d6dd2848f30d25',1,'bclib::matrix']]],
+  ['istransposed',['isTransposed',['../classbclib_1_1matrix.html#af626625ff9b872fe0a362bcdffb66309',1,'bclib::matrix']]],
+  ['isvalidlhs',['isValidLHS',['../namespacelhslib.html#a7af77ed0b838f98395f503483b7e29b4',1,'lhslib']]],
+  ['iterator',['iterator',['../classbclib_1_1matrix.html#afce7bb2fa42deb61c2a7247b53354cea',1,'bclib::matrix']]]
 ];

@@ -82,7 +82,7 @@ floor(4*optimumLHS(4,3,2,0.1))+1
             oRandom.setSeed(1976, 1968);
 
             bclib::matrix<int> result = bclib::matrix<int>(n,k);
-			for (int i = 0; i < 10000; i++)
+			for (int i = 0; i < 50; i++)
             {
                 lhslib::optimumLHS(n, k, maxSweeps, eps, result, jLen, oRandom, false);
             }

@@ -35,6 +35,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/_ext/124989428/geneticLHS.o \
+	${OBJECTDIR}/_ext/124989428/randomLHS.o \
 	${OBJECTDIR}/CRandom.o \
 	${OBJECTDIR}/improvedLHS.o \
 	${OBJECTDIR}/maximinLHS.o \
@@ -68,6 +70,16 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblhslib.a: ${OBJECTFILES}
 	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblhslib.a
 	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblhslib.a ${OBJECTFILES} 
 	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblhslib.a
+
+${OBJECTDIR}/_ext/124989428/geneticLHS.o: /C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib/geneticLHS.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/124989428
+	${RM} $@.d
+	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/bclib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/124989428/geneticLHS.o /C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib/geneticLHS.cpp
+
+${OBJECTDIR}/_ext/124989428/randomLHS.o: /C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib/randomLHS.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/124989428
+	${RM} $@.d
+	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/bclib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/124989428/randomLHS.o /C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib/randomLHS.cpp
 
 ${OBJECTDIR}/CRandom.o: CRandom.cpp 
 	${MKDIR} -p ${OBJECTDIR}

@@ -74,7 +74,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>bclib</b></li><li class="navelem"><a class="el" href="classbclib_1_1_test_class.html">TestClass</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacebclib.html">bclib</a></li><li class="navelem"><a class="el" href="classbclib_1_1_test_class.html">TestClass</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -97,39 +97,83 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">bclib::TestClass Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A class used to derive unit test from.  
+ <a href="classbclib_1_1_test_class.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_test_class_8h_source.html">TestClass.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for bclib::TestClass:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classbclib_1_1_test_class.png" usemap="#bclib::TestClass_map" alt=""/>
   <map id="bclib::TestClass_map" name="bclib::TestClass_map">
-<area href="classlhs_test_1_1improved_l_h_s___r_test.html" alt="lhsTest::improvedLHS_RTest" shape="rect" coords="0,56,179,80"/>
-<area href="classlhs_test_1_1maximin_l_h_s___r_test.html" alt="lhsTest::maximinLHS_RTest" shape="rect" coords="189,56,368,80"/>
-<area href="classlhs_test_1_1optimum_l_h_s___r_test.html" alt="lhsTest::optimumLHS_RTest" shape="rect" coords="378,56,557,80"/>
-<area href="classlhs_test_1_1opt_seeded_l_h_s___r_test.html" alt="lhsTest::optSeededLHS_RTest" shape="rect" coords="567,56,746,80"/>
-<area href="classlhs_test_1_1utility_l_h_s_test.html" alt="lhsTest::utilityLHSTest" shape="rect" coords="756,56,935,80"/>
+<area href="classlhs_test_1_1improved_l_h_s___r_test.html" title="class to test the improvedLHS method " alt="lhsTest::improvedLHS_RTest" shape="rect" coords="0,56,179,80"/>
+<area href="classlhs_test_1_1maximin_l_h_s___r_test.html" title="Class to test the maximinLHS methods. " alt="lhsTest::maximinLHS_RTest" shape="rect" coords="189,56,368,80"/>
+<area href="classlhs_test_1_1optimum_l_h_s___r_test.html" title="Class to test the optimumLHS method. " alt="lhsTest::optimumLHS_RTest" shape="rect" coords="378,56,557,80"/>
+<area href="classlhs_test_1_1opt_seeded_l_h_s___r_test.html" title="class to test the optSeededLHS method " alt="lhsTest::optSeededLHS_RTest" shape="rect" coords="567,56,746,80"/>
+<area href="classlhs_test_1_1random_l_h_s___r_test.html" title="class to test the randomLHS method " alt="lhsTest::randomLHS_RTest" shape="rect" coords="756,56,935,80"/>
+<area href="classlhs_test_1_1utility_l_h_s_test.html" title="A class to test the utility methods of the lhs library. " alt="lhsTest::utilityLHSTest" shape="rect" coords="945,56,1124,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9b964915aac96ec93c2d1dd7b489ce1d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b964915aac96ec93c2d1dd7b489ce1d"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Run</b> ()</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbclib_1_1_test_class.html#a9b964915aac96ec93c2d1dd7b489ce1d">Run</a> ()</td></tr>
+<tr class="memdesc:a9b964915aac96ec93c2d1dd7b489ce1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">run a set of unit tests in a <a class="el" href="classbclib_1_1_test_class.html" title="A class used to derive unit test from. ">TestClass</a> <br/></td></tr>
 <tr class="separator:a9b964915aac96ec93c2d1dd7b489ce1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a2cae37f046f4c7d88028840b06bc1c97"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2cae37f046f4c7d88028840b06bc1c97"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>executeTests</b> (std::vector&lt; <a class="el" href="classbclib_1_1_test_class.html">TestClass</a> * &gt; tests)</td></tr>
+<tr class="memitem:a2cae37f046f4c7d88028840b06bc1c97"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbclib_1_1_test_class.html#a2cae37f046f4c7d88028840b06bc1c97">executeTests</a> (std::vector&lt; <a class="el" href="classbclib_1_1_test_class.html">TestClass</a> * &gt; tests)</td></tr>
+<tr class="memdesc:a2cae37f046f4c7d88028840b06bc1c97"><td class="mdescLeft">&#160;</td><td class="mdescRight">method used in the <a class="el" href="main_8cpp.html">main.cpp</a> to run unit test classes  <a href="#a2cae37f046f4c7d88028840b06bc1c97">More...</a><br/></td></tr>
 <tr class="separator:a2cae37f046f4c7d88028840b06bc1c97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class used to derive unit test from. </p>
+<p>Used in conjunction with the macros as follows <code> #include &lt;cstdlib&gt; #include &lt;vector&gt; #include  #include "TestClass.h" #include "simpleTest1.h" #include "simpleTest2.h"</code></p>
+<p><code>int main(int argc, const char* argv[] ) { START_TESTS("Starting Simple Tests...\n") <a class="el" href="_test_class_8h.html#a1357225b059061f8b6cee86a8a76af43" title="Macro to create an individual test and instantiate it&#39;s class if it inherits from TestClass...">CREATE_TEST(simpleTest1)</a>; <a class="el" href="_test_class_8h.html#a1357225b059061f8b6cee86a8a76af43" title="Macro to create an individual test and instantiate it&#39;s class if it inherits from TestClass...">CREATE_TEST(simpleTest2)</a>; EXECUTE_TESTS } </code> </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a2cae37f046f4c7d88028840b06bc1c97"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void bclib::TestClass::executeTests </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classbclib_1_1_test_class.html">TestClass</a> * &gt;&#160;</td>
+          <td class="paramname"><em>tests</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>method used in the <a class="el" href="main_8cpp.html">main.cpp</a> to run unit test classes </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tests</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>bclib/<a class="el" href="_test_class_8h_source.html">TestClass.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 6 2014 16:04:11 for Latin Hypercube Sampling by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 25 2014 17:08:59 for Latin Hypercube Sampling by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

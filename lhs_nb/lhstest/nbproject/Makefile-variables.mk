@@ -22,6 +22,14 @@ CND_ARTIFACT_PATH_Release=dist/Release/RTools-Windows/lhstest
 CND_PACKAGE_DIR_Release=dist/Release/RTools-Windows/package
 CND_PACKAGE_NAME_Release=lhstest.tar
 CND_PACKAGE_PATH_Release=dist/Release/RTools-Windows/package/lhstest.tar
+# Profile configuration
+CND_PLATFORM_Profile=RTools-Windows
+CND_ARTIFACT_DIR_Profile=dist/Profile/RTools-Windows
+CND_ARTIFACT_NAME_Profile=lhstest
+CND_ARTIFACT_PATH_Profile=dist/Profile/RTools-Windows/lhstest
+CND_PACKAGE_DIR_Profile=dist/Profile/RTools-Windows/package
+CND_PACKAGE_NAME_Profile=lhstest.tar
+CND_PACKAGE_PATH_Profile=dist/Profile/RTools-Windows/package/lhstest.tar
 #
 # include compiler specific variables
 #

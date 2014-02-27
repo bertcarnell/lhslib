@@ -40,19 +40,9 @@ namespace lhsTest{
 		int k = 3;
 		int maxSweeps = 2;
 		double eps = 0.1;
-		//double * pNew = new double[n*k];
         bclib::matrix<double> mOld = bclib::matrix<double>(n, k, pOld);
 		int jLen = 9 * 8 / 2 + 1; // 9 choose 2 + 1
-		//double * J1 = new double[jLen];
-		//int * J2 = new int[jLen];
-		//int * J3 = new int[jLen];
-		//int iVerbose = 0;
 
-		//set_seed(1976, 1968);
-        lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
-        oRandom.setSeed(1976, 1968);
-
-		//optSeededLHS_C(&n, &k, &maxSweeps, &eps, pOld, &jLen, &iVerbose);
         lhslib::optSeededLHS(n, k, maxSweeps, eps, mOld, jLen, false);
         
         bclib::matrix<int> result = bclib::matrix<int>(n, k);
@@ -63,9 +53,6 @@ namespace lhsTest{
                 result(i, j) = static_cast<int>(std::floor(9.0*mOld(i,j)) + 1.0);
             }
         }
-		//int expected[27] = {7,9,5,8,6,4,3,1,2,
-		//	                  1,7,8,4,3,9,5,2,6,
-		//	                  3,6,8,2,9,4,1,5,7};
 		int expected[27] = {7,1,3,
                             9,7,6,
                             5,8,8,
@@ -75,6 +62,7 @@ namespace lhsTest{
                             3,5,1,
                             1,2,5,
                             2,6,7};
+        bclib::matrix<int> expectedMat = bclib::matrix<int>(9, 3, expected);
         
 		for (int i = 0; i < n; i++)
 		{
@@ -153,20 +141,10 @@ floor((4+5)*optSeededLHS(lhsseed, 5, 2, 0.1))+1
         bclib::matrix<double> mOld = bclib::matrix<double>(n,k);
 		int maxSweeps = 2;
 		double eps = 0.1;
-		//double * pNew = new double[n*k];
 		int jLen = 9 * 8 / 2 + 1; // 9 choose 2 + 1
-		//double * J1 = new double[jLen];
-		//int * J2 = new int[jLen];
-		//int * J3 = new int[jLen];
-		//int iVerbose = 0;
 
-		//set_seed(1976, 1968);
-        //lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
-        //oRandom.setSeed(1976, 1968);
-
-		for (int i = 0; i < 10000; i++)
+		for (int i = 0; i < 50; i++)
         {
-			//optSeededLHS_C(&n, &k, &maxSweeps, &eps, pOld, &jLen, &iVerbose);
             lhslib::optSeededLHS(n, k, maxSweeps, eps, mOld, jLen, false);
         }
 	}

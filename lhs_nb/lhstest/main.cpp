@@ -27,6 +27,8 @@
 #include "optimumLHS_RTest.h"
 #include "optSeededLHS_RTest.h"
 #include "utilityLHS_RTest.h"
+#include "randomLHS_RTest.h"
+#include "geneticLHS_RTest.h"
 
 using namespace lhsTest;
 
@@ -38,5 +40,7 @@ int main(int argc, const char* argv[] )
 	CREATE_TEST(optimumLHS_RTest);
 	CREATE_TEST(optSeededLHS_RTest);
 	CREATE_TEST(utilityLHSTest);
+    CREATE_TEST(randomLHS_RTest);
+    CREATE_TEST(geneticLHS_RTest);
     EXECUTE_TESTS();
 }

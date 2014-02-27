@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -101,11 +102,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;vector&gt;</code><br/>
 <code>#include &lt;algorithm&gt;</code><br/>
 <code>#include &lt;functional&gt;</code><br/>
+<code>#include &lt;numeric&gt;</code><br/>
 <code>#include &lt;cfloat&gt;</code><br/>
 <code>#include &lt;climits&gt;</code><br/>
 <code>#include &lt;cstdio&gt;</code><br/>
-<code>#include &quot;matrix.h&quot;</code><br/>
-<code>#include &quot;order.h&quot;</code><br/>
+<code>#include &quot;<a class="el" href="matrix_8h_source.html">matrix.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="order_8h_source.html">order.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_c_random_8h_source.html">CRandom.h</a>&quot;</code><br/>
 </div>
 <p><a href="_common_defines_8h_source.html">Go to the source code of this file.</a></p>
@@ -130,7 +132,7 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:aba3390cdfd1c0921a2afd4877ae2694a"><td class="memItemLeft" align="right" valign="top">typedef bclib::matrix&lt; int &gt;<br class="typebreak"/>
+<tr class="memitem:aba3390cdfd1c0921a2afd4877ae2694a"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; int &gt;<br class="typebreak"/>
 ::size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#aba3390cdfd1c0921a2afd4877ae2694a">lhslib::msize_type</a></td></tr>
 <tr class="memdesc:aba3390cdfd1c0921a2afd4877ae2694a"><td class="mdescLeft">&#160;</td><td class="mdescRight">type of size type for use with bclib::matrix&lt;T&gt;  <a href="#aba3390cdfd1c0921a2afd4877ae2694a">More...</a><br/></td></tr>
 <tr class="separator:aba3390cdfd1c0921a2afd4877ae2694a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,18 +143,21 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1bcea72bb643189e251f3573f40f95a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a1bcea72bb643189e251f3573f40f95a7">lhslib::improvedLHS</a> (int n, int k, int dup, bclib::matrix&lt; int &gt; &amp;result, CRandom&lt; double &gt; &amp;oRandom)</td></tr>
+<tr class="memitem:a1bcea72bb643189e251f3573f40f95a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a1bcea72bb643189e251f3573f40f95a7">lhslib::improvedLHS</a> (int n, int k, int dup, <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; int &gt; &amp;result, CRandom&lt; double &gt; &amp;oRandom)</td></tr>
 <tr class="memdesc:a1bcea72bb643189e251f3573f40f95a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Improved Latin hypercube sample algorithm.  <a href="#a1bcea72bb643189e251f3573f40f95a7">More...</a><br/></td></tr>
 <tr class="separator:a1bcea72bb643189e251f3573f40f95a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5ace7050d4c2e53ba6bf40b43fe94fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#ac5ace7050d4c2e53ba6bf40b43fe94fd">lhslib::maximinLHS</a> (int n, int k, int dup, bclib::matrix&lt; int &gt; &amp;result, CRandom&lt; double &gt; &amp;oRandom)</td></tr>
+<tr class="memitem:ac5ace7050d4c2e53ba6bf40b43fe94fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#ac5ace7050d4c2e53ba6bf40b43fe94fd">lhslib::maximinLHS</a> (int n, int k, int dup, <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; int &gt; &amp;result, CRandom&lt; double &gt; &amp;oRandom)</td></tr>
 <tr class="memdesc:ac5ace7050d4c2e53ba6bf40b43fe94fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Latin hypercube sample algorithm with maximin criterion.  <a href="#ac5ace7050d4c2e53ba6bf40b43fe94fd">More...</a><br/></td></tr>
 <tr class="separator:ac5ace7050d4c2e53ba6bf40b43fe94fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38e8e0204db3ded54b28fd5ff7b8dcc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a38e8e0204db3ded54b28fd5ff7b8dcc4">lhslib::optimumLHS</a> (int n, int k, int maxSweeps, double eps, bclib::matrix&lt; int &gt; &amp;outlhs, int optimalityRecordLength, CRandom&lt; double &gt; &amp;oRandom, bool bVerbose)</td></tr>
+<tr class="memitem:a38e8e0204db3ded54b28fd5ff7b8dcc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a38e8e0204db3ded54b28fd5ff7b8dcc4">lhslib::optimumLHS</a> (int n, int k, int maxSweeps, double eps, <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; int &gt; &amp;outlhs, int optimalityRecordLength, CRandom&lt; double &gt; &amp;oRandom, bool bVerbose)</td></tr>
 <tr class="memdesc:a38e8e0204db3ded54b28fd5ff7b8dcc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimum Latin hypercube sample algorithm.  <a href="#a38e8e0204db3ded54b28fd5ff7b8dcc4">More...</a><br/></td></tr>
 <tr class="separator:a38e8e0204db3ded54b28fd5ff7b8dcc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63325b1013d30cee42bb04ea7bb8bb2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a63325b1013d30cee42bb04ea7bb8bb2e">lhslib::optSeededLHS</a> (int n, int k, int maxSweeps, double eps, bclib::matrix&lt; double &gt; &amp;pOld, int JLen, bool bVerbose)</td></tr>
+<tr class="memitem:a63325b1013d30cee42bb04ea7bb8bb2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelhslib.html#a63325b1013d30cee42bb04ea7bb8bb2e">lhslib::optSeededLHS</a> (int n, int k, int maxSweeps, double eps, <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; double &gt; &amp;pOld, int JLen, bool bVerbose)</td></tr>
 <tr class="memdesc:a63325b1013d30cee42bb04ea7bb8bb2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Application of the optimum lhs method to a seeded Latin hypercube.  <a href="#a63325b1013d30cee42bb04ea7bb8bb2e">More...</a><br/></td></tr>
 <tr class="separator:a63325b1013d30cee42bb04ea7bb8bb2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeabc32263e6017814fb1f8d0837f4cf6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeabc32263e6017814fb1f8d0837f4cf6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>lhslib::randomLHS</b> (int n, int k, bool bPreserveDraw, <a class="el" href="classbclib_1_1matrix.html">bclib::matrix</a>&lt; double &gt; &amp;result, CRandom&lt; double &gt; &amp;oRandom)</td></tr>
+<tr class="separator:aeabc32263e6017814fb1f8d0837f4cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Robert Carnell </dd></dl>
@@ -163,7 +168,7 @@ Functions</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 6 2014 17:03:09 for Latin Hypercube Sampling by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 25 2014 17:08:58 for Latin Hypercube Sampling by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
