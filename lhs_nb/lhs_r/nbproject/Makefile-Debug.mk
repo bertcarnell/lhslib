@@ -53,7 +53,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L/C/Program\ Files/R/R-3.0.1/library/Rcpp/lib/x64 -L/C/Program\ Files/R/R-3.0.1/bin/x64 -L/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib/dist/Debug/RTools-Windows -lR -lRcpp -llhslib
+LDLIBSOPTIONS=-L/C/Program\ Files/R/R-3.0.2/bin/x64 -L../lhslib/dist/Debug/RTools-Windows -L/C/Program\ Files/R/R-3.0.2/library/Rcpp/libs/x64 -lR -lRcpp -llhslib
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -65,13 +65,13 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblhs_r.${CND_DLIB_EXT}: ${OBJECTFIL
 
 ${OBJECTDIR}/lhs_r.o: lhs_r.cpp 
 	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib -I/C/Program\ Files/R/R-3.0.1/include -I/C/Program\ Files/R/R-3.0.1/library/Rcpp/include -I../bclib -std=c++98 -Wall -pedantic  -MMD -MP -MF $@.d -o ${OBJECTDIR}/lhs_r.o lhs_r.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Werror -I../lhslib -I/C/Program\ Files/R/R-3.0.2/include -I/C/Program\ Files/R/R-3.0.2/library/Rcpp/include -I../bclib -std=c++98  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/lhs_r.o lhs_r.cpp
 
 ${OBJECTDIR}/lhs_r_utilities.o: lhs_r_utilities.cpp 
 	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib -I/C/Program\ Files/R/R-3.0.1/include -I/C/Program\ Files/R/R-3.0.1/library/Rcpp/include -I../bclib -std=c++98 -Wall -pedantic  -MMD -MP -MF $@.d -o ${OBJECTDIR}/lhs_r_utilities.o lhs_r_utilities.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Werror -I../lhslib -I/C/Program\ Files/R/R-3.0.2/include -I/C/Program\ Files/R/R-3.0.2/library/Rcpp/include -I../bclib -std=c++98  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/lhs_r_utilities.o lhs_r_utilities.cpp
 
 # Subprojects
 .build-subprojects:

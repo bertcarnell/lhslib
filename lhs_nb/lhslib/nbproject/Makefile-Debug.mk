@@ -35,13 +35,13 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/124989428/geneticLHS.o \
-	${OBJECTDIR}/_ext/124989428/randomLHS.o \
 	${OBJECTDIR}/CRandom.o \
+	${OBJECTDIR}/geneticLHS.o \
 	${OBJECTDIR}/improvedLHS.o \
 	${OBJECTDIR}/maximinLHS.o \
 	${OBJECTDIR}/optSeededLHS.o \
 	${OBJECTDIR}/optimumLHS.o \
+	${OBJECTDIR}/randomLHS.o \
 	${OBJECTDIR}/utilityLHS.o
 
 
@@ -71,45 +71,45 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblhslib.a: ${OBJECTFILES}
 	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblhslib.a ${OBJECTFILES} 
 	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblhslib.a
 
-${OBJECTDIR}/_ext/124989428/geneticLHS.o: /C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib/geneticLHS.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/124989428
-	${RM} $@.d
-	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/bclib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/124989428/geneticLHS.o /C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib/geneticLHS.cpp
-
-${OBJECTDIR}/_ext/124989428/randomLHS.o: /C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib/randomLHS.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/124989428
-	${RM} $@.d
-	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/bclib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/124989428/randomLHS.o /C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib/randomLHS.cpp
-
 ${OBJECTDIR}/CRandom.o: CRandom.cpp 
 	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/bclib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/CRandom.o CRandom.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Werror -I../bclib -std=c++98 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CRandom.o CRandom.cpp
+
+${OBJECTDIR}/geneticLHS.o: geneticLHS.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Werror -I../bclib -std=c++98 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/geneticLHS.o geneticLHS.cpp
 
 ${OBJECTDIR}/improvedLHS.o: improvedLHS.cpp 
 	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/bclib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/improvedLHS.o improvedLHS.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Werror -I../bclib -std=c++98 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/improvedLHS.o improvedLHS.cpp
 
 ${OBJECTDIR}/maximinLHS.o: maximinLHS.cpp 
 	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/bclib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/maximinLHS.o maximinLHS.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Werror -I../bclib -std=c++98 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/maximinLHS.o maximinLHS.cpp
 
 ${OBJECTDIR}/optSeededLHS.o: optSeededLHS.cpp 
 	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/bclib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/optSeededLHS.o optSeededLHS.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Werror -I../bclib -std=c++98 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/optSeededLHS.o optSeededLHS.cpp
 
 ${OBJECTDIR}/optimumLHS.o: optimumLHS.cpp 
 	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/bclib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/optimumLHS.o optimumLHS.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Werror -I../bclib -std=c++98 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/optimumLHS.o optimumLHS.cpp
+
+${OBJECTDIR}/randomLHS.o: randomLHS.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Werror -I../bclib -std=c++98 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/randomLHS.o randomLHS.cpp
 
 ${OBJECTDIR}/utilityLHS.o: utilityLHS.cpp 
 	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -g -Werror -I/C/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include -I/C/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/bclib -std=c++98 -Wall -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/utilityLHS.o utilityLHS.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Werror -I../bclib -std=c++98 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/utilityLHS.o utilityLHS.cpp
 
 # Subprojects
 .build-subprojects:

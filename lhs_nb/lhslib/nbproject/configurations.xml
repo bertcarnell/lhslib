@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="89">
+<configurationDescriptor version="90">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
@@ -16,12 +16,12 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>CRandom.cpp</itemPath>
-      <itemPath>C:/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib/geneticLHS.cpp</itemPath>
+      <itemPath>geneticLHS.cpp</itemPath>
       <itemPath>improvedLHS.cpp</itemPath>
       <itemPath>maximinLHS.cpp</itemPath>
       <itemPath>optSeededLHS.cpp</itemPath>
       <itemPath>optimumLHS.cpp</itemPath>
-      <itemPath>C:/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib/randomLHS.cpp</itemPath>
+      <itemPath>randomLHS.cpp</itemPath>
       <itemPath>utilityLHS.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -40,7 +40,6 @@
   <confs>
     <conf name="Debug" type="3">
       <toolsSet>
-        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>RTools|MinGW</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
@@ -55,8 +54,7 @@
           <architecture>2</architecture>
           <standard>4</standard>
           <incDir>
-            <pElem>C:/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include</pElem>
-            <pElem>C:/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/bclib</pElem>
+            <pElem>../bclib</pElem>
           </incDir>
           <commandLine>-Wall -pedantic</commandLine>
           <warningLevel>3</warningLevel>
@@ -68,21 +66,13 @@
         <archiverTool>
         </archiverTool>
       </compileType>
-      <item path="C:/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib/geneticLHS.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="C:/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib/randomLHS.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
       <item path="CRandom.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="CRandom.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="CommonDefines.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="geneticLHS.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="improvedLHS.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -92,6 +82,8 @@
       </item>
       <item path="optimumLHS.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="randomLHS.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="utilityLHS.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="utilityLHS.h" ex="false" tool="3" flavor2="0">
@@ -99,7 +91,6 @@
     </conf>
     <conf name="Release" type="3">
       <toolsSet>
-        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>RTools|MinGW</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
@@ -116,7 +107,6 @@
           <architecture>2</architecture>
           <standard>4</standard>
           <incDir>
-            <pElem>C:/Users/carnellr/Documents/Repositories/Rdevel/R-2.15.0/src/include</pElem>
             <pElem>../bclib</pElem>
           </incDir>
           <commandLine>-Wall -pedantic</commandLine>
@@ -133,21 +123,13 @@
         <archiverTool>
         </archiverTool>
       </compileType>
-      <item path="C:/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib/geneticLHS.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="C:/Users/carnellr/Documents/Repositories/lhsgit/lhs_nb/lhslib/randomLHS.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
       <item path="CRandom.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="CRandom.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="CommonDefines.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="geneticLHS.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="improvedLHS.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -156,6 +138,8 @@
       <item path="optSeededLHS.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="optimumLHS.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="randomLHS.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="utilityLHS.cpp" ex="false" tool="1" flavor2="0">
       </item>
