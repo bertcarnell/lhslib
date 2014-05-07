@@ -29,7 +29,7 @@ namespace lhs_r
     /**
      * Standard Uniform random number generator using R
      */
-    class RStandardUniform : public lhslib::CRandom<double>
+    class RStandardUniform : public bclib::CRandom<double>
     {
     public:
         /**

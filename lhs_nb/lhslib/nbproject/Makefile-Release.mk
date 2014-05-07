@@ -35,7 +35,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/CRandom.o \
 	${OBJECTDIR}/geneticLHS.o \
 	${OBJECTDIR}/improvedLHS.o \
 	${OBJECTDIR}/maximinLHS.o \
@@ -70,11 +69,6 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblhslib.a: ${OBJECTFILES}
 	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblhslib.a
 	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblhslib.a ${OBJECTFILES} 
 	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblhslib.a
-
-${OBJECTDIR}/CRandom.o: CRandom.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -Werror -I../bclib -std=c++98 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CRandom.o CRandom.cpp
 
 ${OBJECTDIR}/geneticLHS.o: geneticLHS.cpp 
 	${MKDIR} -p ${OBJECTDIR}

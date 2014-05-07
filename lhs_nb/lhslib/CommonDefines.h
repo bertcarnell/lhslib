@@ -60,7 +60,7 @@ namespace lhslib
      * @param oRandom the random number stream
      */
     void improvedLHS(int n, int k, int dup, bclib::matrix<int> & result, 
-            CRandom<double> & oRandom);
+            bclib::CRandom<double> & oRandom);
     /**
      * Latin hypercube sample algorithm with maximin criterion
      * @param n number of rows / samples in the lha
@@ -70,7 +70,7 @@ namespace lhslib
      * @param oRandom the random number stream
      */
     void maximinLHS(int n, int k, int dup, bclib::matrix<int> & result, 
-            CRandom<double> & oRandom);
+            bclib::CRandom<double> & oRandom);
     /**
      * Optimum Latin hypercube sample algorithm
      * @param n number of rows / samples in the lha
@@ -84,7 +84,7 @@ namespace lhslib
      */
     void optimumLHS(int n, int k, int maxSweeps, double eps, 
             bclib::matrix<int> & outlhs, int optimalityRecordLength, 
-            CRandom<double> & oRandom, bool bVerbose);
+            bclib::CRandom<double> & oRandom, bool bVerbose);
     /**
      * Application of the optimum lhs method to a seeded Latin hypercube
      * @param n number of rows / samples in the lhs
@@ -117,7 +117,7 @@ namespace lhslib
      * @param result the lhs
      * @param oRandom the random number stream
      */
-    void randomLHS(int n, int k, bool bPreserveDraw, bclib::matrix<double> & result, CRandom<double> & oRandom);
+    void randomLHS(int n, int k, bool bPreserveDraw, bclib::matrix<double> & result, bclib::CRandom<double> & oRandom);
 
     /**
      * Create a random latin hypercube sample with integer values
@@ -126,7 +126,7 @@ namespace lhslib
      * @param result the lhs
      * @param oRandom the random number stream
      */
-    void randomLHS(int n, int k, bclib::matrix<int> & result, CRandom<double> & oRandom);
+    void randomLHS(int n, int k, bclib::matrix<int> & result, bclib::CRandom<double> & oRandom);
     
     /**
      * Create a latin hypercube sample optimized by some criteria with a genetic algorithm
@@ -141,7 +141,7 @@ namespace lhslib
      * @param oRandom the random number stream
      */
     void geneticLHS(int n, int k, int pop, int gen, double pMut, std::string criterium,
-            bool bVerbose, bclib::matrix<double> & result, CRandom<double> & oRandom);
+            bool bVerbose, bclib::matrix<double> & result, bclib::CRandom<double> & oRandom);
 }
 
 #endif	/* COMMONDEFINES_H */

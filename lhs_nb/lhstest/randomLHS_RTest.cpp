@@ -34,7 +34,7 @@ namespace lhsTest{
 		int k = 3;
 		bool bPreserveDraw = false;
         bclib::matrix<double> result = bclib::matrix<double>(n,k);
-        lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
+        bclib::CRandomStandardUniform oRandom = bclib::CRandomStandardUniform();
         oRandom.setSeed(1976, 1968);
         
         lhslib::randomLHS(n, k, bPreserveDraw, result, oRandom);

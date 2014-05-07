@@ -316,7 +316,7 @@ namespace lhslib
      * @param output the output vector of random values
      * @param oRandom the pseudo random number generator
      */
-    void runif_std(unsigned int n, std::vector<double> & output, CRandom<double> & oRandom);
+    void runif_std(unsigned int n, std::vector<double> & output, bclib::CRandom<double> & oRandom);
 
     /**
      * Create a vector of random integer like values
@@ -329,7 +329,7 @@ namespace lhslib
      * @tparam T2 the real valued type like <code>float, double, long double</code>
      */
     template <class T1>
-    void runifint(unsigned int n, T1 min, T1 max, std::vector<T1> & output, CRandom<double> & oRandom)
+    void runifint(unsigned int n, T1 min, T1 max, std::vector<T1> & output, bclib::CRandom<double> & oRandom)
     {
         if (output.size() != n)
         {
@@ -356,7 +356,7 @@ namespace lhslib
      * @tparam T1 the integer valued type like <code>int, unsigned int, long, long long, unsigned long</code>
      */
     template <class T1>
-    void runifint(T1 min, T1 max, T1 * output, CRandom<double> & oRandom)
+    void runifint(T1 min, T1 max, T1 * output, bclib::CRandom<double> & oRandom)
     {
         double r = oRandom.getNextRandom();
         double range = static_cast<double>(max + static_cast<T1>(1) - min);

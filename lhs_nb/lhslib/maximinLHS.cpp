@@ -37,7 +37,7 @@
  */
 namespace lhslib 
 {
-    void maximinLHS(int n, int k, int dup, bclib::matrix<int> & result, CRandom<double> & oRandom)
+    void maximinLHS(int n, int k, int dup, bclib::matrix<int> & result, bclib::CRandom<double> & oRandom)
     {
         if (n < 1 || k < 1 || dup < 1)
         {

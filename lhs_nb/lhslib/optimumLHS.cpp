@@ -47,7 +47,7 @@ namespace lhslib
  *
  */
     void optimumLHS(int n, int k, int maxSweeps, double eps, bclib::matrix<int> & outlhs,
-                    int optimalityRecordLength, CRandom<double> & oRandom, bool bVerbose)
+                    int optimalityRecordLength, bclib::CRandom<double> & oRandom, bool bVerbose)
     {
         if (n < 1 || k < 1 || maxSweeps < 1 || eps <= 0)
         {

@@ -87,7 +87,7 @@ namespace lhslib
         }
     }
     
-    void runif_std(unsigned int n, std::vector<double> & output, CRandom<double> & oRandom)
+    void runif_std(unsigned int n, std::vector<double> & output, bclib::CRandom<double> & oRandom)
     {
         if (output.size() != n)
         {

@@ -39,7 +39,7 @@ namespace lhsTest{
         std::string crit = "S";
         bool verbose = false;
         bclib::matrix<double> result = bclib::matrix<double>(n, k);
-        lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
+        bclib::CRandomStandardUniform oRandom = bclib::CRandomStandardUniform();
         oRandom.setSeed(1976, 1968);
         
         lhslib::geneticLHS(n, k, pop, gen, pMut, crit, verbose, result, oRandom);
@@ -72,7 +72,7 @@ namespace lhsTest{
         int gen = 5;
         double pMut = 0.05;
         bclib::matrix<double> result = bclib::matrix<double>(n, k);
-        lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
+        bclib::CRandomStandardUniform oRandom = bclib::CRandomStandardUniform();
         oRandom.setSeed(1976, 1968);
 
         bool test;

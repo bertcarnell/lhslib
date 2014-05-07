@@ -23,7 +23,7 @@
 
 namespace lhslib 
 {
-    void randomLHS(int n, int k, bclib::matrix<int> & result, CRandom<double> & oRandom)
+    void randomLHS(int n, int k, bclib::matrix<int> & result, bclib::CRandom<double> & oRandom)
     {
         std::vector<int> orderVector = std::vector<int>(n);
         std::vector<double> randomunif1 = std::vector<double>(n);
@@ -41,7 +41,7 @@ namespace lhslib
         }
     }
     
-    void randomLHS(int n, int k, bool bPreserveDraw, bclib::matrix<double> & result, CRandom<double> & oRandom)
+    void randomLHS(int n, int k, bool bPreserveDraw, bclib::matrix<double> & result, bclib::CRandom<double> & oRandom)
     {
         if (n < 1 || k < 1)
         {

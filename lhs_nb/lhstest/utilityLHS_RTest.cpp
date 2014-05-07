@@ -183,7 +183,7 @@ namespace lhsTest{
     
     void utilityLHSTest::testRunif_std()
     {
-        lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
+        bclib::CRandomStandardUniform oRandom = bclib::CRandomStandardUniform();
         oRandom.setSeed(1000,2000);
         
         std::vector<double> A = std::vector<double>(10u);
@@ -199,7 +199,7 @@ namespace lhsTest{
     void utilityLHSTest::testRunifint()
     {
         std::vector<int> A = std::vector<int>(1000u);
-        lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
+        bclib::CRandomStandardUniform oRandom = bclib::CRandomStandardUniform();
         oRandom.setSeed(1100,2100);
         lhslib::runifint<int>(1000u, 3, 9, A, oRandom);
         std::vector<int>::iterator it = std::min_element(A.begin(), A.end());

@@ -36,7 +36,7 @@ namespace lhsTest{
 		int dup = 5;
         bclib::matrix<int> result = bclib::matrix<int>(n,k);
 
-        lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
+        bclib::CRandomStandardUniform oRandom = bclib::CRandomStandardUniform();
         oRandom.setSeed(1976, 1968);
         lhslib::improvedLHS(n, k, dup, result, oRandom);
 		
@@ -90,7 +90,7 @@ print(runif(1), 20)
 		int DUP = 5;
         bclib::matrix<int> result = bclib::matrix<int>(n, k);
 
-        lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
+        bclib::CRandomStandardUniform oRandom = bclib::CRandomStandardUniform();
         oRandom.setSeed(1976, 1968);
 		for (int i = 0; i < 50; i++)
         {

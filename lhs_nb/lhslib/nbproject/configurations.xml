@@ -4,7 +4,6 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>CRandom.h</itemPath>
       <itemPath>CommonDefines.h</itemPath>
       <itemPath>utilityLHS.h</itemPath>
     </logicalFolder>
@@ -15,7 +14,6 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>CRandom.cpp</itemPath>
       <itemPath>geneticLHS.cpp</itemPath>
       <itemPath>improvedLHS.cpp</itemPath>
       <itemPath>maximinLHS.cpp</itemPath>
@@ -66,10 +64,6 @@
         <archiverTool>
         </archiverTool>
       </compileType>
-      <item path="CRandom.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="CRandom.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="CommonDefines.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="geneticLHS.cpp" ex="false" tool="1" flavor2="0">
@@ -123,10 +117,6 @@
         <archiverTool>
         </archiverTool>
       </compileType>
-      <item path="CRandom.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="CRandom.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="CommonDefines.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="geneticLHS.cpp" ex="false" tool="1" flavor2="0">

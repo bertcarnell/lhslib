@@ -25,7 +25,7 @@ namespace lhslib
 {
     // TODO: multi-thread the iterations over population
     void geneticLHS(int n, int k, int pop, int gen, double pMut, std::string criterium,
-            bool bVerbose, bclib::matrix<double> & result, CRandom<double> & oRandom)
+            bool bVerbose, bclib::matrix<double> & result, bclib::CRandom<double> & oRandom)
     {
         if (n < 1 || k < 1)
         {

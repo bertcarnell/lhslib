@@ -37,7 +37,7 @@ namespace lhsTest{
 		double eps = 0.1;
 		int jLen = 7; // 4 choose 2 + 1
 
-        lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
+        bclib::CRandomStandardUniform oRandom = bclib::CRandomStandardUniform();
         oRandom.setSeed(1976, 1968);
 
         bclib::matrix<int> result = bclib::matrix<int>(n, k);
@@ -78,7 +78,7 @@ floor(4*optimumLHS(4,3,2,0.1))+1
 			double eps = 0.1;
 			int jLen = 7; // 4 choose 2 + 1
 
-            lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
+            bclib::CRandomStandardUniform oRandom = bclib::CRandomStandardUniform();
             oRandom.setSeed(1976, 1968);
 
             bclib::matrix<int> result = bclib::matrix<int>(n,k);
