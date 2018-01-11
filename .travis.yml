@@ -2,3 +2,7 @@ language: c++
 
 dist: trusty
 sudo: false
+
+script:
+  - cd lhs_nb
+  - cmake
