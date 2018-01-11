@@ -7,3 +7,6 @@ script:
   - cd lhs_nb
   - cmake -H. -Bbuild
   - cmake --build build
+  - ls -alh build
+  - ./lhstest
+ 
