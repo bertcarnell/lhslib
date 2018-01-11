@@ -9,5 +9,5 @@ script:
   - ls -alh
   - ls -alh build
   - cat build/Makefile
-  - make build/Makefile
+  - make -f build/Makefile lhslib
 
