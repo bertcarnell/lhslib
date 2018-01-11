@@ -4,5 +4,5 @@ dist: trusty
 sudo: false
 
 script:
-  - cd lhs_nb
+  - cd bertcarnell/lhs/lhs_nb
   - cmake
