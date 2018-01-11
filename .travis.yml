@@ -4,6 +4,9 @@ dist: trusty
 sudo: false
 
 script:
-  - ls -alh
   - cd lhs_nb
-  - cmake
+  - cmake -H. -Bbuild
+  - ls -alh
+  - ls -alh build
+  - make build/Makefile
+
