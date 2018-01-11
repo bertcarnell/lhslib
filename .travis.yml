@@ -5,5 +5,5 @@ sudo: false
 
 script:
   - ls -alh
-  - cd bertcarnell/lhs/lhs_nb
+  - cd lhs_nb
   - cmake
