@@ -8,5 +8,6 @@ script:
   - cmake -H. -Bbuild
   - cmake --build build
   - ls -alh build
-  - ./lhstest
+  - ls -alh build/CMakeFiles
+  - ./lhstest/lhstest
  
