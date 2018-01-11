@@ -6,8 +6,4 @@ sudo: false
 script:
   - cd lhs_nb
   - cmake -H. -Bbuild
-  - ls -alh
-  - ls -alh build
-  - cat build/Makefile
-  - make -f build/Makefile lhslib
-
+  - cmake --build build
