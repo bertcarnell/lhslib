@@ -50,8 +50,8 @@ namespace lhsTest{
                 for (int irow = 0; irow < n; irow++)
                 {
                     double temp = result(irow, jcol);
-                    if (result(irow,jcol) >= static_cast<double>(counter) / static_cast<double>(n) &&
-                            result(irow,jcol) < static_cast<double>(counter+1) / static_cast<double>(n))
+                    if (temp >= static_cast<double>(counter) / static_cast<double>(n) &&
+                            temp < static_cast<double>(counter+1) / static_cast<double>(n))
                     {
                         bclib::Assert(0, counterPerColumn);
                         counterPerColumn++;
@@ -74,8 +74,8 @@ namespace lhsTest{
                 for (int irow = 0; irow < n; irow++)
                 {
                     double temp = result(irow, jcol);
-                    if (result(irow,jcol) >= static_cast<double>(counter) / static_cast<double>(n) &&
-                            result(irow,jcol) < static_cast<double>(counter+1) / static_cast<double>(n))
+                    if (temp >= static_cast<double>(counter) / static_cast<double>(n) &&
+                            temp < static_cast<double>(counter+1) / static_cast<double>(n))
                     {
                         bclib::Assert(0, counterPerColumn);
                         counterPerColumn++;
