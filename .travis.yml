@@ -3,9 +3,23 @@ language: c++
 dist: trusty
 sudo: false
 
+addons:
+  apt:
+    packages:
+      - lcov
+
 script:
-  - cd lhs_nb
-  - cmake -H. -Bbuild
+  - cmake . -Bbuild -DCMAKE_BUILD_TYPE=Release # Test release build options
   - cmake --build build
   - ./build/lhstest/lhstest
+  - cmake . -Bcoveragebuild -DCMAKE_BUILD_TYPE=Coverage # Test debug build and coverage options
+  - cmake --build coveragebuild
+  - ./coveragebuild/lhstest/lhstest
+
+after_success:
+  - cd coveragebuild
+  - lcov --directory lhstest --capture --output-file lhstest.info
+  - lcov --remove lhstest.info 'lhstest/*' '/usr/*' --output-file lhstest.clean.info
+  - lcov --list lhstest.clean.info
+  - bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
  
