@@ -9,6 +9,7 @@ addons:
       - lcov
 
 script:
+  - cd lhs_nb
   - cmake . -Bbuild -DCMAKE_BUILD_TYPE=Release # Test release build options
   - cmake --build build
   - ./build/lhstest/lhstest
