@@ -10,6 +10,7 @@ See the lhs R-Forge project here:  https://r-forge.r-project.org/projects/lhs/
 See the lhs project page here:  http://lhs.r-forge.r-project.org/
 
 [![Build Status](https://travis-ci.org/bertcarnell/lhs.svg?branch=master)](https://travis-ci.org/bertcarnell/lhs)
+[![codecov](https://codecov.io/gh/bertcarnell/lhs/branch/master/graph/badge.svg)](https://codecov.io/gh/bertcarnell/lhs)
 
 ### Process
 
