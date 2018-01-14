@@ -7,6 +7,11 @@ addons:
   apt:
     packages:
       - lcov
+      - r-base
+      - r-base-dev
+
+install:
+  - R --slave --vanilla -e "install.packages('Rcpp', repos='http://cran.case.edu')"
 
 script:
   - cd lhs_nb
