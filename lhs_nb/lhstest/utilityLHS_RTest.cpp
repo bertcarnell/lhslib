@@ -65,7 +65,7 @@ namespace lhsTest{
 		bclib::Assert(d.size() == a.size(), "Initialize vector error");
 		int expected[5] = {4, 1, 3, 2, 0};
 		int sizeofexpected = sizeof(expected) / sizeof(expected[0]);
-		bclib::Assert(d.size() == sizeofexpected, "Initialize vector error");
+		bclib::Assert(static_cast<int>(d.size()) == sizeofexpected, "Initialize vector error");
 		for (int i = 0; i < sizeofexpected; i++)
 		{
 			bclib::Assert(d[i] == expected[i], "failed 4");
@@ -75,7 +75,7 @@ namespace lhsTest{
 		lhslib::rank<double>(a, d2);
 		
 		bclib::Assert(d2.size() == a.size(), "Resizing error");
-		bclib::Assert(static_cast<ind>(d2.size()) == sizeofexpected, "Resizing error2");
+		bclib::Assert(static_cast<int>(d2.size()) == sizeofexpected, "Resizing error2");
 		for (int i = 0; i < sizeofexpected; i++)
 		{
 			bclib::Assert(d2[i] == expected[i], "failed 4");
@@ -89,8 +89,8 @@ namespace lhsTest{
 
 		int expected2[5] = {4, 1, 1, 3, 0};
 		int sizeofexpected2 = sizeof(expected2) / sizeof(expected2[0]);
-		bclib::Assert(d.size() == sizeofexpected2, "Resizing error");
-		for (int i = 0; i < static_cast<ind>(sizeof(expected2)); i++)
+		bclib::Assert(static_cast<int>(d.size()) == sizeofexpected2, "Resizing error");
+		for (int i = 0; i < static_cast<int>(sizeof(expected2)); i++)
         {
 			bclib::Assert(d[i] == expected2[i], "failed 5");
         }
@@ -218,7 +218,10 @@ namespace lhsTest{
         bclib::Assert(*it < 1.0);
         it = std::min_element(A.begin(), A.end());
         bclib::Assert(*it > 0.0);
-        
+	
+	// resizing
+	std::vector<double> B = std::vector<double>(100u);
+	lhslib::runif_std(500u, B, oRandom);
     }
     
     void utilityLHSTest::testRunifint()
