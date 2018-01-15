@@ -57,12 +57,12 @@ namespace lhsTest{
 		double b[5] = {.1, .4, .2, .3, .5};
 		int sizeofb = sizeof(b) / sizeof(b[0]);
 		int notsizeofb = 20;
-		std::vector<double> a(b, b + sizeofb)
+		std::vector<double> a(b, b + sizeofb);
 
 		std::vector<int> d = std::vector<int>(sizeofb);
 		lhslib::rank<double>(a, d);
 
-		bclib::Assert(d.size() == a.size(), "Initialize vector error")
+		bclib::Assert(d.size() == a.size(), "Initialize vector error");
 		int expected[5] = {4, 1, 3, 2, 0};
 		int sizeofexpected = sizeof(expected) / sizeof(expected[0]);
 		bclib::Assert(d.size() == sizeofexpected, "Initialize vector error");
@@ -75,7 +75,7 @@ namespace lhsTest{
 		lhslib::rank<double>(a, d2);
 		
 		bclib::Assert(d2.size() == a.size(), "Resizing error");
-		bclib::Assert(d2.size() == sizeofexpected, "Resizing error2");
+		bclib::Assert(static_cast<ind>(d2.size()) == sizeofexpected, "Resizing error2");
 		for (int i = 0; i < sizeofexpected; i++)
 		{
 			bclib::Assert(d2[i] == expected[i], "failed 4");
@@ -90,7 +90,7 @@ namespace lhsTest{
 		int expected2[5] = {4, 1, 1, 3, 0};
 		int sizeofexpected2 = sizeof(expected2) / sizeof(expected2[0]);
 		bclib::Assert(d.size() == sizeofexpected2, "Resizing error");
-		for (int i = 0; i < sizeof(expected2); i++)
+		for (int i = 0; i < static_cast<ind>(sizeof(expected2)); i++)
         {
 			bclib::Assert(d[i] == expected2[i], "failed 5");
         }
