@@ -54,33 +54,43 @@ namespace lhsTest{
 
 	void utilityLHSTest::testRank()
 	{
-		std::vector<double> a = std::vector<double>(5);
 		double b[5] = {.1, .4, .2, .3, .5};
-		for (int i = 0; i < 5; i++)
-        {
-			a[i] = b[i];
-        }
+		int sizeofb = sizeof(b) / sizeof(b[0]);
+		int notsizeofb = 20;
+		std::vector<double> a(b, b + sizeofb)
 
-		std::vector<int> d = std::vector<int>(5);
-        lhslib::rank<double>(a, d);
+		std::vector<int> d = std::vector<int>(sizeofb);
+		lhslib::rank<double>(a, d);
 
+		bclib::Assert(d.size() == a.size(), "Initialize vector error")
 		int expected[5] = {4, 1, 3, 2, 0};
-		for (int i = 0; i < 5; i++)
-        {
+		int sizeofexpected = sizeof(expected) / sizeof(expected[0]);
+		bclib::Assert(d.size() == sizeofexpected, "Initialize vector error");
+		for (int i = 0; i < sizeofexpected; i++)
+		{
 			bclib::Assert(d[i] == expected[i], "failed 4");
-        }
+		}
+		
+		std::vector<int> d2 = std::vector<int>(notsizeofb);
+		lhslib::rank<double>(a, d2);
+		
+		bclib::Assert(d2.size() == a.size(), "Resizing error");
+		bclib::Assert(d2.size() == sizeofexpected, "Resizing error2");
+		for (int i = 0; i < sizeofexpected; i++)
+		{
+			bclib::Assert(d2[i] == expected[i], "failed 4");
+		}
 
-		std::vector<double> e = std::vector<double>(5);
 		double f[5] = {.1, .4, .4, .3, .5};
-		for (int i = 0; i < 5; i++)
-        {
-			e[i] = f[i];
-        }
+		int sizeoff = sizeof(f) / sizeof(f[0]);
+		std::vector<double> e(f, f+sizeoff);
 
 		lhslib::rank<double>(e, d);
 
 		int expected2[5] = {4, 1, 1, 3, 0};
-		for (int i = 0; i < 5; i++)
+		int sizeofexpected2 = sizeof(expected2) / sizeof(expected2[0]);
+		bclib::Assert(d.size() == sizeofexpected2, "Resizing error");
+		for (int i = 0; i < sizeof(expected2); i++)
         {
 			bclib::Assert(d[i] == expected2[i], "failed 5");
         }
@@ -159,6 +169,18 @@ namespace lhsTest{
         bclib::AssertEqualsLRE(sqrt(3*3+3*3+3*3), Bdist(0,1), 12);
         bclib::AssertEqualsLRE(sqrt(6*6+6*6+6*6), Bdist(0,2), 12);
         bclib::AssertEqualsLRE(sqrt(3*3+3*3+3*3), Bdist(1,2), 12);
+		
+		// a matrix with resizing
+        Bdist = bclib::matrix<double>(20, 6);
+        lhslib::calculateDistance<int>(B, Bdist);
+		bclib::Assert(Bdist.colsize() == B.colsize());
+		bclib::Assert(Bdist.rowsize() == B.rowsize());
+        bclib::Assert(0.0, Bdist(0,0), 1E-12);
+        bclib::Assert(0.0, Bdist(1,1), 1E-12);
+        bclib::Assert(0.0, Bdist(2,2), 1E-12);
+        bclib::AssertEqualsLRE(sqrt(3*3+3*3+3*3), Bdist(0,1), 12);
+        bclib::AssertEqualsLRE(sqrt(6*6+6*6+6*6), Bdist(0,2), 12);
+        bclib::AssertEqualsLRE(sqrt(3*3+3*3+3*3), Bdist(1,2), 12);
     }
     
     void utilityLHSTest::testCalculateSOptimal()
@@ -179,6 +201,9 @@ namespace lhsTest{
         std::vector<int> E = {11,11,11,11,11,11,11,11,11,11};
         bclib::matrix<int> F = bclib::matrix<int>(2, 5, E);
         lhslib::copyMatrix<int>(F, B);
+		
+		bclib::matrix<int> G = bclib::matrix<int>(8, 8);
+		ASSERT_THROW(lhslib::copyMatrix<int>(G, B));
     }
     
     void utilityLHSTest::testRunif_std()
@@ -225,5 +250,11 @@ namespace lhsTest{
             lhslib::runifint<int>(3, 9, &temp, oRandom);
             bclib::Assert(temp >= 3 && temp <= 9);
         }
+
+		// resizing
+		std::vector<int> AA = std::vector<int>(10u);
+		unsigned int desiredsize = 100u;
+        lhslib::runifint<int>(desiredsize, 3, 9, AA, oRandom);
+		bclib::Assert(AA.size() == desiredsize);
     }
 }
