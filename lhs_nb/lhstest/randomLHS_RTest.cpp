@@ -83,6 +83,14 @@ namespace lhsTest{
                 }
             }
         }
+		
+		result = bclib::matrix<double>(n,k);
+		ASSERT_THROW(lhslib::randomLHS(-1, k, false, result, oRandom));
+		ASSERT_THROW(lhslib::randomLHS(n, -3, false, result, oRandom));
+		result = bclib::matrix<double>(n+1,k);
+		ASSERT_THROW(lhslib::randomLHS(n, k, false, result, oRandom));
+		result = bclib::matrix<double>(n, k+2);
+		ASSERT_THROW(lhslib::randomLHS(n, k, false, result, oRandom));
     }
 }
 
