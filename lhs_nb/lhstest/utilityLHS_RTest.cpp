@@ -90,7 +90,7 @@ namespace lhsTest{
 		int expected2[5] = {4, 1, 1, 3, 0};
 		int sizeofexpected2 = sizeof(expected2) / sizeof(expected2[0]);
 		bclib::Assert(static_cast<int>(d.size()) == sizeofexpected2, "Resizing error");
-		for (int i = 0; i < static_cast<int>(sizeof(expected2)); i++)
+		for (int i = 0; i < sizeofexpected2; i++)
         {
 			printf("actual %i, expected %i\n", d[i], expected2[i]);
 			bclib::Assert(d[i] == expected2[i], "failed 5 in utilityLHSTest::testRank");
