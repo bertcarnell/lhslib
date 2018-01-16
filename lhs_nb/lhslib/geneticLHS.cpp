@@ -202,13 +202,13 @@ namespace lhslib
             A = J;
             if (v != m_gen && bVerbose)
             {
-                printf("Generation %d completed\n", static_cast<int>(v));
+                printf("Generation %d completed\n", static_cast<int>(v)); // LCOV_EXCL_LINE
             }
         }
 
         if (bVerbose)
         {
-            printf("Last generation completed\n");
+            printf("Last generation completed\n"); // LCOV_EXCL_LINE
         }
 #ifdef _DEBUG
         if (!lhslib::isValidLHS(J[0])) printf("J[0] is not valid\n");
