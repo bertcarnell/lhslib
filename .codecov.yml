@@ -8,6 +8,9 @@ coverage:
   precision: 2
   round: down
   range: "70...100"
+  ignore:
+    - "lhstest/.*"
+    - "/usr/.*"
 
   status:
     project: yes
@@ -27,7 +30,3 @@ comment:
   behavior: default
   require_changes: no
 
-# Custom options
-ignore:
-  - "lhstest/.*"
-  - "/usr/.*"
