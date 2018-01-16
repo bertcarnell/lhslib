@@ -188,7 +188,7 @@ namespace lhslib
         if (!test)
         {
             /* the error function should send an error message through R */
-            throw std::runtime_error("Invalid Hypercube\n");
+            throw std::runtime_error("Invalid Hypercube\n"); // LCOV_EXCL_LINE
         }
     //#endif
 
