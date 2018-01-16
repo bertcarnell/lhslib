@@ -67,7 +67,7 @@ namespace lhsTest{
 		bclib::Assert(k, static_cast<int>(result.colsize()), "resize error2");
 
 		//verbose
-        lhslib::optimumLHS(n, k, maxSweeps, eps, result, jLen, oRandom, true);
+        //lhslib::optimumLHS(n, k, maxSweeps, eps, result, jLen, oRandom, true); // did this cause a seg fault?
 	}
 
 
