@@ -67,7 +67,7 @@ namespace lhsTest{
 		
         bclib::matrix<int> result2 = bclib::matrix<int>(n+1,k);
         ASSERT_THROW(lhslib::improvedLHS(n, k, dup, result2, oRandom));
-        bclib::matrix<int> result3 = bclib::matrix<int>(n,k+!);
+        bclib::matrix<int> result3 = bclib::matrix<int>(n,k+1);
         ASSERT_THROW(lhslib::improvedLHS(n, k, dup, result3, oRandom));
 	}
 
