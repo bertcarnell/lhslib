@@ -27,5 +27,6 @@ after_success:
   - lcov --directory lhstest --capture --output-file lhstest.info
   - lcov --remove lhstest.info 'lhstest/*' '/usr/*' --output-file lhstest.clean.info
   - lcov --list lhstest.clean.info
-  - bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
+  - bash <(curl -s https://codecov.io/bash) -f lhstest.clean.info
+#  - bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
  
