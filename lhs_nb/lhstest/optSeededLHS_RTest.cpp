@@ -76,6 +76,9 @@ namespace lhsTest{
 		ASSERT_THROW(lhslib::optSeededLHS(n, -5, maxSweeps, eps, mOld, jLen, false));
 		ASSERT_THROW(lhslib::optSeededLHS(n, k, 0, eps, mOld, jLen, false));
 		ASSERT_THROW(lhslib::optSeededLHS(n, k, maxSweeps, 0, mOld, jLen, false));
+
+		// trying to get the algorithm to stop when the change is less than eps
+        lhslib::optSeededLHS(n, k, maxSweeps, 1.0E-6, mOld, jLen, false);
 	}
 
 
