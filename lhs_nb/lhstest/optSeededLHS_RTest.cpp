@@ -71,6 +71,14 @@ namespace lhsTest{
 				bclib::Assert(expected[i*k+j] == result(i, j), "Failed 1");
 			}
 		}
+		
+		ASSERT_THROW(lhslib::optSeededLHS(-1, k, maxSweeps, eps, mOld, jLen, false));
+		ASSERT_THROW(lhslib::optSeededLHS(n, -5, maxSweeps, eps, mOld, jLen, false));
+		ASSERT_THROW(lhslib::optSeededLHS(n, k, 0, eps, mOld, jLen, false));
+		ASSERT_THROW(lhslib::optSeededLHS(n, k, maxSweeps, 0, mOld, jLen, false));
+		
+		//verbose
+        lhslib::optSeededLHS(n, k, maxSweeps, eps, mOld, jLen, true);
 	}
 
 
