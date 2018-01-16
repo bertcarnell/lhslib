@@ -54,6 +54,20 @@ namespace lhsTest{
                 bclib::Assert(expected[i*k+j] == result(i, j), "Failed optimumLHS_RTest");
 			}
 		}
+		
+		ASSERT_THROW(lhslib::optimumLHS(-1, k, maxSweeps, eps, result, jLen, oRandom, false));
+		ASSERT_THROW(lhslib::optimumLHS(n, -5, maxSweeps, eps, result, jLen, oRandom, false));
+		ASSERT_THROW(lhslib::optimumLHS(n, k, 0, eps, result, jLen, oRandom, false));
+		ASSERT_THROW(lhslib::optimumLHS(n, k, maxSweeps, -6, result, jLen, oRandom, false));
+		
+		//resize
+		result = bclib::matrix<int>(1,1);
+        lhslib::optimumLHS(n, k, maxSweeps, eps, result, jLen, oRandom, false);
+		bclib::Assert(n, static_cast<int>(result.rowsize()), "resize error");
+		bclib::Assert(k, static_cast<int>(result.colsize()), "resize error2");
+
+		//verbose
+        lhslib::optimumLHS(n, k, maxSweeps, eps, result, jLen, oRandom, true);
 	}
 
 
@@ -85,6 +99,16 @@ floor(4*optimumLHS(4,3,2,0.1))+1
 			for (int i = 0; i < 50; i++)
             {
                 lhslib::optimumLHS(n, k, maxSweeps, eps, result, jLen, oRandom, false);
+            }
+			for (n = 2; n < 8; n++)
+            {
+				for (k = 2; k < 8; k++)
+				{
+					for (maxSweeps = 1; maxSweeps < 4; maxSweeps++)
+					{
+						lhslib::optimumLHS(n, k, maxSweeps, eps, result, jLen, oRandom, false);
+					}
+				}
             }
 		}
 }
