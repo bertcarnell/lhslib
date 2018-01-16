@@ -78,7 +78,9 @@ namespace lhsTest{
 		ASSERT_THROW(lhslib::optSeededLHS(n, k, maxSweeps, 0, mOld, jLen, false));
 		
 		//verbose
+		printf("\n");
         lhslib::optSeededLHS(n, k, maxSweeps, eps, mOld, jLen, true);
+		printf("\n\t");
 	}
 
 

@@ -67,7 +67,9 @@ namespace lhsTest{
 		bclib::Assert(k, static_cast<int>(result.colsize()), "resize error2");
 
 		//verbose
-        //lhslib::optimumLHS(n, k, maxSweeps, eps, result, jLen, oRandom, true); // did this cause a seg fault?
+		printf("\n");
+        lhslib::optimumLHS(n, k, maxSweeps, eps, result, jLen, oRandom, true);
+		printf("\n\t");
 	}
 
 
@@ -90,7 +92,7 @@ floor(4*optimumLHS(4,3,2,0.1))+1
 			int k = 3;
 			int maxSweeps = 2;
 			double eps = 0.1;
-			int jLen = 7; // 4 choose 2 + 1
+			int jLen = n * (n - 1) / 2 + 1; // n choose 2 + 1
 
             bclib::CRandomStandardUniform oRandom = bclib::CRandomStandardUniform();
             oRandom.setSeed(1976, 1968);
@@ -100,8 +102,10 @@ floor(4*optimumLHS(4,3,2,0.1))+1
             {
                 lhslib::optimumLHS(n, k, maxSweeps, eps, result, jLen, oRandom, false);
             }
+
 			for (n = 2; n < 8; n++)
             {
+				jLen = n * (n - 1) / 2 + 1;
 				for (k = 2; k < 8; k++)
 				{
 					for (maxSweeps = 1; maxSweeps < 4; maxSweeps++)
@@ -110,5 +114,6 @@ floor(4*optimumLHS(4,3,2,0.1))+1
 					}
 				}
             }
+
 		}
 }
