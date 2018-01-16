@@ -29,5 +29,5 @@ comment:
 
 # Custom options
 ignore:
-  - "lhstest/*"
-  - "/usr/*"
+  - "lhstest/.*"
+  - "/usr/.*"
