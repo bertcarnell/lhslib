@@ -11,6 +11,7 @@ coverage:
   ignore:
     - "lhstest/.*"
     - "/usr/.*"
+    - "lhs_nb/lhstest/.*"
 
   status:
     project: yes
