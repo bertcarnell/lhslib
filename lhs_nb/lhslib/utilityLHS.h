@@ -300,14 +300,7 @@ namespace lhslib
     {
         //        B[i] <- 1/sum(1/dist(A[, , i]))
         double sum = sumInvDistance<T>(mat);
-        if (sum > 0)
-        {
-            return 1.0 / sum;
-        }
-        else
-        {
-            throw std::runtime_error("problem with calculateSOptimal");
-        }
+        return 1.0 / sum;
     }
 
     /**
