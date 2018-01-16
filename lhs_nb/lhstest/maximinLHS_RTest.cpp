@@ -40,18 +40,23 @@ namespace lhsTest{
         oRandom.setSeed(1976, 1968);
 		lhslib::maximinLHS(n, k, DUP, result, oRandom);
 
-		//int expected[12] = {4,2,1,3,
-        //                    1,4,3,2,
-        //                    3,1,4,2};
 		int expected[12] = {4,1,3,
                             2,4,1,
                             1,3,4,
                             3,2,2};
 		for (int i = 0; i < n*k; i++)
 		{
-			//Assert(expected[i] == result_temp.values[i], "Failed 1");
             bclib::Assert(expected[i], result.getDataVector()[i], "Failed 1");
 		}
+		
+		ASSERT_THROW(lhslib::maximinLHS(-1, k, DUP, result, oRandom));
+		ASSERT_THROW(lhslib::maximinLHS(n, -1, DUP, result, oRandom));
+		ASSERT_THROW(lhslib::maximinLHS(n, k, -1, result, oRandom));
+		
+		bclib::matrix<int> result2 = bclib::matrix<int>(2, k);
+		ASSERT_THROW(lhslib::maximinLHS(n, k, DUP, result2, oRandom));
+		bclib::matrix<int> result3 = bclib::matrix<int>(n, k+1);
+		ASSERT_THROW(lhslib::maximinLHS(n, k, DUP, result3, oRandom));
 	}
 
 /*
