@@ -81,12 +81,11 @@ namespace lhslib
 
         if (bVerbose)
         {
-            PRINT_MACRO("Beginning Optimality Criterion %f \n", gOptimalityOld);
+            PRINT_MACRO("Beginning Optimality Criterion %f \n", gOptimalityOld); //LCOV_EXCL_LINE
         }
 
 #if PRINT_RESULT
         lhslib::lhsPrint(oldHypercube, false);
-        //utilityLHS<double>::lhsPrint(nsamples, nparameters, oldHypercube);
 #endif
 
         test = 0;
@@ -167,7 +166,7 @@ namespace lhslib
                             test = 1;
                             if (bVerbose)
                             {
-                                PRINT_MACRO("Algorithm stopped when the change in the inverse distance measure was smaller than %f \n", ((eps_change) * optimalityChangeOld));
+                                PRINT_MACRO("Algorithm stopped when the change in the inverse distance measure was smaller than %f \n", ((eps_change) * optimalityChangeOld)); //LCOV_EXCL_LINE
                             }
                         }
                     }
@@ -186,14 +185,14 @@ namespace lhslib
                     test = 1;
                     if (bVerbose)
                     {
-                        PRINT_MACRO("Algorithm stopped when changes did not impove design optimality\n");
+                        PRINT_MACRO("Algorithm stopped when changes did not impove design optimality\n"); //LCOV_EXCL_LINE
                     }
                 }
                 /* if the new optimality measure is worse */
                 else if (optimalityRecord[posit] > gOptimalityOld)
                 {
-                    ERROR_MACRO("Unexpected Result: Algorithm produced a less optimal design\n");
-                    test = 1;
+                    ERROR_MACRO("Unexpected Result: Algorithm produced a less optimal design\n"); //LCOV_EXCL_LINE
+                    test = 1; //LCOV_EXCL_LINE
                 }
                 /* if there is a reason to exit... */
                 if (test == 1)
@@ -209,7 +208,7 @@ namespace lhslib
         {
             if (bVerbose)
             {
-                PRINT_MACRO("%d full sweeps completed\n", static_cast<int>(nMaxSweeps));
+                PRINT_MACRO("%d full sweeps completed\n", static_cast<int>(nMaxSweeps)); //LCOV_EXCL_LINE
             }
         }
         /* if we didn't make it through all of them */
@@ -217,13 +216,13 @@ namespace lhslib
         {
             if (bVerbose)
             {
-                PRINT_MACRO("Algorithm used %d sweep(s) and %d extra column(s)\n", static_cast<int>(iter-1), static_cast<int>(extraColumns));
+                PRINT_MACRO("Algorithm used %d sweep(s) and %d extra column(s)\n", static_cast<int>(iter-1), static_cast<int>(extraColumns)); //LCOV_EXCL_LINE
             }
         }
 
         if (bVerbose)
         {
-            PRINT_MACRO("Final Optimality Criterion %f \n", gOptimalityOld);
+            PRINT_MACRO("Final Optimality Criterion %f \n", gOptimalityOld); //LCOV_EXCL_LINE
         }
 
 #if PRINT_RESULT

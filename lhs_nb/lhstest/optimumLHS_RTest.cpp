@@ -65,11 +65,6 @@ namespace lhsTest{
         lhslib::optimumLHS(n, k, maxSweeps, eps, result, jLen, oRandom, false);
 		bclib::Assert(n, static_cast<int>(result.rowsize()), "resize error");
 		bclib::Assert(k, static_cast<int>(result.colsize()), "resize error2");
-
-		//verbose
-		printf("\n");
-        lhslib::optimumLHS(n, k, maxSweeps, eps, result, jLen, oRandom, true);
-		printf("\n\t");
 	}
 
 
