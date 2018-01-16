@@ -24,8 +24,8 @@ namespace lhsTest{
 	void improvedLHS_RTest::Run()
 	{
 		printf("\timprovedLHS_RTest...");
-        testImprovedLHS_R(); // TODO: Not passing
-		testStress(); // TODO:  Not passing
+        testImprovedLHS_R(); 
+		testStress(); 
 		printf("passed\n");
 	}
 
@@ -40,9 +40,6 @@ namespace lhsTest{
         oRandom.setSeed(1976, 1968);
         lhslib::improvedLHS(n, k, dup, result, oRandom);
 		
-		//int expected[12] = {1,4,2,3,
-        //                    3,1,4,2,
-        //                    3,4,1,2};
 		int expected[12] = {1,3,3,
                             4,1,4,
                             2,4,1,
@@ -63,6 +60,15 @@ namespace lhsTest{
         lhslib::improvedLHS(n, k, dup, result, oRandom);
         oRandom.getSeed(&a, &b);
 		bclib::Assert(a == 1399152289 && b == 766747565, "failed RNG test3");
+		
+		ASSERT_THROW(lhslib::improvedLHS(-1, k, dup, result, oRandom));
+		ASSERT_THROW(lhslib::improvedLHS(n, -1, dup, result, oRandom));
+		ASSERT_THROW(lhslib::improvedLHS(n, k, -1, result, oRandom));
+		
+        bclib::matrix<int> result2 = bclib::matrix<int>(n+1,k);
+        ASSERT_THROW(lhslib::improvedLHS(n, k, dup, result2, oRandom));
+        bclib::matrix<int> result3 = bclib::matrix<int>(n,k+!);
+        ASSERT_THROW(lhslib::improvedLHS(n, k, dup, result3, oRandom));
 	}
 
 /*
