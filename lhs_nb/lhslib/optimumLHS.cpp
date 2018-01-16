@@ -206,11 +206,11 @@ namespace lhslib
                     }
                 }
                 /* if the new optimality measure is worse */
-                else if (optimalityRecord[posit] > gOptimalityOld)
+                else if (optimalityRecord[posit] > gOptimalityOld) // LCOV_EXCL_START
                 {
-                    ERROR_MACRO("Unexpected Result: Algorithm produced a less optimal design\n"); // LCOV_EXCL_LINE
-                    test = 1; // LCOV_EXCL_LINE
-                }
+                    ERROR_MACRO("Unexpected Result: Algorithm produced a less optimal design\n");
+                    test = 1;
+                } // LCOV_EXCL_STOP
                 /* if there is a reason to exit... */
                 if (test == 1) 
                 {
