@@ -10,7 +10,7 @@ addons:
       - cmake
 
 script:
-  - cd lhs_nb
+  - cd src
   - cmake . -Bbuild -DCMAKE_BUILD_TYPE=Release # Test release build options
   - cmake --build build
   - ./build/lhstest/lhstest
