@@ -1,5 +1,5 @@
-include_directories(${LHS_SOURCE_DIR}/bclib)
-include_directories(${LHS_SOURCE_DIR}/lhslib)
+include_directories(${LHSLIB_SOURCE_DIR}/bclib)
+include_directories(${LHSLIB_SOURCE_DIR}/lhslib)
 
 add_executable(lhstest geneticLHS_RTest.cpp
                        improvedLHS_RTest.cpp
@@ -10,5 +10,5 @@ add_executable(lhstest geneticLHS_RTest.cpp
 					   randomLHS_RTest.cpp
 					   utilityLHS_RTest.cpp)
 
-link_directories(${LHS_SOURCE_DIR}/lhslib)
+link_directories(${LHSLIB_SOURCE_DIR}/lhslib)
 target_link_libraries(lhstest lhslib)
