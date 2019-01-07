@@ -1,0 +1,33 @@
+version: 1.0.{build}
+
+image: Visual Studio 2017
+
+configuration:
+  - Release
+  - Debug
+
+init:
+  - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+
+install:
+  - cd %APPVEYOR_BUILD_FOLDER%
+  - git submodule update --init --recursive
+
+before_build:
+  - cd %APPVEYOR_BUILD_FOLDER%\src
+  - mkdir build
+  - cd build
+  - cmake.exe .. -G "Visual Studio 15 2017 Win64"
+  
+build:
+  project: c:\projects\oa\src\build\LHSLIB.sln
+
+test_script:
+  - cd %APPVEYOR_BUILD_FOLDER%\src\build
+  - .\lhstest\%configuration%\lhstest.exe > lhstest_output.log
+  - type lhstest_output.log
+  
+artifacts:
+  - path: 'src\**\*_output.log'
+    name: TestOuptut
+    
