@@ -12,7 +12,7 @@ Link to the lhs project page here:  http://bertcarnell.github.io/lhslib/
 
 The code is transfered from the github project to the R project by copying the code from the github checkout to the SVN checkout location and then committing to the R-Forge project.  The R-Forge project is maintained because of the continuous build environment that it offers using the latest R tool chain.  The R-Forge library contains all the R code and help files while the github library is focused only on the C++ library.
 
-The code is transferred using the `lhs_nb\deploylhs.bat` batch script in Windows.
+The code is transferred using the `src\deploylhs.bat` batch script in Windows.
 
 ### Connections
 
