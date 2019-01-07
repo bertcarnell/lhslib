@@ -20,7 +20,7 @@ before_build:
   - cmake.exe .. -G "Visual Studio 15 2017 Win64"
   
 build:
-  project: c:\projects\oa\src\build\LHSLIB.sln
+  project: c:\projects\lhslib\src\build\LHSLIB.sln
 
 test_script:
   - cd %APPVEYOR_BUILD_FOLDER%\src\build
