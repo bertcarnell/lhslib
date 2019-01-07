@@ -1,26 +1,13 @@
-language: c++
+language: cpp
 
 dist: trusty
 sudo: false
 
-#https://github.com/travis-ci/apt-source-whitelist/blob/master/ubuntu.json
-#  {
-#    "alias": "r-packages-trusty",
-#    "sourceline": "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/",
-#    "key_url": "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x51716619E084DAB9"
-#  },
-
 addons:
   apt:
-    sources:
-      - r-packages-trusty
     packages:
       - lcov
-      - r-base
-      - r-base-dev
-
-install:
-  - sudo R --slave --vanilla -e "install.packages('Rcpp', repos='http://cran.case.edu')"
+      - cmake
 
 script:
   - cd lhs_nb
@@ -37,4 +24,3 @@ after_success:
   - lcov --remove lhstest.info 'lhstest/*' '/usr/*' --output-file lhstest.clean.info
   - lcov --list lhstest.clean.info
   - bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
- 

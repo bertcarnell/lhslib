@@ -20,10 +20,7 @@ endif()
 
 message(STATUS "Linker FLAGS: ${CMAKE_EXE_LINKER_FLAGS}")
 
-include(RVariables.cmake)
-
 add_subdirectory(lhslib)
 add_subdirectory(lhstest)
-add_subdirectory(lhs_r)
 
 # don't forget git submodule init, git submodule update
