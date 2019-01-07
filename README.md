@@ -7,6 +7,7 @@ Link to the lhs project page here:  http://bertcarnell.github.io/lhslib/
 
 [![Build Status](https://travis-ci.org/bertcarnell/lhslib.svg?branch=master)](https://travis-ci.org/bertcarnell/lhslib)
 [![codecov](https://codecov.io/gh/bertcarnell/lhslib/branch/master/graph/badge.svg)](https://codecov.io/gh/bertcarnell/lhslib)
+[![Build status](https://ci.appveyor.com/api/projects/status/7xd7sohoug7c0d42?svg=true)](https://ci.appveyor.com/project/bertcarnell/lhslib)
 
 ### Process
 
