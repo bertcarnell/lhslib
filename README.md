@@ -1,12 +1,12 @@
-lhs
-===
+lhslib
+======
 
 Latin hypercube sampling code for the lhs pacakge in the statistical software package R (www.r-project.org)
 
 Link to the lhs project page here:  http://bertcarnell.github.io/lhslib/
 
-[![Build Status](https://travis-ci.org/bertcarnell/lhs.svg?branch=master)](https://travis-ci.org/bertcarnell/lhs)
-[![codecov](https://codecov.io/gh/bertcarnell/lhs/branch/master/graph/badge.svg)](https://codecov.io/gh/bertcarnell/lhs)
+[![Build Status](https://travis-ci.org/bertcarnell/lhslib.svg?branch=master)](https://travis-ci.org/bertcarnell/lhslib)
+[![codecov](https://codecov.io/gh/bertcarnell/lhslib/branch/master/graph/badge.svg)](https://codecov.io/gh/bertcarnell/lhslib)
 
 ### Process
 
