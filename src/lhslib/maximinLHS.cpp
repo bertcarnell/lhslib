@@ -129,10 +129,10 @@ namespace lhslib
                     * find the distance between candidate points and the points already
                     * in the sample
                     */
-                    for (msize_type k = 0; k < nparameters; k++)
+                    for (msize_type kindex= 0; kindex < nparameters; kindex++)
                     {
-                        vec[k] = point1(k, jcol) - result(k, j);
-                        distSquared += vec[k] * vec[k];
+                        vec[kindex] = point1(kindex, jcol) - result(kindex, j);
+                        distSquared += vec[kindex] * vec[kindex];
                     }
                     /*
                     * if the distance squared value is the smallest so far, place it in the
@@ -150,7 +150,7 @@ namespace lhslib
                 if (static_cast<double>(minCandidateSquaredDistBtwnPts) > minSquaredDistBtwnPts)
                 {
                     minSquaredDistBtwnPts = static_cast<double>(minCandidateSquaredDistBtwnPts);
-                    best = jcol;
+                    best = static_cast<unsigned int>(jcol);
                 }
             }
 

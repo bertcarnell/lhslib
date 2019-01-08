@@ -1,57 +1,27 @@
-rm -rf cmakebuild
-mkdir cmakebuild
-cd cmakebuild
-"c:\Program Files (x86)\CMake 2.8\bin\cmake.exe" -G "MinGW Makefiles" -DCMAKE_CXX_COMPILER=C:/Rtools/gcc-4.6.3/bin/g++.exe -DCMAKE_BUILD_TYPE=Debug ..
-
-"C:\MinGW\bin\mingw32-make.exe"
-
-bclibtest\bclibtest.exe
-  
-  
-
-:: %1 is Debug, Release
-if "%1"=="" (GOTO :firststop)
-if "%2"=="" (echo No compiler specified, using visual studio)
-GOTO :continue
-
-:firststop
-echo %0 uses command:  %0 [Debug,Release] [MinGw,VS]
-PAUSE
-EXIT
-
-:continue
-
-:: %2 is MinGW or any other (e.g. VS)
-
-cd ..
 rm -rf build
 mkdir build
 cd build
 
-IF "%2"=="MinGW" (GOTO :section1) ELSE (GOTO :section2)
+IF "%1"=="MinGW" (GOTO :section1) ELSE (GOTO :section2)
 
 :section1
 
-set path=%path:c:\Rtools\bin;=%
+"C:\Program Files\CMake\bin\cmake.exe" -G "MinGW Makefiles" -DCMAKE_CXX_COMPILER=C:/Rtools/mingw_64/bin/g++.exe -DCMAKE_C_COMPILER=C:/Rtools/mingw_64/bin/gcc.exe -DCMAKE_MAKE_PROGRAM=C:/Rtools/mingw_64/bin/mingw32-make.exe -DCMAKE_BUILD_TYPE=Debug ..
+C:\Rtools\mingw_64\bin\mingw32-make.exe
 
-"c:\Program Files (x86)\CMake 2.8\bin\cmake.exe" -G "MinGW Makefiles" -DCMAKE_CXX_COMPILER=C:/Rtools/gcc-4.6.3/bin/g++.exe -DCMAKE_BUILD_TYPE=%1 ../src
+.\lhstest\lhstest.exe
 
-"C:\MinGW\bin\mingw32-make.exe"
-
-oatest\oatest.exe
-oalhstest\oalhstest.exe
-
-PAUSE
-EXIT
+GOTO :section3
 
 :section2
 
-"c:\Program Files (x86)\CMake 2.8\bin\cmake.exe" -G "Visual Studio 12" -DCMAKE_BUILD_TYPE=%1 ../src
+cmake .. -G "Visual Studio 15 2017 Win64"
 
-"C:\Program Files (x86)\MSBuild\12.0\Bin\msbuild.exe" OA.sln /t:Rebuild /p:Configuration=Debug
+"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\MsBuild.exe" LHSLIB.sln /t:Rebuild /p:Configuration=Debug
 
-oatest\Debug\oatest.exe
-oalhstest\Debug\oalhstest.exe
+.\lhstest\Debug\lhstest.exe
 
+GOTO :section3
+
+:section3
 PAUSE
-EXIT

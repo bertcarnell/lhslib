@@ -38,8 +38,8 @@ namespace lhsTest{
         oRandom.setSeed(1976, 1968);
         
         lhslib::randomLHS(n, k, bPreserveDraw, result, oRandom);
-        bclib::Assert(k, result.colsize());
-        bclib::Assert(n, result.rowsize());
+        bclib::Assert(k, static_cast<int>(result.colsize()));
+        bclib::Assert(n, static_cast<int>(result.rowsize()));
 
         int counterPerColumn;
         for (int jcol = 0; jcol < k; jcol++)
@@ -63,8 +63,8 @@ namespace lhsTest{
         result.clear();
         result = bclib::matrix<double>(n,k);
         lhslib::randomLHS(n, k, true, result, oRandom);
-        bclib::Assert(k, result.colsize());
-        bclib::Assert(n, result.rowsize());
+        bclib::Assert(k, static_cast<int>(result.colsize()));
+        bclib::Assert(n, static_cast<int>(result.rowsize()));
 
         for (int jcol = 0; jcol < k; jcol++)
         {

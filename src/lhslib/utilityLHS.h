@@ -332,7 +332,7 @@ namespace lhslib
         runif_std(n, r, oRandom);
         typename std::vector<T1>::iterator output_it;
         std::vector<double>::iterator r_it;
-        double range = static_cast<double>(max + static_cast<T1>(1) - min);
+        double range = static_cast<double>(max) + 1.0 - static_cast<double>(min);
         for (output_it = output.begin(), r_it = r.begin();
                 output_it != output.end() && r_it != r.end(); ++output_it, ++r_it)
         {
@@ -352,7 +352,7 @@ namespace lhslib
     void runifint(T1 min, T1 max, T1 * output, bclib::CRandom<double> & oRandom)
     {
         double r = oRandom.getNextRandom();
-        double range = static_cast<double>(max + static_cast<T1>(1) - min);
+        double range = static_cast<double>(max) + 1.0 - static_cast<double>(min);
         *output = min + static_cast<T1>(floor((r * range)));
     }
     

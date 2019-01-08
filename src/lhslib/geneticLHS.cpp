@@ -62,7 +62,7 @@ namespace lhslib
         for (msize_type i = 0; i < m_pop; i++)
         {
             // fill A with random hypercubes
-            randomLHS(m_n, m_k, A[i], oRandom);
+            randomLHS(static_cast<int>(m_n), static_cast<int>(m_k), A[i], oRandom);
 #ifdef _DEBUG
             if (!lhslib::isValidLHS(A[i])) printf("A is not valid at %d in randomLHS\n", static_cast<int>(i));
 #endif
@@ -108,7 +108,7 @@ namespace lhslib
             // H is used as an index on vector of matrices, A, so it should be using zero based order
             std::vector<int> H = std::vector<int>(B.size());
             bclib::findorder_zero(B, H);
-            int posit = std::max_element(B.begin(), B.end()) - B.begin();
+            int posit = static_cast<int>(std::max_element(B.begin(), B.end()) - B.begin());
 
             J = std::vector<bclib::matrix<int> >(m_pop);
             for (std::vector<bclib::matrix<int> >::iterator i = J.begin(); i != J.end(); ++i)
@@ -154,8 +154,8 @@ namespace lhslib
             // in the others in the first half of the population, randomly permute a column from the second half into the first half
             for (msize_type i = 1; i < (m_pop / 2); i++)
             {
-                runifint<int>(0, m_k-1, &temp1, oRandom);
-                runifint<int>(0, m_k-1, &temp2, oRandom);
+                runifint<int>(0, static_cast<int>(m_k)-1, &temp1, oRandom);
+                runifint<int>(0, static_cast<int>(m_k)-1, &temp2, oRandom);
                 for (msize_type irow = 0; irow < m_n; irow++)
                 {
                     J[i](irow, temp1) = J[i + m_pop / 2](irow, temp2);
@@ -172,8 +172,8 @@ namespace lhslib
             // for the second half of the population, randomly permute a column from the best hypercube
             for (msize_type i = m_pop / 2; i < m_pop; i++)
             {
-                runifint<int>(0, m_k-1, &temp1, oRandom);
-                runifint<int>(0, m_k-1, &temp2, oRandom);
+                runifint<int>(0, static_cast<int>(m_k)-1, &temp1, oRandom);
+                runifint<int>(0, static_cast<int>(m_k)-1, &temp2, oRandom);
                 for (msize_type irow = 0; irow < m_n; irow++)
                 {
                     J[i](irow, temp1) = A[posit](irow, temp2);
@@ -184,7 +184,7 @@ namespace lhslib
             std::vector<double> y = std::vector<double>(m_k);
             for (msize_type i = 1; i < m_pop; i++)
             {
-                runif_std(m_k, y, oRandom);
+                runif_std(static_cast<unsigned int>(m_k), y, oRandom);
                 for (msize_type j = 0; j < m_k; j++)
                 {
                     if (y[j] <= pMut)
@@ -214,7 +214,7 @@ namespace lhslib
         if (!lhslib::isValidLHS(J[0])) printf("J[0] is not valid\n");
 #endif
         std::vector<double> eps = std::vector<double>(m_n*m_k);
-        runif_std(m_n*m_k, eps, oRandom);
+        runif_std(static_cast<unsigned int>(m_n * m_k), eps, oRandom);
         unsigned int count = 0;
         for (unsigned int j = 0; j < static_cast<unsigned int>(m_k); j++)
         {

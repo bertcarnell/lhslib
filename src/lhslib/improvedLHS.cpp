@@ -149,10 +149,10 @@ namespace lhslib
                     * find the distance between candidate points and the points already
                     * in the sample
                     */
-                    for (msize_type k = 0; k < nparameters; k++)
+                    for (msize_type kindex = 0; kindex < nparameters; kindex++)
                     {
-                        vec[k] = point1(k, jcol) - result(k, j);
-                        distSquared += vec[k] * vec[k];
+                        vec[kindex] = point1(kindex, jcol) - result(kindex, j);
+                        distSquared += vec[kindex] * vec[kindex];
                     }
                     /* original code compared dist1 to opt, but using the square root
                     * function and recasting distSquared to a double was unnecessary.
@@ -176,7 +176,7 @@ namespace lhslib
                 if (std::fabs(static_cast<double>(min_candidate) - opt2) < min_all)
                 {
                     min_all = std::fabs(static_cast<double>(min_candidate) - opt2);
-                    best = jcol;
+                    best = static_cast<unsigned int>(jcol);
                 }
             }
 

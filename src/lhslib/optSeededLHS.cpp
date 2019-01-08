@@ -106,21 +106,21 @@ namespace lhslib
                 for (msize_type i = 0; i < nsamples - 1; i++)
                 {
                     /* iterate over the rows for the second point from i+1 to N-1 */
-                    for (msize_type k = i + 1; k < nsamples; k++)
+                    for (msize_type kindex = i + 1; kindex < nsamples; kindex++)
                     {
                         /* put the values from oldHypercube into newHypercube */
                         copyMatrix<double>(newHypercube, oldHypercube);
                         
                         /* exchange two values (from the ith and kth rows) in the jth column
                         * and place them in the new matrix */
-                        newHypercube(i, j) = oldHypercube(k, j);
-                        newHypercube(k, j) = oldHypercube(i, j);
+                        newHypercube(i, j) = oldHypercube(kindex, j);
+                        newHypercube(kindex, j) = oldHypercube(i, j);
 
                         /* store the optimality of the newly created matrix and the rows that
                         * were interchanged */
                         optimalityRecord[optimalityRecordIndex] = sumInvDistance<double>(newHypercube);
-                        interchangeRow1[optimalityRecordIndex] = i;
-                        interchangeRow2[optimalityRecordIndex] = k;
+                        interchangeRow1[optimalityRecordIndex] = static_cast<unsigned int>(i);
+                        interchangeRow2[optimalityRecordIndex] = static_cast<unsigned int>(kindex);
                         optimalityRecordIndex++;
                     }
                 }
@@ -135,11 +135,11 @@ namespace lhslib
                 * In other words, which two row interchanges made the hypercube better in
                 * this column */
                 posit = 0;
-                for (vsize_type k = 0; k < nOptimalityRecordLength; k++)
+                for (vsize_type kindex = 0; kindex < nOptimalityRecordLength; kindex++)
                 {
-                    if (optimalityRecord[k] < optimalityRecord[posit])
+                    if (optimalityRecord[kindex] < optimalityRecord[posit])
                     {
-                        posit = k;
+                        posit = static_cast<unsigned int>(kindex);
                     }
                 }
 

@@ -69,7 +69,7 @@ namespace lhslib
         bclib::matrix<int>::iterator iti = resultint.begin();
         for (;it != result.end(); ++it, ++iti)
         {
-            *iti = 1 + floor(static_cast<double>(n) * (*it));
+            *iti = 1 + static_cast<int>(floor(static_cast<double>(n) * (*it)));
         }
         bool ret = isValidLHS(resultint);        
         return ret;

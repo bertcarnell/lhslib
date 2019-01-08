@@ -42,5 +42,5 @@ int main(int argc, const char* argv[] )
 	CREATE_TEST(utilityLHSTest);
     CREATE_TEST(randomLHS_RTest);
     CREATE_TEST(geneticLHS_RTest);
-    EXECUTE_TESTS();
+    EXECUTE_TESTS(0);
 }

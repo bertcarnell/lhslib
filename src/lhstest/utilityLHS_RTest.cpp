@@ -110,7 +110,7 @@ namespace lhsTest{
         {
             for (bclib::matrix<int>::size_type irow = 0; irow < A.rowsize(); irow++)
             {
-                bclib::Assert(jcol+1, A(irow, jcol));
+                bclib::Assert(static_cast<int>(jcol) + 1, A(irow, jcol));
             }
         }
     }
