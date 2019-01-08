@@ -3,7 +3,7 @@ lhslib
 
 Latin hypercube sampling code for the lhs pacakge in the statistical software package R (www.r-project.org)
 
-Link to the lhs project page here:  http://bertcarnell.github.io/lhslib/
+Link to the lhs project page here:  https://bertcarnell.github.io/lhslib/
 
 |<sub>Linux & MacOS</sub>|<sub>Windows</sub>|<sub>Code Coverage</sub>|
 |:---:|:---:|:---:|
