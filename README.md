@@ -17,4 +17,57 @@ The code is transferred using the `src\deploylhs.bat` batch script in Windows.
 
 ### Connections
 
-The project is also connected to the oa (orthogonal array) project.  https://github.com/bertcarnell/oa
+- [oa](https://github.com/bertcarnell/oa) orthogonal array project
+- [bclib](https://github.com/bertcarnell/bclib) bertcarnell template library
+- [R project](http://www.r-project.org)
+- [lhs on CRAN](https://r-forge.r-project.org/projects/lhs/)
+- [doxygen](http://www.stack.nl/~dimitri/doxygen/)
+
+## Examples
+
+The API is primarily documented through the Doxygen documentation supplied [here](http://bertcarnell.github.io/lhslib/).  The following
+code illustrates how the API is called from C++.  The Rcpp API is also illustrated, although it is intended to be
+called from within R.  Notes: `bclib` is a namespace from another related github project with common code for bertcarnell's
+libraries.  The `bclib::matrix<T>` class is a simple matrix class that only includes necessary operations.  More
+robust matrix templates could be used in the future.  `lhslib` is the namespace of this project.
+
+#### improvedLHS Algorithm
+
+```
+int n = 4;
+int k = 3;
+int dup = 5;
+bclib::matrix<int> result = bclib::matrix<int>(n,k);
+
+lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
+oRandom.setSeed(1976, 1968);
+lhslib::improvedLHS(n, k, dup, result, oRandom);
+```
+
+#### maximinLHS Algorithm
+
+```
+int n = 4;
+int k = 3;
+int dup = 5;
+bclib::matrix<int> result = bclib::matrix<int>(n, k);
+
+lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
+oRandom.setSeed(1976, 1968);
+lhslib::maximinLHS(n, k, dup, result, oRandom);
+```
+
+#### optimumLHS Algorithm
+
+```
+int n = 4;
+int k = 3;
+int maxSweeps = 2;
+double eps = 0.1;
+int jLen = 7; // (4 choose 2) + 1
+bclib::matrix<int> result = bclib::matrix<int>(n, k);
+
+lhslib::CRandomStandardUniform oRandom = lhslib::CRandomStandardUniform();
+oRandom.setSeed(1976, 1968);
+lhslib::optimumLHS(n, k, maxSweeps, eps, result, jLen, oRandom, false);
+```
