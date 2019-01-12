@@ -24,7 +24,7 @@
 #include <cstdlib>
 #include "TestClass.h"
 #include "utilityLHS.h"
-#include "CommonDefines.h"
+#include "LHSCommonDefines.h"
 
 namespace lhsTest {
 	class geneticLHS_RTest : public bclib::TestClass

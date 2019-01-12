@@ -22,7 +22,7 @@
 
 #include <cstdlib>
 #include "TestClass.h"
-#include "CommonDefines.h"
+#include "LHSCommonDefines.h"
 
 namespace lhsTest 
 {

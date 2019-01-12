@@ -21,7 +21,7 @@
 #ifndef UTILITYLHS_H
 #define	UTILITYLHS_H
 
-#include "CommonDefines.h"
+#include "LHSCommonDefines.h"
 
 namespace lhslib
 {

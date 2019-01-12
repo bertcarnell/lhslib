@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "CommonDefines.h"
+#include "LHSCommonDefines.h"
 #include "utilityLHS.h"
 /*
  * Arrays are passed into this routine to allow R to allocate and deallocate

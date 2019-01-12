@@ -24,7 +24,7 @@
 #include "TestClass.h"
 #include "utilityLHS.h"
 #include "matrix.h"
-#include "CommonDefines.h"
+#include "LHSCommonDefines.h"
 
 /**
  * @namespace lhsTest A collections of tests for the lhs methods
