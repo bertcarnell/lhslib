@@ -144,4 +144,4 @@ namespace lhslib
             bool bVerbose, bclib::matrix<double> & result, bclib::CRandom<double> & oRandom);
 }
 
-#endif	/* HSCOMMONDEFINES_H */
+#endif	/* LHSCOMMONDEFINES_H */
