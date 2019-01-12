@@ -18,8 +18,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef COMMONDEFINES_H
-#define	COMMONDEFINES_H
+#ifndef LHSCOMMONDEFINES_H
+#define	LHSCOMMONDEFINES_H
 
 #include <cstdlib>
 #include <cmath>
@@ -144,4 +144,4 @@ namespace lhslib
             bool bVerbose, bclib::matrix<double> & result, bclib::CRandom<double> & oRandom);
 }
 
-#endif	/* COMMONDEFINES_H */
+#endif	/* HSCOMMONDEFINES_H */
