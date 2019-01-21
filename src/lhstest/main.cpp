@@ -32,6 +32,7 @@
 
 using namespace lhsTest;
 
+/** Test runner */
 int main(int argc, const char* argv[] )
 {
     START_TESTS("Starting Simple Tests...\n");

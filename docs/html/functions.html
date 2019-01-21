@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +56,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('functions.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -63,242 +87,35 @@ $(function() {
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div>
-
-<h3><a id="index_a"></a>- a -</h3><ul>
-<li>assertion_error()
-: <a class="el" href="classbclib_1_1assertion__error.html#ace47425eaf774c04caf93a073eaab38a">bclib::assertion_error</a>
-</li>
-<li>at()
-: <a class="el" href="classbclib_1_1matrix.html#a36dde132dee1b7a620b40de14de8876e">bclib::matrix&lt; T &gt;</a>
-</li>
-</ul>
-
-
-<h3><a id="index_b"></a>- b -</h3><ul>
-<li>begin()
-: <a class="el" href="classbclib_1_1matrix.html#a22657b4fd7139aba0d51da4c71eea103">bclib::matrix&lt; T &gt;</a>
-</li>
-</ul>
-
-
-<h3><a id="index_c"></a>- c -</h3><ul>
-<li>clear()
-: <a class="el" href="classbclib_1_1matrix.html#a2a8973dc97fcfe6122aaac457f0a4489">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>colsize()
-: <a class="el" href="classbclib_1_1matrix.html#a947eee32ac483e9bbd75a24a5f3fb0e9">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>columnwise_iterator
-: <a class="el" href="classbclib_1_1matrix.html#a0e2e9ab9aa123254d4c544d491a22476">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>columnwisebegin()
-: <a class="el" href="classbclib_1_1matrix.html#aeae69b3382060c86ff1b9b55a4985423">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>columnwiseend()
-: <a class="el" href="classbclib_1_1matrix.html#a04bcebe8b4e20dd1ddee5befd48e172b">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>const_columnwise_iterator
-: <a class="el" href="classbclib_1_1matrix.html#a5b96e223aca42e17fcb4ee13a015ac5c">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>const_iterator
-: <a class="el" href="classbclib_1_1matrix.html#a730317fa71ef965e089f4e438294f859">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>const_rowwise_iterator
-: <a class="el" href="classbclib_1_1matrix.html#a337c3bd7bcd2a4fdaca40d6d3ec01711">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>CRandomStandardUniform()
-: <a class="el" href="classbclib_1_1_c_random_standard_uniform.html#a90e5e7b41d1b5b5d40db508ed801708c">bclib::CRandomStandardUniform</a>
-</li>
-</ul>
-
-
-<h3><a id="index_d"></a>- d -</h3><ul>
-<li>data()
-: <a class="el" href="classbclib_1_1matrix.html#aeae65725bbf1c02b8e6b6dd4bcc8d3b3">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>difference_type
-: <a class="el" href="classbclib_1_1matrix.html#a00fd385eef6d4b7f4b201bf5ae997a6f">bclib::matrix&lt; T &gt;</a>
-</li>
-</ul>
-
-
-<h3><a id="index_e"></a>- e -</h3><ul>
-<li>end()
-: <a class="el" href="classbclib_1_1matrix.html#a2a056df60cb006bc612f34ad0b003035">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>executeTests()
-: <a class="el" href="classbclib_1_1_test_class.html#a2cae37f046f4c7d88028840b06bc1c97">bclib::TestClass</a>
-</li>
-</ul>
-
-
-<h3><a id="index_f"></a>- f -</h3><ul>
-<li>fill()
-: <a class="el" href="classbclib_1_1matrix.html#ab19c51389e306967aaadc79cf06773b7">bclib::matrix&lt; T &gt;</a>
-</li>
-</ul>
-
-
-<h3><a id="index_g"></a>- g -</h3><ul>
-<li>getcol()
-: <a class="el" href="classbclib_1_1matrix.html#a0b34a8c7046ec36fb2a65d65a373bd38">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>getcol_at()
-: <a class="el" href="classbclib_1_1matrix.html#a126dfb7f66880d90844e5ba436b032e2">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>getColumnMatrix()
-: <a class="el" href="classbclib_1_1matrix.html#afd38f7e60fe46b60d72efa9a6f25f263">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>getColumnMatrix_at()
-: <a class="el" href="classbclib_1_1matrix.html#abc546ba30ecaf13f4225a10be1fe5659">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>getDataVector()
-: <a class="el" href="classbclib_1_1matrix.html#aaf41f65676a77c8c9dcaac3ef2d63329">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>getNextRandom()
-: <a class="el" href="classbclib_1_1_c_random.html#a65481830afc9946c02263046cb245fe9">bclib::CRandom&lt; T &gt;</a>
-, <a class="el" href="classbclib_1_1_c_random_standard_uniform.html#a974b7c56d93c620902b76bbe3b19f1b0">bclib::CRandomStandardUniform</a>
-, <a class="el" href="classlhs__r_1_1_r_standard_uniform.html#a30351795f1dfa039bc97c6756db502bb">lhs_r::RStandardUniform</a>
-</li>
-<li>getrow()
-: <a class="el" href="classbclib_1_1matrix.html#aa4f0c278271b087e0a46806af7f6a87a">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>getrow_at()
-: <a class="el" href="classbclib_1_1matrix.html#aaa293191428dd7b9cb7fdeb6d182a7aa">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>getRowMatrix()
-: <a class="el" href="classbclib_1_1matrix.html#a1a831daa831fff9ec4446ab613ee32ff">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>getRowMatrix_at()
-: <a class="el" href="classbclib_1_1matrix.html#a0932d2346841b26a78af3480164bde74">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>getSeed()
-: <a class="el" href="classbclib_1_1_c_random_standard_uniform.html#abf94c40e49a133e11a8a57489b26cee1">bclib::CRandomStandardUniform</a>
-</li>
-</ul>
-
-
-<h3><a id="index_i"></a>- i -</h3><ul>
-<li>isEmpty()
-: <a class="el" href="classbclib_1_1matrix.html#a20f799df7c2353096bb8bc380d423c95">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>isTransposed()
-: <a class="el" href="classbclib_1_1matrix.html#a8d5221dc891b2ab41e6bd099e99e73e7">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>iterator
-: <a class="el" href="classbclib_1_1matrix.html#afce7bb2fa42deb61c2a7247b53354cea">bclib::matrix&lt; T &gt;</a>
-</li>
-</ul>
-
-
-<h3><a id="index_m"></a>- m -</h3><ul>
-<li>matrix()
-: <a class="el" href="classbclib_1_1matrix.html#a4493188ae95b67dfd0ce7d858196d23b">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>matrixConstIter()
-: <a class="el" href="classbclib_1_1matrix_const_iter.html#a3ec2d5559ae6ee7086cdfaca42a60626">bclib::matrixConstIter&lt; T, ISROWWISE &gt;</a>
-</li>
-<li>matrixConstIter&lt; T, false &gt;
-: <a class="el" href="classbclib_1_1matrix.html#a7a479d5a0391035da01294495959e285">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>matrixConstIter&lt; T, true &gt;
-: <a class="el" href="classbclib_1_1matrix.html#ac004510e960705fcb826680cb7ccd8f2">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>matrixIter()
-: <a class="el" href="classbclib_1_1matrix_iter.html#a0a9a001c2a080ad21dc8b716d87057a8">bclib::matrixIter&lt; T, ISROWWISE &gt;</a>
-</li>
-<li>matrixIter&lt; T, false &gt;
-: <a class="el" href="classbclib_1_1matrix.html#abebf40cfdffba0f91ac168aa8c19f26c">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>matrixIter&lt; T, true &gt;
-: <a class="el" href="classbclib_1_1matrix.html#a713e4a7813010c45c36a88e6b707cf3d">bclib::matrix&lt; T &gt;</a>
-</li>
-</ul>
-
-
-<h3><a id="index_o"></a>- o -</h3><ul>
-<li>operator *()
-: <a class="el" href="classbclib_1_1matrix_const_iter.html#ae7bc56933362283b82b2455c68501702">bclib::matrixConstIter&lt; T, ISROWWISE &gt;</a>
-, <a class="el" href="classbclib_1_1matrix_iter.html#a17b7b2de368f669085dbc44ee7218a37">bclib::matrixIter&lt; T, ISROWWISE &gt;</a>
-</li>
-<li>operator!=()
-: <a class="el" href="classbclib_1_1matrix.html#a9bd84c9f052528e8464758bc548f0999">bclib::matrix&lt; T &gt;</a>
-, <a class="el" href="classbclib_1_1matrix_const_iter.html#a7211899889d79aa3020f4bc44dfe82c9">bclib::matrixConstIter&lt; T, ISROWWISE &gt;</a>
-, <a class="el" href="classbclib_1_1matrix_iter.html#ab101828196487c79b618233e2016b9f7">bclib::matrixIter&lt; T, ISROWWISE &gt;</a>
-</li>
+<div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div><ul>
 <li>operator()()
-: <a class="el" href="classbclib_1_1matrix.html#ae4e53e9c169aff4c889da892c36b3677">bclib::matrix&lt; T &gt;</a>
-, <a class="el" href="structlhslib_1_1invert.html#a33d9f2fc7d1297c161c3ea9cbb09a792">lhslib::invert&lt; T, W &gt;</a>
+: <a class="el" href="structlhslib_1_1invert.html#a33d9f2fc7d1297c161c3ea9cbb09a792">lhslib::invert&lt; T, W &gt;</a>
 , <a class="el" href="structlhslib_1_1square_difference.html#ace030a997fbe66638bb8033fb13d7ee1">lhslib::squareDifference&lt; T &gt;</a>
 </li>
-<li>operator++()
-: <a class="el" href="classbclib_1_1matrix_const_iter.html#a324bf4affbf19f8da63fefe7431db658">bclib::matrixConstIter&lt; T, ISROWWISE &gt;</a>
-, <a class="el" href="classbclib_1_1matrix_iter.html#ad5d849bf9dee0a85f84b4c038833e66c">bclib::matrixIter&lt; T, ISROWWISE &gt;</a>
-</li>
-<li>operator=()
-: <a class="el" href="classbclib_1_1matrix.html#ab87860c4d77441e1b2f5fad1e922bed4">bclib::matrix&lt; T &gt;</a>
-, <a class="el" href="classbclib_1_1matrix_const_iter.html#aade0cde615b422517cc4b2c6f3a5a04e">bclib::matrixConstIter&lt; T, ISROWWISE &gt;</a>
-, <a class="el" href="classbclib_1_1matrix_iter.html#a84b5b3fb3e65fa386b9f4c533b657cf9">bclib::matrixIter&lt; T, ISROWWISE &gt;</a>
-</li>
-<li>operator==()
-: <a class="el" href="classbclib_1_1matrix.html#a3c2ad9aea9eec10c1571a3d1396a7659">bclib::matrix&lt; T &gt;</a>
-, <a class="el" href="classbclib_1_1matrix_const_iter.html#a353ab56747773576357fbd9d7feb2bb4">bclib::matrixConstIter&lt; T, ISROWWISE &gt;</a>
-, <a class="el" href="classbclib_1_1matrix_iter.html#a2ce38d81a119355dbcee3bffd94db6b7">bclib::matrixIter&lt; T, ISROWWISE &gt;</a>
-</li>
-</ul>
-
-
-<h3><a id="index_p"></a>- p -</h3><ul>
-<li>pointer
-: <a class="el" href="classbclib_1_1matrix.html#a2dbfe8da4088fcf4864c9e616b19e5ad">bclib::matrix&lt; T &gt;</a>
-</li>
-</ul>
-
-
-<h3><a id="index_r"></a>- r -</h3><ul>
-<li>reference
-: <a class="el" href="classbclib_1_1matrix.html#ab44c1078eae81f86f7151a4504526b42">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>rowsize()
-: <a class="el" href="classbclib_1_1matrix.html#a241053c13fbe9bc2c8ac01dafe9eb19d">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>rowwise_iterator
-: <a class="el" href="classbclib_1_1matrix.html#a3c571a889929d2b09fa4c383d03fe551">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>rowwisebegin()
-: <a class="el" href="classbclib_1_1matrix.html#a1e3a4a2bb7117d4daa3b65588064e28c">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>rowwiseend()
-: <a class="el" href="classbclib_1_1matrix.html#addb6694814278f2a7674bdb02cc6f71e">bclib::matrix&lt; T &gt;</a>
-</li>
 <li>Run()
-: <a class="el" href="classbclib_1_1_test_class.html#a9b964915aac96ec93c2d1dd7b489ce1d">bclib::TestClass</a>
-, <a class="el" href="classlhs_test_1_1genetic_l_h_s___r_test.html#ac7151abfa4ec7e5eab02529a6d62d3fc">lhsTest::geneticLHS_RTest</a>
+: <a class="el" href="classlhs_test_1_1genetic_l_h_s___r_test.html#ac7151abfa4ec7e5eab02529a6d62d3fc">lhsTest::geneticLHS_RTest</a>
 , <a class="el" href="classlhs_test_1_1improved_l_h_s___r_test.html#a6e856c1a3844293433e7986e5ad6eb06">lhsTest::improvedLHS_RTest</a>
 , <a class="el" href="classlhs_test_1_1maximin_l_h_s___r_test.html#a64821b17187a30ef003c14b9694b9847">lhsTest::maximinLHS_RTest</a>
 , <a class="el" href="classlhs_test_1_1random_l_h_s___r_test.html#af67ee7daebf73fb94a04896f9325bb78">lhsTest::randomLHS_RTest</a>
 , <a class="el" href="classlhs_test_1_1utility_l_h_s_test.html#a773d25907d3a39529465f35735337fc8">lhsTest::utilityLHSTest</a>
 </li>
-</ul>
-
-
-<h3><a id="index_s"></a>- s -</h3><ul>
-<li>setSeed()
-: <a class="el" href="classbclib_1_1_c_random_standard_uniform.html#aa3750f9b027271da983a7736cee6afdc">bclib::CRandomStandardUniform</a>
+<li>testCalculateDistance()
+: <a class="el" href="classlhs_test_1_1utility_l_h_s_test.html#ac84566b7ce0d48a541d708ada07a527a">lhsTest::utilityLHSTest</a>
 </li>
-<li>size_type
-: <a class="el" href="classbclib_1_1matrix.html#a0c81bec7c0450254c192ca58d94c434c">bclib::matrix&lt; T &gt;</a>
+<li>testCalculateSOptimal()
+: <a class="el" href="classlhs_test_1_1utility_l_h_s_test.html#aafdefa9d50a049fd3e1073eab737ab44">lhsTest::utilityLHSTest</a>
 </li>
-</ul>
-
-
-<h3><a id="index_t"></a>- t -</h3><ul>
+<li>testCopyMatrix()
+: <a class="el" href="classlhs_test_1_1utility_l_h_s_test.html#a0d96fdec17a91be127e588c7fc1a4780">lhsTest::utilityLHSTest</a>
+</li>
 <li>testGeneticLHS_R()
 : <a class="el" href="classlhs_test_1_1genetic_l_h_s___r_test.html#a78f42e45a36f606ef2c44a33c30f4ac6">lhsTest::geneticLHS_RTest</a>
 </li>
 <li>testImprovedLHS_R()
 : <a class="el" href="classlhs_test_1_1improved_l_h_s___r_test.html#a625cb209cbae31b29d987b04521c7e19">lhsTest::improvedLHS_RTest</a>
+</li>
+<li>testInitializeAvailableMatrix()
+: <a class="el" href="classlhs_test_1_1utility_l_h_s_test.html#a9e844993568d0f1b16cf936deb108086">lhsTest::utilityLHSTest</a>
 </li>
 <li>testLhsCheck()
 : <a class="el" href="classlhs_test_1_1utility_l_h_s_test.html#a15752f995ecb848e286bd5496b2446a2">lhsTest::utilityLHSTest</a>
@@ -315,6 +132,12 @@ $(function() {
 <li>testRank()
 : <a class="el" href="classlhs_test_1_1utility_l_h_s_test.html#a10e5898f318aa006bc6d5927a3cf2d41">lhsTest::utilityLHSTest</a>
 </li>
+<li>testRunif_std()
+: <a class="el" href="classlhs_test_1_1utility_l_h_s_test.html#abda6ff4a3e0993554334da943d05d618">lhsTest::utilityLHSTest</a>
+</li>
+<li>testRunifint()
+: <a class="el" href="classlhs_test_1_1utility_l_h_s_test.html#a0ea2dd95624c88cd88388d7cd11b0aa5">lhsTest::utilityLHSTest</a>
+</li>
 <li>testStress()
 : <a class="el" href="classlhs_test_1_1genetic_l_h_s___r_test.html#a1c3bdeb9f53081ce5df87e34aeeba206">lhsTest::geneticLHS_RTest</a>
 , <a class="el" href="classlhs_test_1_1improved_l_h_s___r_test.html#a51e2407cd23eed99707ffba94fc19c06">lhsTest::improvedLHS_RTest</a>
@@ -324,43 +147,16 @@ $(function() {
 <li>testSumInvDistance()
 : <a class="el" href="classlhs_test_1_1utility_l_h_s_test.html#a0f3da0f6b46b1c9cecdb1b4fe0a95c33">lhsTest::utilityLHSTest</a>
 </li>
-<li>toString()
-: <a class="el" href="classbclib_1_1matrix.html#a30e23f1dce6445f2284a629ea726fcaf">bclib::matrix&lt; T &gt;</a>
-</li>
-<li>transpose()
-: <a class="el" href="classbclib_1_1matrix.html#a2112bc2fe67a9d05b9831d310e92e68d">bclib::matrix&lt; T &gt;</a>
-</li>
-</ul>
-
-
-<h3><a id="index_v"></a>- v -</h3><ul>
-<li>value_type
-: <a class="el" href="classbclib_1_1matrix.html#a287a7f7890c73afbe133d02ef857a380">bclib::matrix&lt; T &gt;</a>
-</li>
-</ul>
-
-
-<h3><a id="index_w"></a>- w -</h3><ul>
-<li>what()
-: <a class="el" href="classbclib_1_1assertion__error.html#a5f1b2f678610a22aa2fb74dcadda4d66">bclib::assertion_error</a>
-</li>
-</ul>
-
-
-<h3><a id="index__7E"></a>- ~ -</h3><ul>
-<li>~assertion_error()
-: <a class="el" href="classbclib_1_1assertion__error.html#a249937450feeba1e8c2957d5b6718137">bclib::assertion_error</a>
-</li>
-<li>~matrix()
-: <a class="el" href="classbclib_1_1matrix.html#aa5b9efe53d3cd346903b22322cc83ee8">bclib::matrix&lt; T &gt;</a>
-</li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 7 2019 21:38:57 for Latin Hypercube Sampling by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.15
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
+  </ul>
+</div>
 </body>
 </html>

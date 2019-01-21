@@ -41,26 +41,32 @@ namespace lhsTest {
          */
 		void Run();
         /** 
-         * Test lhsCheck 
+         * @test Test lhsCheck 
          */
 		void testLhsCheck();
         /** 
-         * Test rank 
+         * @test Test rank 
          */
 		void testRank();
         /** 
-         * Test lhsPrint 
+         * @test Test lhsPrint 
          */
 		void testLhsPrint();
         /** 
-         * Test sumInvDistance 
+         * @test Test sumInvDistance 
          */
 		void testSumInvDistance();
+		/** @test test the algorithm to calculate the distance between points */
         void testCalculateDistance();
+		/** @test Test the calculation of S optimality */
         void testCalculateSOptimal();
+		/** @test Test the initialization of the available points matrix */
         void testInitializeAvailableMatrix();
+		/** @test copying matrices*/
         void testCopyMatrix();
+		/** @test test the operation of the Runif method */
         void testRunif_std();
+		/** @test Test the operation of the random sample on the integers */
         void testRunifint();
 	};
 }

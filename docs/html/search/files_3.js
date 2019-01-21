@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['lhs_5fr_2ecpp',['lhs_r.cpp',['../lhs__r_8cpp.html',1,'']]],
-  ['lhs_5fr_2eh',['lhs_r.h',['../lhs__r_8h.html',1,'']]],
-  ['lhs_5fr_5futilities_2ecpp',['lhs_r_utilities.cpp',['../lhs__r__utilities_8cpp.html',1,'']]],
-  ['lhs_5fr_5futilities_2eh',['lhs_r_utilities.h',['../lhs__r__utilities_8h.html',1,'']]]
+  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['maximinlhs_2ecpp',['maximinLHS.cpp',['../maximin_l_h_s_8cpp.html',1,'']]],
+  ['maximinlhs_5frtest_2ecpp',['maximinLHS_RTest.cpp',['../maximin_l_h_s___r_test_8cpp.html',1,'']]],
+  ['maximinlhs_5frtest_2eh',['maximinLHS_RTest.h',['../maximin_l_h_s___r_test_8h.html',1,'']]]
 ];

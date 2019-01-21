@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['begin',['begin',['../classbclib_1_1matrix.html#a22657b4fd7139aba0d51da4c71eea103',1,'bclib::matrix']]]
+  ['geneticlhs',['geneticLHS',['../namespacelhslib.html#a46ccc3dccbd41bddf1403ee2f3a06fe0',1,'lhslib']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['difference_5ftype',['difference_type',['../classbclib_1_1matrix.html#a00fd385eef6d4b7f4b201bf5ae997a6f',1,'bclib::matrix']]]
+  ['vsize_5ftype',['vsize_type',['../namespacelhslib.html#a9bb4b9fa286b7b947ab332cf9076aae1',1,'lhslib']]]
 ];

@@ -27,12 +27,16 @@
 #include "LHSCommonDefines.h"
 
 namespace lhsTest {
+	/** Class to test the geneticLHS algorithm */
 	class geneticLHS_RTest : public bclib::TestClass
 	{
     public:
-		void Run(); /**< Run the test suite */
-		void testGeneticLHS_R(); /**< Test geneticLHS */
-        void testStress(); /**< Test geneticLHS for many conditions */
+		/** Run the test suite */
+		void Run();
+		/** @test Test the geneticLHS algorithm */
+		void testGeneticLHS_R();
+		/** @test Test geneticLHS under many conditions */
+        void testStress();
 	};
 }
 

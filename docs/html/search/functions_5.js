@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['fill',['fill',['../classbclib_1_1matrix.html#ab19c51389e306967aaadc79cf06773b7',1,'bclib::matrix']]],
-  ['findorder',['findorder',['../namespacebclib.html#ae611b18a753d7e34e0b3a1d54a62b133',1,'bclib']]],
-  ['findorder_5fzero',['findorder_zero',['../namespacelhs__r.html#a0f674ea18843155bc54720c713e85bd3',1,'lhs_r::findorder_zero()'],['../namespacebclib.html#a5583d104333248030b699828c7f9b0c2',1,'bclib::findorder_zero()']]],
-  ['findrankscompare',['findranksCompare',['../namespacebclib.html#abef52dca333ae4e46047b268515a4a19',1,'bclib']]]
+  ['operator_28_29',['operator()',['../structlhslib_1_1square_difference.html#ace030a997fbe66638bb8033fb13d7ee1',1,'lhslib::squareDifference::operator()()'],['../structlhslib_1_1invert.html#a33d9f2fc7d1297c161c3ea9cbb09a792',1,'lhslib::invert::operator()()']]],
+  ['optimumlhs',['optimumLHS',['../namespacelhslib.html#a89072052055ec13b0ff7995792ff6927',1,'lhslib']]],
+  ['optseededlhs',['optSeededLHS',['../namespacelhslib.html#a63325b1013d30cee42bb04ea7bb8bb2e',1,'lhslib']]]
 ];

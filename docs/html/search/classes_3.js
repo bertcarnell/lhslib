@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['improvedlhs_5frtest',['improvedLHS_RTest',['../classlhs_test_1_1improved_l_h_s___r_test.html',1,'lhsTest']]],
-  ['invert',['invert',['../structlhslib_1_1invert.html',1,'lhslib']]]
+  ['optimumlhs_5frtest',['optimumLHS_RTest',['../classlhs_test_1_1optimum_l_h_s___r_test.html',1,'lhsTest']]],
+  ['optseededlhs_5frtest',['optSeededLHS_RTest',['../classlhs_test_1_1opt_seeded_l_h_s___r_test.html',1,'lhsTest']]]
 ];

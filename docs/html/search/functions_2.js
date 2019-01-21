@@ -1,15 +1,6 @@
 var searchData=
 [
-  ['calculatedistance',['calculateDistance',['../namespacelhslib.html#a6787a23ff595bf60279354bb50e49fcd',1,'lhslib::calculateDistance()'],['../namespacelhs__r.html#a07b965bc93a70535feb91314885d2750',1,'lhs_r::calculateDistance()']]],
-  ['calculatedistancesquared',['calculateDistanceSquared',['../namespacelhslib.html#a2b0d34638b3b4dfc2c4b7a022357cbad',1,'lhslib::calculateDistanceSquared(const std::vector&lt; T &gt; A, const std::vector&lt; T &gt; B)'],['../namespacelhslib.html#adab3ff100fc5ce89c89b7e9d61a65e8c',1,'lhslib::calculateDistanceSquared(const typename bclib::matrixConstIter&lt; T, ISROWWISE &gt; Abegin, const typename bclib::matrixConstIter&lt; T, ISROWWISE &gt; Aend, const typename bclib::matrixConstIter&lt; T, ISROWWISE &gt; Bbegin)']]],
-  ['calculatesoptimal',['calculateSOptimal',['../namespacelhslib.html#a1cd1542e9860230f6ca3593d951a3267',1,'lhslib::calculateSOptimal()'],['../namespacelhs__r.html#aa1ce6877e5ce6ed20551b599e3af7aa0',1,'lhs_r::calculateSOptimal()']]],
-  ['checkarguments',['checkArguments',['../namespacelhs__r.html#ad068a6624c73a16af87218da7347e754',1,'lhs_r::checkArguments(int n, int k)'],['../namespacelhs__r.html#a4d1d403a5e712cb398ae848adb0c7333',1,'lhs_r::checkArguments(int n, int k, int dup)'],['../namespacelhs__r.html#a85fa7479aef00dc0b9408050e90370c8',1,'lhs_r::checkArguments(int n, int k, int maxsweeps, double eps)']]],
-  ['clear',['clear',['../classbclib_1_1matrix.html#a2a8973dc97fcfe6122aaac457f0a4489',1,'bclib::matrix']]],
-  ['colsize',['colsize',['../classbclib_1_1matrix.html#a947eee32ac483e9bbd75a24a5f3fb0e9',1,'bclib::matrix']]],
-  ['columnwisebegin',['columnwisebegin',['../classbclib_1_1matrix.html#aeae69b3382060c86ff1b9b55a4985423',1,'bclib::matrix::columnwisebegin()'],['../classbclib_1_1matrix.html#a4c735c99ae138102f44981c1391397a0',1,'bclib::matrix::columnwisebegin(size_type jcol)']]],
-  ['columnwiseend',['columnwiseend',['../classbclib_1_1matrix.html#a8a76a3565e23d2556ae4f66a8811507c',1,'bclib::matrix::columnwiseend()'],['../classbclib_1_1matrix.html#a04bcebe8b4e20dd1ddee5befd48e172b',1,'bclib::matrix::columnwiseend(size_type jcol)']]],
-  ['convertintegertonumericlhs',['convertIntegerToNumericLhs',['../namespacelhs__r.html#a6d7b16d0c3998bd4aa98c30e9b8882c3',1,'lhs_r']]],
-  ['convertmatrixtonumericlhs',['convertMatrixToNumericLhs',['../namespacelhs__r.html#a1db21b2cc7f6e2665ab478be9c0a3856',1,'lhs_r']]],
-  ['copymatrix',['copyMatrix',['../namespacelhslib.html#a897a59d76ad6177aa753f52167f6811e',1,'lhslib']]],
-  ['crandomstandarduniform',['CRandomStandardUniform',['../classbclib_1_1_c_random_standard_uniform.html#a90e5e7b41d1b5b5d40db508ed801708c',1,'bclib::CRandomStandardUniform']]]
+  ['improvedlhs',['improvedLHS',['../namespacelhslib.html#a6a5d2609d175734e790904a1f9ae7f15',1,'lhslib']]],
+  ['initializeavailablematrix',['initializeAvailableMatrix',['../namespacelhslib.html#a464d4a440a7a7361440a58c58369a8e2',1,'lhslib']]],
+  ['isvalidlhs',['isValidLHS',['../namespacelhslib.html#a7af77ed0b838f98395f503483b7e29b4',1,'lhslib::isValidLHS(const bclib::matrix&lt; int &gt; &amp;result)'],['../namespacelhslib.html#aafdb3fbb210beafc45adc6e0729a8ea9',1,'lhslib::isValidLHS(const bclib::matrix&lt; double &gt; &amp;result)']]]
 ];
