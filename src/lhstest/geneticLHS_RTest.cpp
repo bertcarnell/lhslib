@@ -83,7 +83,7 @@ namespace lhsTest{
             test = lhslib::isValidLHS(result);
             if (!test)
             {
-                printf("\n%s\n", result.toString());
+                std::cout << "\n" << result.toString() << "\n";
             }
             bclib::Assert(test, "geneticLHS validity S");
 
@@ -91,7 +91,7 @@ namespace lhsTest{
             test = lhslib::isValidLHS(result);
             if (!test)
             {
-                printf("\n%s\n", result.toString());
+                std::cout << "\n" << result.toString() << "\n";
             }
             bclib::Assert(test, "geneticLHS validity maximin");
         }
