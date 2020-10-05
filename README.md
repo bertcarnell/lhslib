@@ -4,9 +4,9 @@ lhslib
 C++ Latin hypercube sampling code.  Used in the `lhs` pacakge in the statistical software package R (www.r-project.org).  
 Link to the `lhs` project page [here](https://bertcarnell.github.io/lhslib/html/index.html).
 
-|<sub>Linux & MacOS</sub>|<sub>Windows</sub>|<sub>Code Coverage</sub>|
-|:---:|:---:|:---:|
-|[![Build Status](https://travis-ci.org/bertcarnell/lhslib.svg?branch=master)](https://travis-ci.org/bertcarnell/lhslib)|[![Build status](https://ci.appveyor.com/api/projects/status/7xd7sohoug7c0d42?svg=true)](https://ci.appveyor.com/project/bertcarnell/lhslib)|[![codecov](https://codecov.io/gh/bertcarnell/lhslib/branch/master/graph/badge.svg)](https://codecov.io/gh/bertcarnell/lhslib)|
+|<sub>Linux & MacOS</sub>|<sub>Windows</sub>|<sub>Code Coverage</sub>|<sub>Actions</sub>|
+|:---:|:---:|:---:|:---:|
+|[![Build Status](https://travis-ci.org/bertcarnell/lhslib.svg?branch=master)](https://travis-ci.org/bertcarnell/lhslib)|[![Build status](https://ci.appveyor.com/api/projects/status/7xd7sohoug7c0d42?svg=true)](https://ci.appveyor.com/project/bertcarnell/lhslib)|[![codecov](https://codecov.io/gh/bertcarnell/lhslib/branch/master/graph/badge.svg)](https://codecov.io/gh/bertcarnell/lhslib)|![CMake](https://github.com/bertcarnell/lhslib/workflows/CMake/badge.svg)|
 
 ### Connections
 
