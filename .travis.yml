@@ -1,26 +1,78 @@
 language: cpp
 
-dist: trusty
-sudo: false
+dist: bionic
+os: linux
 
-addons:
-  apt:
-    packages:
-      - lcov
-      - cmake
+jobs:
+  include:
+    #######################
+    - name: "Release Build"
+      script:
+        - cd src
+        - cmake . -Bbuild -DCMAKE_BUILD_TYPE=Release -DBUILD_TYPE=Gcc
+        - cmake --build build
+        - ./build/lhstest/lhstest
+    ########################
+    - name: "Valgrind Build"
+      addons:
+        apt:
+          packages:
+            - valgrind
+      script:
+        - cd src
+        - cmake . -Bdebugbuild -DCMAKE_BUILD_TYPE=Debug -DBUILD_TYPE=Gcc
+        - cmake --build debugbuild
+        - valgrind --leak-check=full --error-exitcode=1 --track-origins=yes ./debugbuild/lhstest/lhstest
+    ###################
+    - name: "gcc-san Build"
+      script:
+        - cd src
+        - cmake . -Bgccsanbuild -DCMAKE_BUILD_TYPE=Release -DBUILD_TYPE=Gcc-san
+        - cmake --build gccsanbuild
+        - ./gccsanbuild/lhstest/lhstest
+    #####################
+    - name: "clang build"
+      addons:
+        apt:
+          packages:
+            - clang
+            - llvm
+      script:
+        - cd src
+        - export CC=clang
+        - export CXX=clang++
+        - cmake . -Bclangbuild -DCMAKE_BUILD_TYPE=Release -DBUILD_TYPE=Clang -D_CMAKE_TOOLCHAIN_PREFIX='llvm-'
+        - cmake --build clangbuild
+        - ./clangbuild/lhstest/lhstest
+    #########################
+    - name: "clang-san build"
+      addons:
+        apt:
+          packages:
+            - clang
+            - llvm
+      script:
+        - cd src
+        - export CC=clang
+        - export CXX=clang++
+        - cmake . -Bclangsanbuild -DCMAKE_BUILD_TYPE=Release -DBUILD_TYPE=Clang-san -D_CMAKE_TOOLCHAIN_PREFIX='llvm-'
+        - cmake --build clangsanbuild
+        - ./clangsanbuild/lhstest/lhstest
+    ########################
+    - name: "coverage build"
+      addons:
+        apt:
+          packages:
+            - lcov
+      script:
+        - cd src
+        - cmake . -Bcoveragebuild -DCMAKE_BUILD_TYPE=Release -DBUILD_TYPE=Coverage
+        - cmake --build coveragebuild
+        - ./coveragebuild/lhstest/lhstest
+      after_success:
+        - cd coveragebuild
+        - lcov --directory lhstest --capture --output-file lhstest.info
+        - lcov --remove lhstest.info 'lhstest/*' '/usr/*' --output-file lhstest.clean.info
+        - lcov --list lhstest.clean.info
+        - bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
 
-script:
-  - cd src
-  - cmake . -Bbuild -DCMAKE_BUILD_TYPE=Release # Test release build options
-  - cmake --build build
-  - ./build/lhstest/lhstest
-  - cmake . -Bcoveragebuild -DCMAKE_BUILD_TYPE=Coverage # Test debug build and coverage options
-  - cmake --build coveragebuild
-  - ./coveragebuild/lhstest/lhstest
-
-after_success:
-  - cd coveragebuild
-  - lcov --directory lhstest --capture --output-file lhstest.info
-  - lcov --remove lhstest.info 'lhstest/*' '/usr/*' --output-file lhstest.clean.info
-  - lcov --list lhstest.clean.info
-  - bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
