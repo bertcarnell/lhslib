@@ -55,7 +55,7 @@ namespace lhslib
         typename std::vector<T>::const_iterator toRank_it2;
         std::vector<int>::iterator ranks_it;
         for (toRank_it1 = toRank.begin(), ranks_it = ranks.begin();
-                toRank_it1 != toRank.end(), ranks_it != ranks.end();
+                toRank_it1 != toRank.end() && ranks_it != ranks.end();
                 ++toRank_it1, ++ranks_it)
         {
             *ranks_it = 0;
