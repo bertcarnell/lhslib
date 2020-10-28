@@ -1,0 +1,42 @@
+name: CppLinter
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+        
+      - name: Install Packages
+        run: sudo apt-get install clang clang-tidy cppcheck llvm cmake
+        
+      - name: Build Clang projects
+        env: 
+          CMAKE_EXPORT_COMPILE_COMMANDS: ON
+        run: |
+          cd src
+          sh cmakeshell.sh Debug Clang
+          cd ..
+
+      - name: Run checks
+        run: |
+          clang-tidy --version
+          clang-tidy src/lhslib/*.cpp -p=src/clangbuild -checks=boost-*,bugprone-*,performance-*,readability-*,portability-*,modernize-*,clang-analyzer-cplusplus-*,clang-analyzer-*,cppcoreguidelines-*,-modernize-use-auto,-modernize-loop-convert,-modernize-use-emplace > clang-tidy-report.txt
+          cppcheck --enable=all --std=c++11 --language=c++ --output-file=cppcheck-report.txt src/lhslib/*
+
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: lint-output
+          path: |
+            clang-tidy-report.txt
+            cppcheck-report.txt
