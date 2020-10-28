@@ -124,7 +124,7 @@ namespace lhslib
      * @return the total squared distance
      */
     template <class T>
-    T calculateDistanceSquared(const std::vector<T> A, const std::vector<T> B)
+    T calculateDistanceSquared(const std::vector<T> & A, const std::vector<T> & B)
     {
         if (A.size() != B.size())
         {

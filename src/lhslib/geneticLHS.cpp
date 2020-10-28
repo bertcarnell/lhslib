@@ -24,7 +24,7 @@
 namespace lhslib 
 {
     // TODO: multi-thread the iterations over population
-    void geneticLHS(int n, int k, int pop, int gen, double pMut, std::string criterium,
+    void geneticLHS(int n, int k, int pop, int gen, double pMut, const std::string & criterium,
             bool bVerbose, bclib::matrix<double> & result, bclib::CRandom<double> & oRandom)
     {
         if (n < 1 || k < 1)
@@ -179,7 +179,10 @@ namespace lhslib
                 {
                     J[i](irow, temp1) = A[posit](irow, temp2);
                 }
-                if (!lhslib::isValidLHS(J[i])) PRINT_MACRO << "J is not valid at " << i << " in second half permute\n";
+                if (!lhslib::isValidLHS(J[i]))
+                {
+                    PRINT_MACRO << "J is not valid at " << i << " in second half permute\n";
+                }
             }
             // randomly exchange two numbers in pMut percent of columns
             std::vector<double> y = std::vector<double>(m_k);

@@ -99,12 +99,12 @@ namespace lhslib
      * @param k number parameters / columns in the lhs
      * @param maxSweeps the maximum number of sweeps to use in the algorithm
      * @param eps The optimal stopping criterion
-     * @param pOld the seeded lhs
-     * @param JLen the length of a vector used in the calculations
+     * @param oldHypercube the seeded lhs
+     * @param optimalityRecordLength the length of a vector used in the calculations
      * @param bVerbose should messages be printed?
      */
     void optSeededLHS(int n, int k, int maxSweeps, double eps,
-            bclib::matrix<double> & pOld, int JLen, bool bVerbose);
+            bclib::matrix<double> & oldHypercube, int optimalityRecordLength, bool bVerbose);
 
     /**
      * type of size type for use with bclib::matrix<T>
@@ -148,7 +148,7 @@ namespace lhslib
      * @param result the lhs
      * @param oRandom the random number stream
      */
-    void geneticLHS(int n, int k, int pop, int gen, double pMut, std::string criterium,
+    void geneticLHS(int n, int k, int pop, int gen, double pMut, const std::string & criterium,
             bool bVerbose, bclib::matrix<double> & result, bclib::CRandom<double> & oRandom);
 }
 
