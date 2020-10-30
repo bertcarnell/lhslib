@@ -7,6 +7,22 @@ message(VERBOSE, "CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
 # BUILD_TYPE Clang, Coverage, Clang-san, Gcc-san
 message(VERBOSE, "BUILD_TYPE: ${BUILD_TYPE}")
 
+file(READ bclib/BCLIBVERSION version_data)
+string(STRIP "${version_data}" version_data)
+file(READ bclib/bclibVersion.h.in version_header)
+string(REGEX REPLACE "0[.]0[.]0" "${version_data}" new_version_header "${version_header}")
+file(WRITE bclib/bclibVersion.h "${new_version_header}")
+
+file(READ LHSLIBVERSION version_data)
+string(STRIP "${version_data}" version_data)
+file(READ lhslib/lhslibVersion.h.in version_header)
+string(REGEX REPLACE "0[.]0[.]0" "${version_data}" new_version_header "${version_header}")
+file(WRITE lhslib/lhslibVersion.h "${new_version_header}")
+
+file(READ doxygen.config doxygen_data)
+string(REGEX REPLACE "PROJECT[_]NUMBER[ ]*[=][ ]*[0-9]*[.][0-9]*[.][0-9]*" "PROJECT_NUMBER         = ${version_data}" new_version_header "${doxygen_data}")
+file(WRITE doxygen.config "${new_version_header}")
+
 if (MSVC)
     message(VERBOSE, "Windows Build")
   # disable unreferenced formal parameters (4100) and constant conditional expression (4127) and special noexcept from asserterror (26439) and not initialized variables (26495)
