@@ -3,7 +3,7 @@
  * @author Robert Carnell
  * @copyright Copyright (c) 2014, Robert Carnell
  *
- * @license <a href="http://www.gnu.org/licenses/lgpl.html">GNU Lesser General Public License (LGPL v3)</a>
+ * License <a href="http://www.gnu.org/licenses/lgpl.html">GNU Lesser General Public License (LGPL v3)</a>
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -52,6 +52,7 @@
 
 /** RNG Macro (See lhs_r.cpp)*/
 #define START_RNG Rcpp::RNGScope * tempRNG = new Rcpp::RNGScope(); // instantiate a pointer so that the destructor is not implicitly called
+/** End RNG Macro (See lhs_r.cpp)*/
 #define END_RNG delete tempRNG; // explicitly release the RNG state to avoid memory corruption
 
 /**
