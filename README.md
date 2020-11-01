@@ -1,14 +1,14 @@
 lhslib
 ======
 
-C++ Latin hypercube sampling code.  Used in the `lhs` pacakge in the statistical software package R (www.r-project.org).  
+C++ Latin hypercube sampling code.  Used in the `lhs` pacakge in the R statistical software (www.r-project.org).  
 Link to the `lhs` project page [here](https://bertcarnell.github.io/lhslib/html/index.html).
 
-|<sub>Linux & MacOS</sub>|<sub>Windows</sub>|<sub>Code Coverage</sub>|<sub>Actions</sub>|
-|:---:|:---:|:---:|:---:|
-|[![Build Status](https://travis-ci.org/bertcarnell/lhslib.svg?branch=master)](https://travis-ci.org/bertcarnell/lhslib)|[![Build status](https://ci.appveyor.com/api/projects/status/7xd7sohoug7c0d42?svg=true)](https://ci.appveyor.com/project/bertcarnell/lhslib)|[![codecov](https://codecov.io/gh/bertcarnell/lhslib/branch/master/graph/badge.svg)](https://codecov.io/gh/bertcarnell/lhslib)|![CMake](https://github.com/bertcarnell/lhslib/workflows/CMake/badge.svg)|
+|<sub>Linux & MacOS</sub>|<sub>Windows</sub>|<sub>Code Coverage</sub>|<sub>Actions</sub>|<sub>CodeQL</sub>|<sub>Linter</sub>|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|[![Build Status](https://travis-ci.org/bertcarnell/lhslib.svg?branch=master)](https://travis-ci.org/bertcarnell/lhslib)|[![Build status](https://ci.appveyor.com/api/projects/status/7xd7sohoug7c0d42?svg=true)](https://ci.appveyor.com/project/bertcarnell/lhslib)|[![codecov](https://codecov.io/gh/bertcarnell/lhslib/branch/master/graph/badge.svg)](https://codecov.io/gh/bertcarnell/lhslib)|[![CMake](https://github.com/bertcarnell/lhslib/workflows/CMake/badge.svg)](https://github.com/bertcarnell/lhslib/actions)|[![CodeQL](https://github.com/bertcarnell/lhslib/workflows/CodeQL/badge.svg)](https://github.com/bertcarnell/lhslib/actions)|[![CppLinter](https://github.com/bertcarnell/lhslib/workflows/CppLinter/badge.svg)](https://github.com/bertcarnell/lhslib/actions)|
 
-### Connections
+## Connections to Other Projects
 
 - [oa](https://github.com/bertcarnell/oa) orthogonal array project
 - [bclib](https://github.com/bertcarnell/bclib) bertcarnell template library
@@ -17,10 +17,14 @@ Link to the `lhs` project page [here](https://bertcarnell.github.io/lhslib/html/
 - [lhs on CRAN](https://r-forge.r-project.org/projects/lhs/)
 - [doxygen](http://www.stack.nl/~dimitri/doxygen/)
 
+## Documentation
+
+The API is primarily documented through the Doxygen documentation supplied [here](http://bertcarnell.github.io/lhslib/).
+
 ## Examples
 
-The API is primarily documented through the Doxygen documentation supplied [here](http://bertcarnell.github.io/lhslib/).  The following
-code illustrates how the API is called from C++.  The `bclib::matrix<T>` class is a simple matrix class that only includes necessary operations.  More
+The following code illustrates how the API is called from C++.  The `bclib::matrix<T>` class is a simple matrix class that only 
+includes necessary operations ([bclib](https://github.com/bertcarnell/bclib)).  More
 robust matrix templates could be used in the future.  `lhslib` is the namespace of this project.
 
 #### randomLHS Algorithm
