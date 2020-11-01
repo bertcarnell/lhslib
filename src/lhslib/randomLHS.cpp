@@ -83,7 +83,7 @@ namespace lhslib
         }
         else
         {
-            randomunif2 = std::vector<double>(n*k);
+            randomunif2 = std::vector<double>(static_cast<size_t>(n)*static_cast<size_t>(k)); // need to cast before multiply to prevent integer overflow
             for (int jcol = 0; jcol < k; jcol++)
             {
                 for (int irow = 0; irow < n; irow++)
