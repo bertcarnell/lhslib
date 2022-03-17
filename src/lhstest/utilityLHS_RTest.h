@@ -1,7 +1,7 @@
 /**
  * @file utilityLHS_RTest.h
  * @author Robert Carnell
- * @copyright Copyright (c) 2014, Robert Carnell
+ * @copyright Copyright (c) 2022, Robert Carnell
  * 
  * License <a href="http://www.gnu.org/licenses/lgpl.html">GNU Lesser General Public License (LGPL v3)</a>
  * This program is free software: you can redistribute it and/or modify
@@ -68,5 +68,9 @@ namespace lhsTest {
         void testRunif_std();
 		/** @test Test the operation of the random sample on the integers */
         void testRunifint();
+		/** @test Test the square difference function */
+		void testSquareDifference();
+		/** @test test the inverse function */
+		void testInverse();
 	};
 }

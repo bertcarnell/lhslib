@@ -1,7 +1,7 @@
 /**
  * @file utilityLHS_RTest.cpp
  * @author Robert Carnell
- * @copyright Copyright (c) 2014, Robert Carnell
+ * @copyright Copyright (c) 2022, Robert Carnell
  * 
  * License <a href="http://www.gnu.org/licenses/lgpl.html">GNU Lesser General Public License (LGPL v3)</a>
  * This program is free software: you can redistribute it and/or modify
@@ -260,4 +260,28 @@ namespace lhsTest{
         lhslib::runifint<int>(desiredsize, 3, 9, AA, oRandom);
 		bclib::Assert(AA.size() == desiredsize);
     }
+	
+	void utilityLHSTest::testSquareDifference()
+	{
+		lhslib::squareDifference<int> sqdint;
+		lhslib::squareDifference<double> sqddouble;
+		
+		int x = sqdint(2, 4);
+		bclib::Assert(x == 4);
+		
+		double y = sqddouble(3.0, 6.0);
+		bclib::AssertEqualsLRE(9.0, y, 12);
+	}
+	
+	void utilityLHSTest::testInverse()
+	{
+	    lhslib::invert<int, double> iid;
+		lhslib::invert<double, double> idd;
+		
+		double x = iid(2);
+		bclib::AssertEqualsLRE(0.5, x, 12);
+		
+		double y = idd(4.0);
+		bclib::AssertEqualsLRE(0.25, y, 12);
+	}
 }
