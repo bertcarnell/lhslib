@@ -11,7 +11,7 @@ elif [ "$2" = "Clang" ]; then
   echo Clang Build
   export CC=clang
   export CXX=clang++
-  cmake . -Bclangbuild -DCMAKE_BUILD_TYPE=$1 -DBUILD_TYPE=$2 -D_CMAKE_TOOLCHAIN_PREFIX='llvm-'  
+  cmake . -Bclangbuild -DCMAKE_BUILD_TYPE=$1 -DBUILD_TYPE=$2 -D_CMAKE_TOOLCHAIN_PREFIX='llvm-'
   cmake --build clangbuild
   ./clangbuild/lhstest/lhstest
 elif [ "$2" = "Clang-san" ]; then
