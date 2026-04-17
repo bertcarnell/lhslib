@@ -25,8 +25,12 @@ file(WRITE doxygen.config "${new_version_header}")
 
 if (MSVC)
     message(VERBOSE, "Windows Build")
-    # disable unreferenced formal parameters (4100) and constant conditional expression (4127) and special noexcept from asserterror (26439) and not initialized variables (26495)
-    set(CMAKE_CXX_FLAGS "/EHsc /W4 /WX /wd4100 /wd4127 /wd26439 /wd26495")
+    # 26439 is special_noexcept
+    # 4100 is The formal parameter is not referenced in the body of the function
+    # 4702 is unreachable code for the assertion code
+	# 4127 is constant conditional expression
+	# 26495 is not initialized variables
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHsc /std:c++17 /W4 /WX /wd4100 /wd26439 /wd4702 /wd4127 /wd26495")
     set(CMAKE_CXX_FLAGS_DEBUG "/Od /Zi")
     set(CMAKE_CXX_FLAGS_RELEASE "/Ox")
     set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "/O2 /Zi")
