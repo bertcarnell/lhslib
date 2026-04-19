@@ -77,6 +77,9 @@ namespace lhslib
             B = std::vector<double>(m_pop);
             for (msize_type i = 0; i < m_pop; i++)
             {
+#ifdef RCOMPILE
+                Rcpp::checkUserInterrupt();
+#endif
                 if (criterium == "S")
                 {
                     B[i] = calculateSOptimal<int>(A[i]);
@@ -102,7 +105,7 @@ namespace lhslib
                 {
                     std::stringstream msg;
                     msg << "Criterium not recognized: S and Maximin are available: " << criterium.c_str() << " was provided.\n";
-					const std::string smsg = msg.str();
+                    const std::string smsg = msg.str();
                     throw std::invalid_argument(smsg.c_str());
                 }
             }
@@ -135,17 +138,17 @@ namespace lhslib
 #ifdef _DEBUG                
                 if (!lhslib::isValidLHS(J[i + m_pop / 2]))
                 {
-					PRINT_MACRO("J is not valid at %d %d %d in 2nd half setup\n", static_cast<int>(i + m_pop / 2), static_cast<int>(i), static_cast<int>(m_pop/2));
-					PRINT_MACRO("J is equal to A[H[i]], 1 is true %d", (int)(J[i+m_pop/2] == A[H[i]]));
-					PRINT_MACRO("\n%s\n", J[i + m_pop / 2].toString());
+                    PRINT_MACRO("J is not valid at %d %d %d in 2nd half setup\n", static_cast<int>(i + m_pop / 2), static_cast<int>(i), static_cast<int>(m_pop/2));
+                    PRINT_MACRO("J is equal to A[H[i]], 1 is true %d", (int)(J[i+m_pop/2] == A[H[i]]));
+                    PRINT_MACRO("\n%s\n", J[i + m_pop / 2].toString());
                     
-					PRINT_MACRO("\n%s\n", A[H[i]].toString());
-					PRINT_MACRO("H: ");
+                    PRINT_MACRO("\n%s\n", A[H[i]].toString());
+                    PRINT_MACRO("H: ");
                     for (vsize_type iv = 0; iv < H.size(); iv++)
                     {
-						PRINT_MACRO("%d,", H[iv]);
+                        PRINT_MACRO("%d,", H[iv]);
                     }
-					PRINT_MACRO("\n");
+                    PRINT_MACRO("\n");
                     return;
                 }
 #endif
@@ -164,8 +167,8 @@ namespace lhslib
 #ifdef _DEBUG
                 if (!lhslib::isValidLHS(J[i]))
                 {
-					PRINT_MACRO("J is not valid at %d in 1st half permute\n", static_cast<int>(i));
-					PRINT_MACRO("\n%s\n", J[i].toString());
+                    PRINT_MACRO("J is not valid at %d in 1st half permute\n", static_cast<int>(i));
+                    PRINT_MACRO("\n%s\n", J[i].toString());
                     return;
                 }
 #endif
@@ -206,13 +209,13 @@ namespace lhslib
             A = J;
             if (v != m_gen && bVerbose)
             {
-				PRINT_MACRO << "Generation " << v << " completed\n"; // LCOV_EXCL_LINE
+                PRINT_MACRO << "Generation " << v << " completed\n"; // LCOV_EXCL_LINE
             }
         }
 
         if (bVerbose)
         {
-			PRINT_MACRO << "Last generation completed\n"; // LCOV_EXCL_LINE
+            PRINT_MACRO << "Last generation completed\n"; // LCOV_EXCL_LINE
         }
 #ifdef _DEBUG
         if (!lhslib::isValidLHS(J[0])) PRINT_MACRO("J[0] is not valid\n");
